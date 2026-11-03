@@ -8,35 +8,37 @@
 <link rel="icon" href="../icon.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <style>
-:root{color-scheme:light dark;--bg:#F2F2F7;--card:#FFFFFF;--text:#000000;--sub:#3C3C43;--acc:#0062CC;--line:rgba(60,60,67,.18)}
-@media (prefers-color-scheme:dark){:root{--bg:#000000;--card:#1C1C1E;--text:#FFFFFF;--sub:#AEAEB2;--acc:#64B5FF;--line:rgba(84,84,88,.65)}}
+:root{color-scheme:light dark;--bg:#FBFBFD;--bg2:#F2F2F7;--card:#FFFFFF;--text:#1D1D1F;--sub:#5E5E66;--acc:#0062CC;--fill:#007AFF;--line:rgba(60,60,67,.14);--bar:rgba(251,251,253,.8)}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--bg2:#0D0D0F;--card:#1C1C1E;--text:#F5F5F7;--sub:#A1A1A8;--acc:#4DA3FF;--fill:#0A84FF;--line:rgba(84,84,88,.5);--bar:rgba(0,0,0,.72)}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
-main{max-width:680px;margin:0 auto;padding:20px 16px 64px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:8px 16px 64px}
 a{color:var(--acc)}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:600;font-size:20px}
-.brand img{width:36px;height:36px;border-radius:9px}
-.langs{display:flex;gap:4px;font-size:15px}
-.langs a{text-decoration:none;padding:4px 8px;border-radius:8px}
-.langs a[aria-current=page]{background:var(--card);color:var(--text);font-weight:600}
 article{margin-top:40px}
-section{background:var(--card);border-radius:22px;padding:4px 24px 12px}
+section{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:4px 24px 12px}
 h1{font-size:34px;line-height:41px;margin:0}h2{font-size:20px;margin:20px 0 4px}
 p{color:var(--sub);margin:0 0 8px}.meta{margin:4px 0 16px}
 footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:none}
+.bar{position:sticky;top:0;z-index:10;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;max-width:680px;margin:0 auto;padding:0 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.langs{display:flex;gap:2px;font-size:14px}
+.langs a{text-decoration:none;padding:5px 9px;border-radius:8px;color:var(--sub);font-weight:500}
+.langs a[aria-current=page]{background:var(--bg2);color:var(--text);font-weight:600}
+h1,h2,h3{letter-spacing:-.01em}h1{font-weight:800;letter-spacing:-.02em}
 </style>
 </head>
 <body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="../"><img src="../icon.png" width="256" height="256" alt="">Tilla</a>
+<nav class="langs" aria-label="Language"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
+</div></header>
 <main>
-<header class="top">
-<a class="brand" href="../"><img src="../icon.png" alt="">Tilla</a>
-<nav class="langs"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
-</header>
 
 <article lang="de" data-lang="de" data-title="Tilla – Datenschutz">
 <h1>Datenschutz</h1>
-<p class="meta">Stand: 2. November 2026</p>
+<p class="meta">Stand: 3. November 2026</p>
 <section>
 <h2>Kurz gesagt</h2>
 <p>Tilla sammelt keine Daten. Es gibt keinen Tilla-Server, keine Werbung, kein Tracking und keine Analysedienste. Ich als Entwickler kann eure Einträge nicht sehen.</p>
@@ -51,14 +53,14 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Löschen</h2>
 <p>In Tilla unter Einstellungen → Haushalt könnt ihr den Haushalt verlassen oder löschen. Die Daten lassen sich außerdem in den iCloud-Einstellungen des iPhones löschen.</p>
 <h2>Verantwortlich und Kontakt</h2>
-<p>Simon Blum, Karlsruhe, Deutschland · E-Mail: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Deutschland · E-Mail: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#de">Tilla</a> · <a href="../support/#de">Support</a> · © 2026 <a href="../../#de">Simon Blum</a></footer>
 </article>
 
 <article lang="en" data-lang="en" data-title="Tilla – Privacy">
 <h1>Privacy</h1>
-<p class="meta">Last updated: November 2, 2026</p>
+<p class="meta">Last updated: November 3, 2026</p>
 <section>
 <h2>In short</h2>
 <p>Tilla collects no data. There is no Tilla server, no ads, no tracking and no analytics. As the developer, I can’t see your entries.</p>
@@ -73,14 +75,14 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Deleting</h2>
 <p>In Tilla, Settings → Household lets you leave or delete the household. You can also delete the data in your iPhone’s iCloud settings.</p>
 <h2>Controller and contact</h2>
-<p>Simon Blum, Karlsruhe, Germany · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Germany · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#en">Tilla</a> · <a href="../support/#en">Support</a> · © 2026 <a href="../../#en">Simon Blum</a></footer>
 </article>
 
 <article lang="es" data-lang="es" data-title="Tilla – Privacidad">
 <h1>Privacidad</h1>
-<p class="meta">Última actualización: 2 de noviembre de 2026</p>
+<p class="meta">Última actualización: 3 de noviembre de 2026</p>
 <section>
 <h2>En resumen</h2>
 <p>Tilla no recopila datos. No hay servidor de Tilla, ni anuncios, ni rastreo, ni servicios de análisis. Como desarrollador, no puedo ver vuestras entradas.</p>
@@ -95,14 +97,14 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Eliminar</h2>
 <p>En Tilla, en Ajustes → Hogar, podéis salir del hogar o eliminarlo. También podéis borrar los datos en los ajustes de iCloud del iPhone.</p>
 <h2>Responsable y contacto</h2>
-<p>Simon Blum, Karlsruhe, Alemania · Correo: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Alemania · Correo: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#es">Tilla</a> · <a href="../support/#es">Soporte</a> · © 2026 <a href="../../#es">Simon Blum</a></footer>
 </article>
 
 <article lang="fr" data-lang="fr" data-title="Tilla – Confidentialité">
 <h1>Confidentialité</h1>
-<p class="meta">Dernière mise à jour&nbsp;: 2&nbsp;novembre 2026</p>
+<p class="meta">Dernière mise à jour&nbsp;: 3&nbsp;novembre 2026</p>
 <section>
 <h2>En bref</h2>
 <p>Tilla ne collecte aucune donnée. Pas de serveur Tilla, pas de publicité, pas de pistage, pas d’outils d’analyse. En tant que développeur, je ne peux pas voir vos entrées.</p>
@@ -117,14 +119,14 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Suppression</h2>
 <p>Dans Tilla, Réglages → Foyer vous permet de quitter ou de supprimer le foyer. Vous pouvez aussi supprimer les données dans les réglages iCloud de l’iPhone.</p>
 <h2>Responsable et contact</h2>
-<p>Simon Blum, Karlsruhe, Allemagne · E-mail&nbsp;: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Allemagne · E-mail&nbsp;: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#fr">Tilla</a> · <a href="../support/#fr">Assistance</a> · © 2026 <a href="../../#fr">Simon Blum</a></footer>
 </article>
 
 <article lang="it" data-lang="it" data-title="Tilla – Privacy">
 <h1>Privacy</h1>
-<p class="meta">Ultimo aggiornamento: 2 novembre 2026</p>
+<p class="meta">Ultimo aggiornamento: 3 novembre 2026</p>
 <section>
 <h2>In breve</h2>
 <p>Tilla non raccoglie dati. Nessun server di Tilla, nessuna pubblicità, nessun tracciamento e nessun servizio di analisi. Come sviluppatore non posso vedere le vostre voci.</p>
@@ -139,7 +141,7 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Eliminazione</h2>
 <p>In Tilla, da Impostazioni → Casa potete lasciare o eliminare la casa. Potete anche eliminare i dati nelle impostazioni di iCloud dell’iPhone.</p>
 <h2>Titolare e contatti</h2>
-<p>Simon Blum, Karlsruhe, Germania · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Germania · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#it">Tilla</a> · <a href="../support/#it">Assistenza</a> · © 2026 <a href="../../#it">Simon Blum</a></footer>
 </article>

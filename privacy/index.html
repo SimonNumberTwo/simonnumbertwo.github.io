@@ -7,30 +7,33 @@
 <meta name="description" content="Datenschutz dieser Website · Privacy of this website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230062E0'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
 <style>
-:root{color-scheme:light dark;--bg:#F2F2F7;--card:#FFFFFF;--text:#000000;--sub:#3C3C43;--acc:#0062CC;--line:rgba(60,60,67,.18)}
-@media (prefers-color-scheme:dark){:root{--bg:#000000;--card:#1C1C1E;--text:#FFFFFF;--sub:#AEAEB2;--acc:#64B5FF;--line:rgba(84,84,88,.65)}}
+:root{color-scheme:light dark;--bg:#FBFBFD;--bg2:#F2F2F7;--card:#FFFFFF;--text:#1D1D1F;--sub:#5E5E66;--acc:#0062CC;--fill:#007AFF;--line:rgba(60,60,67,.14);--bar:rgba(251,251,253,.8)}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--bg2:#0D0D0F;--card:#1C1C1E;--text:#F5F5F7;--sub:#A1A1A8;--acc:#4DA3FF;--fill:#0A84FF;--line:rgba(84,84,88,.5);--bar:rgba(0,0,0,.72)}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
-main{max-width:680px;margin:0 auto;padding:20px 16px 64px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:8px 16px 64px}
 a{color:var(--acc)}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.name{font-weight:600;font-size:20px;color:var(--text);text-decoration:none}
-.langs{display:flex;gap:4px;font-size:15px}
-.langs a{text-decoration:none;padding:4px 8px;border-radius:8px}
-.langs a[aria-current=page]{background:var(--card);color:var(--text);font-weight:600}
 article{margin-top:40px}
-section{background:var(--card);border-radius:22px;padding:4px 24px 12px}
+section{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:4px 24px 12px}
 h1{font-size:34px;line-height:41px;margin:0}h2{font-size:20px;margin:20px 0 4px}
 p{color:var(--sub);margin:0 0 8px}.meta{margin:4px 0 16px}
 footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:none}
+.bar{position:sticky;top:0;z-index:10;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;max-width:680px;margin:0 auto;padding:0 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.langs{display:flex;gap:2px;font-size:14px}
+.langs a{text-decoration:none;padding:5px 9px;border-radius:8px;color:var(--sub);font-weight:500}
+.langs a[aria-current=page]{background:var(--bg2);color:var(--text);font-weight:600}
+h1,h2,h3{letter-spacing:-.01em}h1{font-weight:800;letter-spacing:-.02em}
 </style>
 </head>
 <body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="../">Simon Blum</a>
+<nav class="langs" aria-label="Language"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
+</div></header>
 <main>
-<header class="top">
-<a class="name" href="../">Simon Blum</a>
-<nav class="langs"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
-</header>
 
 <article lang="de" data-lang="de" data-title="Simon Blum – Datenschutz">
 <h1>Datenschutz dieser Website</h1>
@@ -47,7 +50,7 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Eure Rechte</h2>
 <p>Ihr könnt jederzeit Auskunft, Berichtigung oder Löschung eurer Daten verlangen und euch bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
 <h2>Verantwortlich und Kontakt</h2>
-<p>Simon Blum, Karlsruhe, Deutschland · E-Mail: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Deutschland · E-Mail: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#de">Simon Blum</a> · <a href="../tilla/#de">Tilla</a></footer>
 </article>
@@ -67,7 +70,7 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Your rights</h2>
 <p>You can ask for information about, correction or deletion of your data at any time and complain to a data protection authority.</p>
 <h2>Controller and contact</h2>
-<p>Simon Blum, Karlsruhe, Germany · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Germany · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#en">Simon Blum</a> · <a href="../tilla/#en">Tilla</a></footer>
 </article>
@@ -87,7 +90,7 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Vuestros derechos</h2>
 <p>Podéis pedir en cualquier momento información, rectificación o eliminación de vuestros datos y presentar una reclamación ante una autoridad de protección de datos.</p>
 <h2>Responsable y contacto</h2>
-<p>Simon Blum, Karlsruhe, Alemania · Correo: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Alemania · Correo: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#es">Simon Blum</a> · <a href="../tilla/#es">Tilla</a></footer>
 </article>
@@ -107,7 +110,7 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>Vos droits</h2>
 <p>Vous pouvez à tout moment demander l’accès à vos données, leur rectification ou leur suppression, et déposer une réclamation auprès d’une autorité de protection des données.</p>
 <h2>Responsable et contact</h2>
-<p>Simon Blum, Karlsruhe, Allemagne · E-mail&nbsp;: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Allemagne · E-mail&nbsp;: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#fr">Simon Blum</a> · <a href="../tilla/#fr">Tilla</a></footer>
 </article>
@@ -127,7 +130,7 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <h2>I vostri diritti</h2>
 <p>Potete chiedere in qualsiasi momento l’accesso, la rettifica o la cancellazione dei vostri dati e presentare reclamo a un’autorità per la protezione dei dati.</p>
 <h2>Titolare e contatti</h2>
-<p>Simon Blum, Karlsruhe, Germania · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
+<p>Simon Blum, Germania · Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a></p>
 </section>
 <footer><a href="../#it">Simon Blum</a> · <a href="../tilla/#it">Tilla</a></footer>
 </article>
