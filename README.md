@@ -18,5 +18,5 @@ Each page is a standalone HTML file with all five languages (de, en, es, fr, it)
 the language of the URL's hash (`tilla/support/#fr`) or else the browser's; without JavaScript every
 language is shown. Light and dark mode follow the system. No cookies, analytics or external resources.
 
-Contact address: `simon-blum@icloud.com` (an iCloud alias). `tilla/icon.png` and
-`tilla/apple-touch-icon.png` are the app icon (from the app repo's `AppIcon.png`).
+Contact address: `simonblum.apps@icloud.com` (an iCloud alias). `tilla/icon.png` and
+`tilla/apple-touch-icon.png` are the app icon (from the app repo's `AppIcon.png`); `tilla/screenshots/<lang>/` are the App Store screenshots (`fastlane/store_screenshots`, 460 px JPEG).
