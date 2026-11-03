@@ -5,213 +5,399 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tilla – Gemeinsame Ausgaben im Blick</title>
 <meta name="description" content="Das gemeinsame Haushaltsbuch für Paare, Familien und WGs. · The shared household expense book for couples, families and flatmates.">
+<meta name="theme-color" content="#FBFBFD" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-:root{color-scheme:light dark;--bg:#F2F2F7;--card:#FFFFFF;--text:#000000;--sub:#3C3C43;--acc:#0062CC;--line:rgba(60,60,67,.18)}
-@media (prefers-color-scheme:dark){:root{--bg:#000000;--card:#1C1C1E;--text:#FFFFFF;--sub:#AEAEB2;--acc:#64B5FF;--line:rgba(84,84,88,.65)}}
+:root{color-scheme:light dark;--bg:#FBFBFD;--bg2:#F2F2F7;--card:#FFFFFF;--text:#1D1D1F;--sub:#5E5E66;--acc:#0062CC;--fill:#007AFF;--glow:rgba(0,122,255,.18);--line:rgba(60,60,67,.14);--bar:rgba(251,251,253,.8);--bezel:#1D1D1F}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--bg2:#0D0D0F;--card:#1C1C1E;--text:#F5F5F7;--sub:#A1A1A8;--acc:#4DA3FF;--fill:#0A84FF;--glow:rgba(10,132,255,.28);--line:rgba(84,84,88,.5);--bar:rgba(0,0,0,.72);--bezel:#3A3A3C}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
-main{max-width:680px;margin:0 auto;padding:20px 16px 64px}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--acc)}
-.top{display:flex;justify-content:flex-end}
-.langs{display:flex;gap:4px;font-size:15px}
-.langs a{text-decoration:none;padding:4px 8px;border-radius:8px}
-.langs a[aria-current=page]{background:var(--card);color:var(--text);font-weight:600}
-.hero{text-align:center;margin:40px 0 32px}
-.hero img{width:128px;height:128px;border-radius:29px;box-shadow:0 8px 24px rgba(0,98,224,.25)}
-h1{font-size:40px;line-height:46px;margin:20px 0 4px}
-.tagline{font-size:22px;line-height:28px;color:var(--text);font-weight:600;margin:0 0 12px}
-p{color:var(--sub);margin:0 0 8px}
-.soon{display:inline-block;margin-top:12px;font-size:15px;font-weight:600;color:var(--acc);background:var(--card);border-radius:999px;padding:6px 14px}
-.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px 32px;padding:0 16px 8px;scrollbar-width:none}
-.shots::-webkit-scrollbar{display:none}
-.shots img{flex:none;width:200px;height:auto;border-radius:20px;scroll-snap-align:center}
-section{background:var(--card);border-radius:22px;padding:4px 24px 12px}
-h2{font-size:20px;margin:20px 0 4px}
-.features h2{border-top:1px solid var(--line);padding-top:16px}
-.features h2:first-child{border-top:0;padding-top:0}
-footer{margin-top:32px;font-size:15px;color:var(--sub);text-align:center}footer a{text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;letter-spacing:-.02em;margin:0}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+[hidden]{display:none!important}
+
+.bar{position:sticky;top:0;z-index:10;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.langs{display:flex;gap:2px;font-size:14px}
+.langs a{text-decoration:none;padding:5px 9px;border-radius:8px;color:var(--sub);font-weight:500}
+.langs a[aria-current=page]{background:var(--bg2);color:var(--text);font-weight:600}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:56px}
+.pill{display:inline-block;font-size:14px;font-weight:600;color:var(--acc);background:var(--glow);border-radius:999px;padding:6px 14px;margin-bottom:20px}
+h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom:20px}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--sub);max-width:34em}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;background:var(--fill);color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:13px 24px;border-radius:999px}
+.btn.ghost{background:var(--bg2);color:var(--text)}
+
+.stage{position:relative;height:620px}
+.stage::before{content:"";position:absolute;inset:8% 0 0 8%;background:radial-gradient(closest-side,var(--glow),transparent);z-index:0}
+.phone{--w:280px;position:relative;width:var(--w);padding:calc(var(--w)*.032);border-radius:calc(var(--w)*.165);background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06) inset}
+.phone img{width:100%;border-radius:calc(var(--w)*.135)}
+.stage .phone{position:absolute;z-index:1}
+.stage .front{--w:290px;left:6%;top:0}
+.stage .back{--w:250px;right:0;top:70px;transform:rotate(6deg);opacity:.92}
+
+.trust{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:96px}
+.trust li{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-weight:600;font-size:16px}
+.trust svg{flex:none;width:24px;height:24px;color:var(--acc)}
+
+.section-title{font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:800;text-align:center;margin-bottom:56px}
+.feature{display:grid;grid-template-columns:auto 1fr;gap:72px;align-items:center;max-width:900px;margin:0 auto 96px}
+.feature:nth-of-type(even){grid-template-columns:1fr auto}
+.feature:nth-of-type(even) .phone{order:2}
+.feature .phone{--w:270px}
+.num{display:block;font-weight:700;color:var(--acc);font-size:15px;letter-spacing:.08em;margin-bottom:10px}
+.feature h3{font-size:clamp(26px,3vw,34px);line-height:1.15;font-weight:700;margin-bottom:14px}
+.feature-text>p{font-size:19px;color:var(--sub)}
+.note{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.note strong{display:block;margin-bottom:4px}
+.note p{color:var(--sub);font-size:16px}
+
+.also{padding-top:24px;margin-bottom:96px}
+.also .section-title{margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.card svg{width:30px;height:30px;color:var(--acc);margin-bottom:14px}
+.card h3{font-size:19px;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+.card p{color:var(--sub);font-size:16px}
+
+.band{margin-bottom:56px}
+.band-card{text-align:center;background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:32px;padding:56px 24px}
+.band-card img{width:104px;height:104px;border-radius:24px;margin:0 auto 24px;box-shadow:0 12px 32px var(--glow)}
+.band-card h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:10px}
+.band-card p{color:var(--sub)}
+.band-card .q{margin-top:20px;color:var(--text);font-weight:500}
+
+footer{padding-top:8px;padding-bottom:48px;text-align:center;font-size:15px;color:var(--sub)}
+footer a{text-decoration:none}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:44px;text-align:center}
+  .lead{margin:0 auto}
+  .actions{justify-content:center}
+  .stage{height:540px;max-width:440px;width:100%;margin:0 auto}
+  .stage .front{--w:250px;left:4%}
+  .stage .back{--w:210px;top:60px}
+  .trust{grid-template-columns:repeat(2,1fr);margin-bottom:72px}
+  .feature,.feature:nth-of-type(even){grid-template-columns:1fr;gap:32px;text-align:center;margin-bottom:72px}
+  .feature .phone,.feature:nth-of-type(even) .phone{order:0;margin:0 auto;--w:240px}
+  .note{text-align:left}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:420px){
+  .stage{height:470px}
+  .stage .front{--w:220px;left:0}
+  .stage .back{--w:180px;top:50px}
+  .trust li{font-size:15px;padding:12px}
+  .grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<main>
-<header class="top">
-<nav class="langs"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
-</header>
-
+<header class="bar"><div class="wrap bar-in">
+<a class="brand" href="#top"><img src="icon.png" width="256" height="256" alt="">Tilla</a>
+<nav class="langs" aria-label="Language"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
+</div></header>
+<main id="top">
 <article lang="de" data-lang="de" data-title="Tilla – Gemeinsame Ausgaben im Blick">
-<div class="hero">
-<img src="icon.png" alt="App-Symbol von Tilla">
-<h1>Tilla</h1>
-<p class="tagline">Gemeinsame Ausgaben im Blick</p>
-<p>Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: Ihr tragt ein, was ihr ausgebt, und seht jederzeit, wie viel von euren Einnahmen diesen Monat noch übrig ist – ohne Kategorien, Budgets oder Tabellen.</p>
-<span class="soon">Bald im App Store · iPhone</span>
+<section class="hero wrap">
+<div class="hero-text">
+<span class="pill">Bald im App Store · iPhone</span>
+<h1>Gemeinsame Ausgaben im Blick</h1>
+<p class="lead">Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: Ihr tragt ein, was ihr ausgebt, und seht jederzeit, wie viel von euren Einnahmen diesen Monat noch übrig ist – ohne Kategorien, Budgets oder Tabellen.</p>
+<div class="actions"><a class="btn" href="#de-features">Funktionen ansehen</a><a class="btn ghost" href="support/#de">Support</a></div>
 </div>
-<div class="shots">
-<img src="screenshots/de/01.jpg" width="460" height="1000" loading="lazy" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest – auf einen Blick">
-<img src="screenshots/de/02.jpg" width="460" height="1000" loading="lazy" alt="In Sekunden eingetragen – Betrag tippen, schreiben wofür – fertig">
-<img src="screenshots/de/03.jpg" width="460" height="1000" loading="lazy" alt="Seht, wohin euer Geld geht – Nach Monat, Jahr und Geschäft">
-<img src="screenshots/de/04.jpg" width="460" height="1000" loading="lazy" alt="Feste Ausgaben tragen sich selbst ein – Miete, Kita, Abos – einmal anlegen">
-<img src="screenshots/de/05.jpg" width="460" height="1000" loading="lazy" alt="Gemeinsam über iCloud – Ohne neues Konto, ohne Passwort">
-<img src="screenshots/de/06.jpg" width="460" height="1000" loading="lazy" alt="Privat. Kein Server, kein Tracking. – Auf Wunsch mit Face ID geschützt">
-</div>
-<section class="features">
-<h2>Seht sofort, was übrig ist</h2>
-<p>Einnahmen, Ausgaben und der Rest – auf einen Blick.</p>
-<h2>In Sekunden eingetragen</h2>
-<p>Betrag tippen, schreiben wofür – fertig. Mit Apple Pay und Siri sogar ohne die App zu öffnen.</p>
-<h2>Feste Ausgaben tragen sich selbst ein</h2>
-<p>Miete, Kita, Abos – einmal anlegen.</p>
-<h2>Gemeinsam über iCloud</h2>
-<p>Ohne neues Konto, ohne Passwort.</p>
-<h2>Privat. Kein Server, kein Tracking.</h2>
-<p>Eure Einträge liegen nur auf euren Geräten und in eurem iCloud. Auf Wunsch mit Face ID geschützt.</p>
+<div class="stage"><div class="phone back"><img src="screens/de/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div><div class="phone front"><img src="screens/de/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest auf einen Blick"></div></div>
 </section>
-<footer><a href="support/#de">Support</a> · <a href="privacy/#de">Datenschutz</a> · © 2026 <a href="../#de">Simon Blum</a></footer>
+<ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Kein Server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Kein Tracking</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Keine Werbung</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Kein neues Konto</span></li></ul>
+<section class="features wrap" id="de-features">
+<h2 class="section-title">So funktioniert Tilla</h2>
+<div class="feature">
+<div class="phone"><img src="screens/de/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Neue Ausgabe eintragen"></div>
+<div class="feature-text">
+<span class="num">01</span><h3>In Sekunden eingetragen</h3><p>Betrag tippen, schreiben wofür, fertig. Das Datum steht schon auf heute, ein anderer Tag ist nur einen Tipp entfernt.</p>
+<div class="note"><strong>Apple Pay automatisch erfassen</strong><p>Mit einer Automation in der Kurzbefehle-App schlägt Tilla nach jeder Zahlung mit dem iPhone die Ausgabe vor. Ein Tipp auf „Hinzufügen“ genügt – oder Tilla trägt sie direkt ein.</p></div>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/de/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div>
+<div class="feature-text">
+<span class="num">02</span><h3>Seht, wohin euer Geld geht</h3><p>Die Statistik zeigt Monat und Jahr: Einnahmen, Ausgaben, was übrig bleibt und wo ihr am meisten ausgebt. Mit „Ohne Fixkosten“ seht ihr, was im Alltag zusammenkommt.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/de/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Feste Ausgaben wie Miete und Kita"></div>
+<div class="feature-text">
+<span class="num">03</span><h3>Feste Ausgaben tragen sich selbst ein</h3><p>Miete, Kita, Strom oder das Fitnessstudio legt ihr einmal an. Tilla trägt sie am Fälligkeitstag ein – monatlich, alle zwei Wochen oder wie es bei euch eben ist. Ändert sich ein Betrag, gilt er ab dem Monat, den ihr wählt.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/de/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Person über iCloud einladen"></div>
+<div class="feature-text">
+<span class="num">04</span><h3>Gemeinsam über iCloud</h3><p>Ladet alle, mit denen ihr zusammenwohnt, per Nachricht ein – Partnerin oder Partner, Familie oder WG. Alle sehen sofort dasselbe, nichts wird doppelt eingetragen. Kein neues Konto, kein Passwort – Tilla nutzt eure Apple-ID.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/de/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla mit Face ID gesperrt"></div>
+<div class="feature-text">
+<span class="num">05</span><h3>Privat. Kein Server, kein Tracking.</h3><p>Eure Daten liegen nur auf euren Geräten und in eurem iCloud. Es gibt keinen Tilla-Server, keine Werbung und kein Tracking. Auf Wunsch schützt Face ID oder Touch ID die App.</p>
+</div></div>
+</section>
+<section class="also wrap"><h2 class="section-title">Außerdem</h2><div class="grid">
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri und Kurzbefehle</h3><p>Ausgaben per Sprache eintragen und fragen, wie viel ihr diesen Monat ausgegeben habt.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Tägliche Erinnerung</h3><p>Falls ihr etwas vergessen habt.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/></svg><h3>Hell- und Dunkelmodus</h3><p>Folgt der Einstellung eures iPhones.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><h3>Fünf Sprachen</h3><p>Deutsch, Englisch, Spanisch, Französisch und Italienisch.</p></div>
+</div></section>
+<section class="band wrap"><div class="band-card">
+<img src="icon.png" width="256" height="256" alt="App-Symbol von Tilla">
+<h2>Bald im App Store</h2><p>Tilla braucht iOS 18 oder neuer und ein iCloud-Konto.</p>
+<p class="q">Fragen oder Feedback? <a href="support/#de">Zum Support</a></p>
+</div></section>
+<footer class="wrap"><a href="support/#de">Support</a> · <a href="privacy/#de">Datenschutz</a> · © 2026 <a href="../#de">Simon Blum</a></footer>
 </article>
-
 <article lang="en" data-lang="en" data-title="Tilla – Shared spending at a glance">
-<div class="hero">
-<img src="icon.png" alt="Tilla app icon">
-<h1>Tilla</h1>
-<p class="tagline">Shared spending at a glance</p>
-<p>The shared household expense book for couples, families and flatmates: you log what you spend and always see how much of your income is left this month – no categories, budgets or spreadsheets.</p>
-<span class="soon">Coming soon to the App Store · iPhone</span>
+<section class="hero wrap">
+<div class="hero-text">
+<span class="pill">Coming soon to the App Store · iPhone</span>
+<h1>Shared spending at a glance</h1>
+<p class="lead">The shared household expense book for couples, families and flatmates: you log what you spend and always see how much of your income is left this month – no categories, budgets or spreadsheets.</p>
+<div class="actions"><a class="btn" href="#en-features">See the features</a><a class="btn ghost" href="support/#en">Support</a></div>
 </div>
-<div class="shots">
-<img src="screenshots/en/01.jpg" width="460" height="1000" loading="lazy" alt="See what’s left at a glance – Income, spending and the rest in one view">
-<img src="screenshots/en/02.jpg" width="460" height="1000" loading="lazy" alt="Logged in seconds – Type the amount, say what for – done">
-<img src="screenshots/en/03.jpg" width="460" height="1000" loading="lazy" alt="See where your money goes – By month, year and shop">
-<img src="screenshots/en/04.jpg" width="460" height="1000" loading="lazy" alt="Fixed costs add themselves – Rent, daycare, subscriptions – set up once">
-<img src="screenshots/en/05.jpg" width="460" height="1000" loading="lazy" alt="Together over iCloud – No new account, no password">
-<img src="screenshots/en/06.jpg" width="460" height="1000" loading="lazy" alt="Private. No server, no tracking. – Locked with Face ID if you like">
-</div>
-<section class="features">
-<h2>See what’s left at a glance</h2>
-<p>Income, spending and the rest in one view.</p>
-<h2>Logged in seconds</h2>
-<p>Type the amount, say what for – done. With Apple Pay and Siri, even without opening the app.</p>
-<h2>Fixed costs add themselves</h2>
-<p>Rent, daycare, subscriptions – set up once.</p>
-<h2>Together over iCloud</h2>
-<p>No new account, no password.</p>
-<h2>Private. No server, no tracking.</h2>
-<p>Your entries live only on your devices and in your iCloud. Locked with Face ID if you like.</p>
+<div class="stage"><div class="phone back"><img src="screens/en/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div><div class="phone front"><img src="screens/en/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="See what’s left – income, spending and the rest in one view"></div></div>
 </section>
-<footer><a href="support/#en">Support</a> · <a href="privacy/#en">Privacy</a> · © 2026 <a href="../#en">Simon Blum</a></footer>
+<ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>No server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>No tracking</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>No ads</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>No new account</span></li></ul>
+<section class="features wrap" id="en-features">
+<h2 class="section-title">How Tilla works</h2>
+<div class="feature">
+<div class="phone"><img src="screens/en/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Adding a new expense"></div>
+<div class="feature-text">
+<span class="num">01</span><h3>Logged in seconds</h3><p>Type the amount, say what it was for, done. The date is already set to today; another day is one tap away.</p>
+<div class="note"><strong>Capture Apple Pay automatically</strong><p>With an automation in the Shortcuts app, Tilla suggests the expense after every payment with your iPhone. One tap on “Add” is enough – or let Tilla add it straight away.</p></div>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/en/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div>
+<div class="feature-text">
+<span class="num">02</span><h3>See where your money goes</h3><p>Statistics show the month and the year: income, spending, what’s left and where you spend the most. “Without fixed costs” shows your everyday spending.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/en/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Fixed costs like rent and daycare"></div>
+<div class="feature-text">
+<span class="num">03</span><h3>Fixed costs add themselves</h3><p>Set up rent, daycare, electricity or the gym once. Tilla adds them on their due date – monthly, every two weeks or whatever fits. When an amount changes, it applies from the month you choose.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/en/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Inviting someone over iCloud"></div>
+<div class="feature-text">
+<span class="num">04</span><h3>Together over iCloud</h3><p>Invite the people you live with by message – your partner, family or flatmates. Everyone sees the same right away, nothing is entered twice. No new account, no password – Tilla uses your Apple ID.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/en/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla locked with Face ID"></div>
+<div class="feature-text">
+<span class="num">05</span><h3>Private. No server, no tracking.</h3><p>Your data stays on your devices and in your iCloud. There is no Tilla server, no ads and no tracking. Face ID or Touch ID can lock the app if you like.</p>
+</div></div>
+</section>
+<section class="also wrap"><h2 class="section-title">Also</h2><div class="grid">
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri and Shortcuts</h3><p>Log expenses by voice and ask how much you’ve spent this month.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Daily reminder</h3><p>In case you forgot something.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/></svg><h3>Light and dark mode</h3><p>Follows your iPhone’s setting.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><h3>Five languages</h3><p>English, German, Spanish, French and Italian.</p></div>
+</div></section>
+<section class="band wrap"><div class="band-card">
+<img src="icon.png" width="256" height="256" alt="Tilla app icon">
+<h2>Coming soon to the App Store</h2><p>Tilla requires iOS 18 or later and an iCloud account.</p>
+<p class="q">Questions or feedback? <a href="support/#en">Get support</a></p>
+</div></section>
+<footer class="wrap"><a href="support/#en">Support</a> · <a href="privacy/#en">Privacy</a> · © 2026 <a href="../#en">Simon Blum</a></footer>
 </article>
-
 <article lang="es" data-lang="es" data-title="Tilla – Gastos compartidos a la vista">
-<div class="hero">
-<img src="icon.png" alt="Icono de la app Tilla">
-<h1>Tilla</h1>
-<p class="tagline">Gastos compartidos a la vista</p>
-<p>El libro de gastos compartido del hogar, para parejas, familias y pisos compartidos: apuntáis lo que gastáis y veis en todo momento cuánto queda de vuestros ingresos este mes, sin categorías, presupuestos ni hojas de cálculo.</p>
-<span class="soon">Pronto en el App Store · iPhone</span>
+<section class="hero wrap">
+<div class="hero-text">
+<span class="pill">Pronto en el App Store · iPhone</span>
+<h1>Gastos compartidos a la vista</h1>
+<p class="lead">El libro de gastos compartido del hogar, para parejas, familias y pisos compartidos: apuntáis lo que gastáis y veis en todo momento cuánto queda de vuestros ingresos este mes, sin categorías, presupuestos ni hojas de cálculo.</p>
+<div class="actions"><a class="btn" href="#es-features">Ver funciones</a><a class="btn ghost" href="support/#es">Soporte</a></div>
 </div>
-<div class="shots">
-<img src="screenshots/es/01.jpg" width="460" height="1000" loading="lazy" alt="Ved al instante lo que queda – Ingresos, gastos y lo que queda, de un vistazo">
-<img src="screenshots/es/02.jpg" width="460" height="1000" loading="lazy" alt="Registrado en segundos – Escribid el importe y para qué – listo">
-<img src="screenshots/es/03.jpg" width="460" height="1000" loading="lazy" alt="Ved adónde va vuestro dinero – Por mes, año y comercio">
-<img src="screenshots/es/04.jpg" width="460" height="1000" loading="lazy" alt="Los gastos fijos se apuntan solos – Alquiler, guardería, suscripciones – una sola vez">
-<img src="screenshots/es/05.jpg" width="460" height="1000" loading="lazy" alt="Juntos a través de iCloud – Sin cuenta nueva, sin contraseña">
-<img src="screenshots/es/06.jpg" width="460" height="1000" loading="lazy" alt="Privado. Sin servidor ni rastreo. – Protegido con Face ID, si queréis">
-</div>
-<section class="features">
-<h2>Ved al instante lo que queda</h2>
-<p>Ingresos, gastos y lo que queda, de un vistazo.</p>
-<h2>Registrado en segundos</h2>
-<p>Escribid el importe y para qué – listo. Con Apple Pay y Siri, incluso sin abrir la app.</p>
-<h2>Los gastos fijos se apuntan solos</h2>
-<p>Alquiler, guardería, suscripciones – una sola vez.</p>
-<h2>Juntos a través de iCloud</h2>
-<p>Sin cuenta nueva, sin contraseña.</p>
-<h2>Privado. Sin servidor ni rastreo.</h2>
-<p>Vuestras entradas solo están en vuestros dispositivos y en vuestro iCloud. Protegido con Face ID, si queréis.</p>
+<div class="stage"><div class="phone back"><img src="screens/es/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div><div class="phone front"><img src="screens/es/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Ved lo que queda: ingresos, gastos y el resto de un vistazo"></div></div>
 </section>
-<footer><a href="support/#es">Soporte</a> · <a href="privacy/#es">Privacidad</a> · © 2026 <a href="../#es">Simon Blum</a></footer>
+<ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Sin servidor</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Sin rastreo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Sin anuncios</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Sin cuenta nueva</span></li></ul>
+<section class="features wrap" id="es-features">
+<h2 class="section-title">Así funciona Tilla</h2>
+<div class="feature">
+<div class="phone"><img src="screens/es/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Añadir un gasto nuevo"></div>
+<div class="feature-text">
+<span class="num">01</span><h3>Registrado en segundos</h3><p>Escribid el importe y para qué fue, y listo. La fecha ya es la de hoy; otro día está a un toque.</p>
+<div class="note"><strong>Apple Pay, sin esfuerzo</strong><p>Con una automatización en la app Atajos, Tilla os propone el gasto después de cada pago con el iPhone. Basta con tocar «Añadir», o dejad que Tilla lo apunte directamente.</p></div>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/es/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div>
+<div class="feature-text">
+<span class="num">02</span><h3>Ved adónde va vuestro dinero</h3><p>Las estadísticas muestran el mes y el año: ingresos, gastos, lo que queda y dónde gastáis más. Con «Sin gastos fijos» veis el gasto del día a día.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/es/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Gastos fijos como alquiler y guardería"></div>
+<div class="feature-text">
+<span class="num">03</span><h3>Los gastos fijos se apuntan solos</h3><p>Alquiler, guardería, luz o gimnasio: los creáis una vez y Tilla los apunta el día que vencen, cada mes, cada dos semanas o como os toque. Si cambia un importe, se aplica desde el mes que elijáis.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/es/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Invitar a alguien a través de iCloud"></div>
+<div class="feature-text">
+<span class="num">04</span><h3>Juntos a través de iCloud</h3><p>Invitad con un mensaje a quienes vivís juntos: pareja, familia o compañeros de piso. Todos veis lo mismo al momento y nada se apunta dos veces. Sin cuenta nueva ni contraseña: Tilla usa vuestro Apple ID.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/es/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla bloqueada con Face ID"></div>
+<div class="feature-text">
+<span class="num">05</span><h3>Privado. Sin servidor ni rastreo.</h3><p>Vuestros datos están solo en vuestros dispositivos y en vuestro iCloud. No hay servidor de Tilla, ni anuncios, ni rastreo. Si queréis, Face ID o Touch ID protegen la app.</p>
+</div></div>
+</section>
+<section class="also wrap"><h2 class="section-title">Y además</h2><div class="grid">
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri y Atajos</h3><p>Apuntad gastos con la voz y preguntad cuánto lleváis gastado este mes.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Recordatorio diario</h3><p>Por si se os ha olvidado algo.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/></svg><h3>Modo claro y oscuro</h3><p>Sigue el ajuste de vuestro iPhone.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><h3>Cinco idiomas</h3><p>Español, alemán, inglés, francés e italiano.</p></div>
+</div></section>
+<section class="band wrap"><div class="band-card">
+<img src="icon.png" width="256" height="256" alt="Icono de la app Tilla">
+<h2>Pronto en el App Store</h2><p>Tilla requiere iOS 18 o posterior y una cuenta de iCloud.</p>
+<p class="q">¿Preguntas o comentarios? <a href="support/#es">Ir al soporte</a></p>
+</div></section>
+<footer class="wrap"><a href="support/#es">Soporte</a> · <a href="privacy/#es">Privacidad</a> · © 2026 <a href="../#es">Simon Blum</a></footer>
 </article>
-
 <article lang="fr" data-lang="fr" data-title="Tilla – Vos dépenses communes en clair">
-<div class="hero">
-<img src="icon.png" alt="Icône de l’app Tilla">
-<h1>Tilla</h1>
-<p class="tagline">Vos dépenses communes en clair</p>
-<p>Le carnet de dépenses du foyer, pensé pour les couples, les familles et les colocations&nbsp;: vous notez ce que vous dépensez et voyez à tout moment ce qu’il reste de vos revenus ce mois-ci – sans catégories, budgets ni tableurs.</p>
-<span class="soon">Bientôt sur l’App Store · iPhone</span>
+<section class="hero wrap">
+<div class="hero-text">
+<span class="pill">Bientôt sur l’App Store · iPhone</span>
+<h1>Vos dépenses communes en clair</h1>
+<p class="lead">Le carnet de dépenses du foyer, pensé pour les couples, les familles et les colocations : vous notez ce que vous dépensez et voyez à tout moment ce qu’il reste de vos revenus ce mois-ci – sans catégories, budgets ni tableurs.</p>
+<div class="actions"><a class="btn" href="#fr-features">Voir les fonctions</a><a class="btn ghost" href="support/#fr">Assistance</a></div>
 </div>
-<div class="shots">
-<img src="screenshots/fr/01.jpg" width="460" height="1000" loading="lazy" alt="Voyez tout de suite ce qu’il reste – Revenus, dépenses et reste, d’un coup d’œil">
-<img src="screenshots/fr/02.jpg" width="460" height="1000" loading="lazy" alt="Saisi en quelques secondes – Le montant, pour quoi – c’est fait">
-<img src="screenshots/fr/03.jpg" width="460" height="1000" loading="lazy" alt="Voyez où va votre argent – Par mois, par an et par magasin">
-<img src="screenshots/fr/04.jpg" width="460" height="1000" loading="lazy" alt="Les dépenses fixes s’ajoutent seules – Loyer, crèche, abonnements – une seule fois">
-<img src="screenshots/fr/05.jpg" width="460" height="1000" loading="lazy" alt="Ensemble via iCloud – Sans nouveau compte, sans mot de passe">
-<img src="screenshots/fr/06.jpg" width="460" height="1000" loading="lazy" alt="Privé. Sans serveur ni pistage. – Protégé par Face ID, si vous le souhaitez">
-</div>
-<section class="features">
-<h2>Voyez tout de suite ce qu’il reste</h2>
-<p>Revenus, dépenses et reste, d’un coup d’œil.</p>
-<h2>Saisi en quelques secondes</h2>
-<p>Le montant, pour quoi – c’est fait. Avec Apple Pay et Siri, même sans ouvrir l’app.</p>
-<h2>Les dépenses fixes s’ajoutent seules</h2>
-<p>Loyer, crèche, abonnements – une seule fois.</p>
-<h2>Ensemble via iCloud</h2>
-<p>Sans nouveau compte, sans mot de passe.</p>
-<h2>Privé. Sans serveur ni pistage.</h2>
-<p>Vos entrées restent sur vos appareils et dans votre iCloud. Protégé par Face ID, si vous le souhaitez.</p>
+<div class="stage"><div class="phone back"><img src="screens/fr/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div><div class="phone front"><img src="screens/fr/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Voyez ce qu’il reste : revenus, dépenses et reste d’un coup d’œil"></div></div>
 </section>
-<footer><a href="support/#fr">Assistance</a> · <a href="privacy/#fr">Confidentialité</a> · © 2026 <a href="../#fr">Simon Blum</a></footer>
+<ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Pas de serveur</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Pas de pistage</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Pas de publicité</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Pas de nouveau compte</span></li></ul>
+<section class="features wrap" id="fr-features">
+<h2 class="section-title">Comment fonctionne Tilla</h2>
+<div class="feature">
+<div class="phone"><img src="screens/fr/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Ajouter une nouvelle dépense"></div>
+<div class="feature-text">
+<span class="num">01</span><h3>Saisi en quelques secondes</h3><p>Tapez le montant, indiquez pour quoi, c’est fait. La date est déjà celle du jour ; un autre jour n’est qu’à un toucher.</p>
+<div class="note"><strong>Apple Pay, automatiquement</strong><p>Grâce à une automatisation dans l’app Raccourcis, Tilla vous propose la dépense après chaque paiement avec l’iPhone. Un toucher sur « Ajouter » suffit – ou laissez Tilla l’ajouter directement.</p></div>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/fr/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div>
+<div class="feature-text">
+<span class="num">02</span><h3>Voyez où va votre argent</h3><p>Les statistiques montrent le mois et l’année : revenus, dépenses, ce qu’il reste et où vous dépensez le plus. Avec « Sans charges fixes », vous voyez vos dépenses du quotidien.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/fr/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Dépenses fixes comme le loyer et la crèche"></div>
+<div class="feature-text">
+<span class="num">03</span><h3>Les dépenses fixes s’ajoutent seules</h3><p>Loyer, crèche, électricité ou salle de sport : vous les créez une fois, Tilla les ajoute à leur échéance – chaque mois, toutes les deux semaines ou selon votre rythme. Si un montant change, il s’applique à partir du mois choisi.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/fr/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Inviter quelqu’un via iCloud"></div>
+<div class="feature-text">
+<span class="num">04</span><h3>Ensemble via iCloud</h3><p>Invitez par message les personnes avec qui vous vivez : partenaire, famille ou colocataires. Tout le monde voit la même chose aussitôt, rien n’est saisi deux fois. Pas de nouveau compte, pas de mot de passe : Tilla utilise votre identifiant Apple.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/fr/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla verrouillée avec Face ID"></div>
+<div class="feature-text">
+<span class="num">05</span><h3>Privé. Sans serveur ni pistage.</h3><p>Vos données restent sur vos appareils et dans votre iCloud. Pas de serveur Tilla, pas de publicité, pas de pistage. Si vous le souhaitez, Face ID ou Touch ID protège l’app.</p>
+</div></div>
+</section>
+<section class="also wrap"><h2 class="section-title">Et aussi</h2><div class="grid">
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri et Raccourcis</h3><p>Saisissez une dépense à la voix et demandez combien vous avez dépensé ce mois-ci.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Rappel quotidien</h3><p>Au cas où vous auriez oublié quelque chose.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/></svg><h3>Mode clair et sombre</h3><p>Suit le réglage de votre iPhone.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><h3>Cinq langues</h3><p>Français, allemand, anglais, espagnol et italien.</p></div>
+</div></section>
+<section class="band wrap"><div class="band-card">
+<img src="icon.png" width="256" height="256" alt="Icône de l’app Tilla">
+<h2>Bientôt sur l’App Store</h2><p>Tilla nécessite iOS 18 ou version ultérieure et un compte iCloud.</p>
+<p class="q">Des questions ou un retour ? <a href="support/#fr">Assistance</a></p>
+</div></section>
+<footer class="wrap"><a href="support/#fr">Assistance</a> · <a href="privacy/#fr">Confidentialité</a> · © 2026 <a href="../#fr">Simon Blum</a></footer>
 </article>
-
 <article lang="it" data-lang="it" data-title="Tilla – Spese comuni a colpo d’occhio">
-<div class="hero">
-<img src="icon.png" alt="Icona dell’app Tilla">
-<h1>Tilla</h1>
-<p class="tagline">Spese comuni a colpo d’occhio</p>
-<p>Il quaderno delle spese di casa pensato per coppie, famiglie e coinquilini: annotate quello che spendete e vedete in ogni momento quanto rimane delle vostre entrate questo mese – senza categorie, budget o fogli di calcolo.</p>
-<span class="soon">Presto sull’App Store · iPhone</span>
+<section class="hero wrap">
+<div class="hero-text">
+<span class="pill">Presto sull’App Store · iPhone</span>
+<h1>Spese comuni a colpo d’occhio</h1>
+<p class="lead">Il quaderno delle spese di casa pensato per coppie, famiglie e coinquilini: annotate quello che spendete e vedete in ogni momento quanto rimane delle vostre entrate questo mese – senza categorie, budget o fogli di calcolo.</p>
+<div class="actions"><a class="btn" href="#it-features">Scopri le funzioni</a><a class="btn ghost" href="support/#it">Assistenza</a></div>
 </div>
-<div class="shots">
-<img src="screenshots/it/01.jpg" width="460" height="1000" loading="lazy" alt="Guardate subito quanto rimane – Entrate, spese e il resto, a colpo d’occhio">
-<img src="screenshots/it/02.jpg" width="460" height="1000" loading="lazy" alt="Registrato in pochi secondi – Importo, per cosa – fatto">
-<img src="screenshots/it/03.jpg" width="460" height="1000" loading="lazy" alt="Guardate dove vanno i vostri soldi – Per mese, anno e negozio">
-<img src="screenshots/it/04.jpg" width="460" height="1000" loading="lazy" alt="Le spese fisse si registrano da sole – Affitto, asilo, abbonamenti – una volta sola">
-<img src="screenshots/it/05.jpg" width="460" height="1000" loading="lazy" alt="Insieme tramite iCloud – Senza nuovo account, senza password">
-<img src="screenshots/it/06.jpg" width="460" height="1000" loading="lazy" alt="Privato. Niente server né tracciamento. – Protetto con Face ID, se volete">
-</div>
-<section class="features">
-<h2>Guardate subito quanto rimane</h2>
-<p>Entrate, spese e il resto, a colpo d’occhio.</p>
-<h2>Registrato in pochi secondi</h2>
-<p>Importo, per cosa – fatto. Con Apple Pay e Siri, anche senza aprire l’app.</p>
-<h2>Le spese fisse si registrano da sole</h2>
-<p>Affitto, asilo, abbonamenti – una volta sola.</p>
-<h2>Insieme tramite iCloud</h2>
-<p>Senza nuovo account, senza password.</p>
-<h2>Privato. Niente server né tracciamento.</h2>
-<p>Le vostre voci restano solo sui vostri dispositivi e nel vostro iCloud. Protetto con Face ID, se volete.</p>
+<div class="stage"><div class="phone back"><img src="screens/it/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div><div class="phone front"><img src="screens/it/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Guardate quanto rimane: entrate, spese e il resto a colpo d’occhio"></div></div>
 </section>
-<footer><a href="support/#it">Assistenza</a> · <a href="privacy/#it">Privacy</a> · © 2026 <a href="../#it">Simon Blum</a></footer>
+<ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Nessun server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Nessun tracciamento</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Nessuna pubblicità</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Nessun nuovo account</span></li></ul>
+<section class="features wrap" id="it-features">
+<h2 class="section-title">Come funziona Tilla</h2>
+<div class="feature">
+<div class="phone"><img src="screens/it/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Aggiungere una nuova spesa"></div>
+<div class="feature-text">
+<span class="num">01</span><h3>Registrato in pochi secondi</h3><p>Digitate l’importo, scrivete per cosa, fatto. La data è già quella di oggi; un altro giorno è a un tocco di distanza.</p>
+<div class="note"><strong>Apple Pay, in automatico</strong><p>Con un’automazione nell’app Comandi Rapidi, Tilla vi propone la spesa dopo ogni pagamento con l’iPhone. Basta un tocco su «Aggiungi» – oppure lasciate che Tilla la registri subito.</p></div>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/it/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div>
+<div class="feature-text">
+<span class="num">02</span><h3>Guardate dove vanno i vostri soldi</h3><p>Le statistiche mostrano il mese e l’anno: entrate, spese, quanto rimane e dove spendete di più. Con «Senza spese fisse» vedete le spese di tutti i giorni.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/it/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Spese fisse come affitto e asilo"></div>
+<div class="feature-text">
+<span class="num">03</span><h3>Le spese fisse si registrano da sole</h3><p>Affitto, asilo, luce o palestra: li create una volta e Tilla li registra alla scadenza – ogni mese, ogni due settimane o come serve a voi. Se un importo cambia, vale dal mese che scegliete.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/it/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Invitare qualcuno tramite iCloud"></div>
+<div class="feature-text">
+<span class="num">04</span><h3>Insieme tramite iCloud</h3><p>Invitate con un messaggio le persone con cui vivete: partner, famiglia o coinquilini. Tutti vedono subito le stesse cose e niente va inserito due volte. Nessun nuovo account, nessuna password: Tilla usa il vostro ID Apple.</p>
+</div></div>
+<div class="feature">
+<div class="phone"><img src="screens/it/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla bloccata con Face ID"></div>
+<div class="feature-text">
+<span class="num">05</span><h3>Privato. Niente server né tracciamento.</h3><p>I vostri dati restano solo sui vostri dispositivi e nel vostro iCloud. Nessun server di Tilla, nessuna pubblicità, nessun tracciamento. Se volete, Face ID o Touch ID proteggono l’app.</p>
+</div></div>
+</section>
+<section class="also wrap"><h2 class="section-title">E inoltre</h2><div class="grid">
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri e Comandi Rapidi</h3><p>Registrate le spese a voce e chiedete quanto avete speso questo mese.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Promemoria giornaliero</h3><p>Nel caso abbiate dimenticato qualcosa.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/></svg><h3>Modalità chiara e scura</h3><p>Segue l’impostazione del vostro iPhone.</p></div>
+<div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><h3>Cinque lingue</h3><p>Italiano, tedesco, inglese, spagnolo e francese.</p></div>
+</div></section>
+<section class="band wrap"><div class="band-card">
+<img src="icon.png" width="256" height="256" alt="Icona dell’app Tilla">
+<h2>Presto sull’App Store</h2><p>Tilla richiede iOS 18 o versioni successive e un account iCloud.</p>
+<p class="q">Domande o feedback? <a href="support/#it">Assistenza</a></p>
+</div></section>
+<footer class="wrap"><a href="support/#it">Assistenza</a> · <a href="privacy/#it">Privacy</a> · © 2026 <a href="../#it">Simon Blum</a></footer>
 </article>
 </main>
 <script>
 (function(){
-  var langs=['de','en','es','fr','it'];
-  function pick(){
-    var h=location.hash.slice(1);if(langs.indexOf(h)>-1)return h;
+  var langs=['de','en','es','fr','it'],current=null;
+  function fromHash(){
+    var h=location.hash.slice(1),l=h.slice(0,2);
+    return (h===l||h.charAt(2)==='-')&&langs.indexOf(l)>-1?l:null;
+  }
+  function fromBrowser(){
     var n=navigator.languages||[navigator.language||''];
     for(var i=0;i<n.length;i++){var l=String(n[i]).slice(0,2).toLowerCase();if(langs.indexOf(l)>-1)return l}
     return 'en';
   }
-  function show(){
-    var l=pick(),a=document.querySelectorAll('article[data-lang]'),n=document.querySelectorAll('.langs a');
+  function show(l){
+    current=l;
+    var a=document.querySelectorAll('article[data-lang]'),n=document.querySelectorAll('.langs a');
     document.documentElement.lang=l;
     for(var i=0;i<a.length;i++){var on=a[i].getAttribute('data-lang')===l;a[i].hidden=!on;if(on)document.title=a[i].getAttribute('data-title')}
     for(var j=0;j<n.length;j++){n[j].setAttribute('aria-current',n[j].hash==='#'+l?'page':'false')}
   }
-  show();
-  addEventListener('hashchange',function(){show();scrollTo(0,0)});
+  show(fromHash()||fromBrowser());
+  addEventListener('hashchange',function(){
+    var l=fromHash();
+    if(l&&l!==current){show(l);if(location.hash.length===3)scrollTo(0,0)}
+  });
 })();
 </script>
 </body>

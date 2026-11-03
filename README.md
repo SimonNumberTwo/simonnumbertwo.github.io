@@ -19,4 +19,4 @@ the language of the URL's hash (`tilla/support/#fr`) or else the browser's; with
 language is shown. Light and dark mode follow the system. No cookies, analytics or external resources.
 
 Contact address: `simonblum.apps@icloud.com` (an iCloud alias). `tilla/icon.png` and
-`tilla/apple-touch-icon.png` are the app icon (from the app repo's `AppIcon.png`); `tilla/screenshots/<lang>/` are the App Store screenshots (`fastlane/store_screenshots`, 460 px JPEG).
+`tilla/apple-touch-icon.png` are the app icon (from the app repo's `AppIcon.png`); `tilla/screens/<lang>/` are the raw app screens (`fastlane/store_frames/raw`, 600 px JPEG) that Tilla's page shows in drawn iPhone frames.
