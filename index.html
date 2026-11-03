@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simon Blum – Apps</title>
-<meta name="description" content="Simon Blum entwickelt Apps für iPhone in Karlsruhe. · Simon Blum makes iPhone apps in Karlsruhe, Germany.">
+<meta name="description" content="Simon Blum entwickelt seit über zehn Jahren mobile Apps, in Karlsruhe. · Simon Blum has been building mobile apps for more than ten years, in Karlsruhe, Germany.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230062E0'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
 <style>
-:root{color-scheme:light dark;--bg:#F2F2F7;--card:#FFFFFF;--text:#000000;--sub:#3C3C43;--acc:#0062CC;--line:rgba(60,60,67,.18)}
-@media (prefers-color-scheme:dark){:root{--bg:#000000;--card:#1C1C1E;--text:#FFFFFF;--sub:#AEAEB2;--acc:#64B5FF;--line:rgba(84,84,88,.65)}}
+:root{color-scheme:light dark;--bg:#F2F2F7;--card:#FFFFFF;--text:#000000;--sub:#3C3C43;--acc:#0062CC;--line:rgba(60,60,67,.18);--chip:#E5E5EA}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--card:#1C1C1E;--text:#FFFFFF;--sub:#AEAEB2;--acc:#64B5FF;--line:rgba(84,84,88,.65);--chip:#2C2C2E}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
 main{max-width:680px;margin:0 auto;padding:20px 16px 64px}
@@ -23,15 +23,17 @@ h1{font-size:34px;line-height:41px;margin:0 0 8px}
 .intro{font-size:20px;line-height:28px;color:var(--sub);margin:0 0 32px}
 h2{font-size:22px;margin:32px 0 12px}
 p{color:var(--sub);margin:0 0 8px}
-.app{display:flex;gap:16px;align-items:flex-start;background:var(--card);border-radius:22px;padding:20px}
+.card{background:var(--card);border-radius:22px;padding:20px}
+.card p:last-child{margin-bottom:0}
+.skills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0 0}
+.skills li{background:var(--chip);color:var(--text);font-size:15px;border-radius:999px;padding:4px 12px}
+.app{display:flex;gap:16px;align-items:flex-start}
 .app img{width:72px;height:72px;border-radius:16px;flex:none}
 .app h3{font-size:20px;margin:0}
 .app .tagline{color:var(--text);font-weight:600;margin:0 0 4px}
 .app .links{margin:8px 0 0;font-size:15px}
 .app .links a{text-decoration:none}
 .soon{display:inline-block;font-size:13px;font-weight:600;color:var(--acc);border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-top:8px}
-.contact{background:var(--card);border-radius:22px;padding:16px 20px}
-.contact p{margin:0}
 footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:none}
 </style>
 </head>
@@ -44,9 +46,9 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 
 <article lang="de" data-lang="de" data-title="Simon Blum – Apps">
 <h1>Hallo, ich bin Simon.</h1>
-<p class="intro">Ich entwickle Apps für iPhone in Karlsruhe – einfach, privat und für den Alltag gemacht.</p>
+<p class="intro">Ich entwickle seit über zehn Jahren mobile Apps, meist für Kunden – von Start-ups bis zu Handels-Apps mit Millionen Downloads. Hier zeige ich meine eigenen.</p>
 <h2>Apps</h2>
-<div class="app">
+<div class="card app">
 <img src="tilla/icon.png" alt="">
 <div>
 <h3>Tilla</h3>
@@ -56,16 +58,22 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <span class="soon">Bald im App Store</span>
 </div>
 </div>
+<h2>Über mich</h2>
+<div class="card">
+<p>Unterwegs habe ich mehrfach die Rolle gewechselt: Lead iOS Developer, Projektleiter mit Personal- und Budgetverantwortung für ein Team von 13 Leuten, Berater und heute Technical Project Manager und Product Owner – mit den Händen weiter im Code.</p>
+<p>Am wohlsten fühle ich mich zwischen Kunde, Team und Code: herausfinden, was wirklich gebraucht wird, die passende Technik wählen und es gemeinsam bauen. Dazu gehört inzwischen auch, KI in die tägliche Entwicklung und Qualitätssicherung zu bringen.</p>
+<ul class="skills"><li>Swift/SwiftUI</li><li>Kotlin Multiplatform</li><li>Android</li><li>Flutter</li><li>Spring</li><li>Karlsruhe</li></ul>
+</div>
 <h2>Kontakt</h2>
-<div class="contact"><p>E-Mail: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
+<div class="card"><p>E-Mail: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://www.linkedin.com/in/simon-blum-mobile">LinkedIn</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
 <footer><a href="privacy/#de">Datenschutz dieser Website</a> · © 2026 Simon Blum</footer>
 </article>
 
 <article lang="en" data-lang="en" data-title="Simon Blum – Apps">
 <h1>Hi, I’m Simon.</h1>
-<p class="intro">I make iPhone apps in Karlsruhe, Germany – simple, private and made for everyday life.</p>
+<p class="intro">I’ve been building mobile apps for more than ten years, mostly for clients – from start-ups to retail apps with millions of downloads. Here are my own.</p>
 <h2>Apps</h2>
-<div class="app">
+<div class="card app">
 <img src="tilla/icon.png" alt="">
 <div>
 <h3>Tilla</h3>
@@ -75,16 +83,22 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <span class="soon">Coming soon to the App Store</span>
 </div>
 </div>
+<h2>About me</h2>
+<div class="card">
+<p>Along the way I’ve switched roles more than once: lead iOS developer, project manager with staffing and budget responsibility for a team of 13, consultant, and now technical project manager and product owner – still hands-on in the code.</p>
+<p>I’m happiest between client, team and code: figuring out what’s really needed, picking the right technology and building it together. Lately that includes bringing AI into everyday development and QA.</p>
+<ul class="skills"><li>Swift/SwiftUI</li><li>Kotlin Multiplatform</li><li>Android</li><li>Flutter</li><li>Spring</li><li>Karlsruhe</li></ul>
+</div>
 <h2>Contact</h2>
-<div class="contact"><p>Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
+<div class="card"><p>Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://www.linkedin.com/in/simon-blum-mobile">LinkedIn</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
 <footer><a href="privacy/#en">Website privacy</a> · © 2026 Simon Blum</footer>
 </article>
 
 <article lang="es" data-lang="es" data-title="Simon Blum – Apps">
 <h1>Hola, soy Simon.</h1>
-<p class="intro">Desarrollo apps para iPhone en Karlsruhe (Alemania): sencillas, privadas y pensadas para el día a día.</p>
+<p class="intro">Llevo más de diez años desarrollando apps móviles, sobre todo para clientes: desde start-ups hasta apps de comercio con millones de descargas. Aquí están las mías.</p>
 <h2>Apps</h2>
-<div class="app">
+<div class="card app">
 <img src="tilla/icon.png" alt="">
 <div>
 <h3>Tilla</h3>
@@ -94,16 +108,22 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <span class="soon">Pronto en el App Store</span>
 </div>
 </div>
+<h2>Sobre mí</h2>
+<div class="card">
+<p>Por el camino he cambiado de rol varias veces: lead iOS developer, jefe de proyecto con responsabilidad de personal y presupuesto para un equipo de 13 personas, consultor y hoy technical project manager y product owner, sin dejar de programar.</p>
+<p>Donde más a gusto estoy es entre cliente, equipo y código: averiguar qué se necesita de verdad, elegir la tecnología adecuada y construirlo juntos. Últimamente eso incluye llevar la IA al desarrollo y al control de calidad del día a día.</p>
+<ul class="skills"><li>Swift/SwiftUI</li><li>Kotlin Multiplatform</li><li>Android</li><li>Flutter</li><li>Spring</li><li>Karlsruhe</li></ul>
+</div>
 <h2>Contacto</h2>
-<div class="contact"><p>Correo: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
+<div class="card"><p>Correo: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://www.linkedin.com/in/simon-blum-mobile">LinkedIn</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
 <footer><a href="privacy/#es">Privacidad de este sitio web</a> · © 2026 Simon Blum</footer>
 </article>
 
 <article lang="fr" data-lang="fr" data-title="Simon Blum – Apps">
 <h1>Bonjour, je suis Simon.</h1>
-<p class="intro">Je crée des apps pour iPhone à Karlsruhe, en Allemagne – simples, privées et pensées pour le quotidien.</p>
+<p class="intro">Je développe des apps mobiles depuis plus de dix ans, surtout pour des clients – des start-ups aux apps de commerce aux millions de téléchargements. Voici les miennes.</p>
 <h2>Apps</h2>
-<div class="app">
+<div class="card app">
 <img src="tilla/icon.png" alt="">
 <div>
 <h3>Tilla</h3>
@@ -113,16 +133,22 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <span class="soon">Bientôt sur l’App Store</span>
 </div>
 </div>
+<h2>À propos</h2>
+<div class="card">
+<p>En chemin, j’ai changé de rôle plusieurs fois&nbsp;: lead développeur iOS, chef de projet responsable du personnel et du budget d’une équipe de 13&nbsp;personnes, consultant, et aujourd’hui technical project manager et product owner – toujours les mains dans le code.</p>
+<p>Je suis le plus à l’aise entre client, équipe et code&nbsp;: comprendre ce dont on a vraiment besoin, choisir la bonne technologie et le construire ensemble. Depuis peu, cela inclut aussi d’intégrer l’IA au développement et à l’assurance qualité au quotidien.</p>
+<ul class="skills"><li>Swift/SwiftUI</li><li>Kotlin Multiplatform</li><li>Android</li><li>Flutter</li><li>Spring</li><li>Karlsruhe</li></ul>
+</div>
 <h2>Contact</h2>
-<div class="contact"><p>E-mail&nbsp;: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
+<div class="card"><p>E-mail&nbsp;: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://www.linkedin.com/in/simon-blum-mobile">LinkedIn</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
 <footer><a href="privacy/#fr">Confidentialité de ce site</a> · © 2026 Simon Blum</footer>
 </article>
 
 <article lang="it" data-lang="it" data-title="Simon Blum – App">
 <h1>Ciao, sono Simon.</h1>
-<p class="intro">Sviluppo app per iPhone a Karlsruhe, in Germania: semplici, private e pensate per la vita di tutti i giorni.</p>
+<p class="intro">Sviluppo app mobili da più di dieci anni, soprattutto per clienti: dalle start-up alle app retail con milioni di download. Qui trovi le mie.</p>
 <h2>App</h2>
-<div class="app">
+<div class="card app">
 <img src="tilla/icon.png" alt="">
 <div>
 <h3>Tilla</h3>
@@ -132,8 +158,14 @@ footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:
 <span class="soon">Presto sull’App Store</span>
 </div>
 </div>
+<h2>Chi sono</h2>
+<div class="card">
+<p>Lungo il percorso ho cambiato ruolo più volte: lead iOS developer, project manager con responsabilità di personale e budget per un team di 13 persone, consulente e oggi technical project manager e product owner, sempre con le mani nel codice.</p>
+<p>Mi trovo meglio tra cliente, team e codice: capire cosa serve davvero, scegliere la tecnologia giusta e costruirlo insieme. Ultimamente questo include anche portare l’IA nello sviluppo e nel controllo qualità di tutti i giorni.</p>
+<ul class="skills"><li>Swift/SwiftUI</li><li>Kotlin Multiplatform</li><li>Android</li><li>Flutter</li><li>Spring</li><li>Karlsruhe</li></ul>
+</div>
 <h2>Contatti</h2>
-<div class="contact"><p>Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
+<div class="card"><p>Email: <a href="mailto:simonblum.apps@icloud.com">simonblum.apps@icloud.com</a> · <a href="https://www.linkedin.com/in/simon-blum-mobile">LinkedIn</a> · <a href="https://github.com/SimonNumberTwo">GitHub</a></p></div>
 <footer><a href="privacy/#it">Privacy di questo sito</a> · © 2026 Simon Blum</footer>
 </article>
 </main>
