@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tilla – Apple Pay-Kurzbefehl</title>
+<meta name="description" content="Jede Zahlung mit Apple Pay automatisch in Tilla · Every Apple Pay payment in Tilla, automatically">
+<link rel="icon" href="../icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<script>
+// Tilla's "Kurzbefehl hinzufügen" opens this page with ?go: straight on to the shortcut.
+// The link is the buttons' href – change it there (all five) when the shortcut is shared anew.
+if(/[?&]go\b/.test(location.search)){document.documentElement.hidden=true;addEventListener('DOMContentLoaded',function(){location.replace(document.querySelector('a.shortcut').href)})}
+</script>
+<style>
+:root{color-scheme:light dark;--bg:#FBFBFD;--bg2:#F2F2F7;--card:#FFFFFF;--text:#1D1D1F;--sub:#5E5E66;--acc:#0062CC;--fill:#007AFF;--line:rgba(60,60,67,.14);--bar:rgba(251,251,253,.8)}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--bg2:#0D0D0F;--card:#1C1C1E;--text:#F5F5F7;--sub:#A1A1A8;--acc:#4DA3FF;--fill:#0A84FF;--line:rgba(84,84,88,.5);--bar:rgba(0,0,0,.72)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:8px 16px 64px}
+a{color:var(--acc)}
+article{margin-top:40px}
+section{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:4px 24px 12px;margin-bottom:16px}
+h1{font-size:34px;line-height:41px;margin:0 0 16px}h2{font-size:20px;margin:20px 0 4px}
+p{color:var(--sub);margin:0 0 8px}
+.lead{font-size:19px;color:var(--text);margin-bottom:24px}
+.add{padding:20px 24px}
+.add p{margin-bottom:16px}
+.btn{display:inline-block;background:var(--fill);color:#FFFFFF;font-weight:600;text-decoration:none;border-radius:999px;padding:13px 24px;margin-bottom:12px}
+.hint{font-size:15px}
+ol{color:var(--sub);margin:0 0 8px;padding-left:22px}li{margin-bottom:6px}
+.steps h2,.more h2{border-top:1px solid var(--line);padding-top:16px}
+.steps h2:first-child,.more h2:first-child{border-top:0;padding-top:0}
+footer{margin-top:32px;font-size:15px;color:var(--sub)}footer a{text-decoration:none}
+.bar{position:sticky;top:0;z-index:10;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;max-width:680px;margin:0 auto;padding:0 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.langs{display:flex;gap:2px;font-size:14px}
+.langs a{text-decoration:none;padding:5px 9px;border-radius:8px;color:var(--sub);font-weight:500}
+.langs a[aria-current=page]{background:var(--bg2);color:var(--text);font-weight:600}
+h1,h2,h3{letter-spacing:-.01em}h1{font-weight:800;letter-spacing:-.02em}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="../"><img src="../icon.png" width="256" height="256" alt="">Tilla</a>
+<nav class="langs" aria-label="Language"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
+</div></header>
+<main>
+
+<article lang="de" data-lang="de" data-title="Tilla – Apple Pay-Kurzbefehl">
+<h1>Apple Pay automatisch erfassen</h1>
+<p class="lead">Bezahlen, fertig: Mit dem Kurzbefehl „Tilla - Apple Pay“ landet jede Zahlung mit Apple Pay in Tilla – als Vorschlag, den du mit einem Tipp bestätigst, oder direkt als Ausgabe.</p>
+<section class="add">
+<p>Öffne diese Seite auf deinem iPhone, auf dem Tilla eingerichtet ist.</p>
+<a class="btn shortcut" href="https://www.icloud.com/shortcuts/cde6288ebf204d419d4256154994a689">Kurzbefehl hinzufügen</a>
+<p class="hint">Ab iOS 27 kommt die Automation für Wallet gleich mit. Auf älteren iPhones zeigt Tilla unter Einstellungen → Apple Pay, wie du sie selbst anlegst.</p>
+</section>
+<section class="steps">
+<h2>So geht’s</h2>
+<ol>
+<li>Tippe auf „Kurzbefehl hinzufügen“ und füge ihn in der Kurzbefehle-App hinzu.</li>
+<li>Öffne in der Kurzbefehle-App „Automation“, schalte „Tilla - Apple Pay“ ein und wähle „Sofort ausführen“.</li>
+<li>Bezahle wie immer mit dem iPhone. Tilla fragt per Mitteilung: „Als Ausgabe hinzufügen?“ – oder trägt die Zahlung direkt ein, wenn du unter Einstellungen → Apple Pay „Ohne Nachfrage eintragen“ einschaltest.</li>
+</ol>
+</section>
+<section class="more">
+<h2>Gut zu wissen</h2>
+<p>Tilla bekommt nur Betrag und Geschäft, nie Kartendaten. Ob der Name des Geschäfts mitkommt, hängt von deiner Bank ab. Der Betrag zählt in der Währung eures Haushalts. Nicht bestätigte Zahlungen warten in Tilla unter „Zu bestätigen“ – nur auf deinem iPhone, bis du sie hinzufügst.</p>
+</section>
+<footer><a href="../#de">Tilla</a> · <a href="../support/#de">Support</a> · <a href="../privacy/#de">Datenschutz</a> · © 2026 <a href="../../#de">Simon Blum</a></footer>
+</article>
+
+<article lang="en" data-lang="en" data-title="Tilla – Apple Pay Shortcut">
+<h1>Capture Apple Pay automatically</h1>
+<p class="lead">Pay, done: with the “Tilla - Apple Pay” shortcut, every Apple Pay payment lands in Tilla – as a suggestion you confirm with one tap, or straight away as an expense.</p>
+<section class="add">
+<p>Open this page on the iPhone where Tilla is set up.</p>
+<a class="btn shortcut" href="https://www.icloud.com/shortcuts/cde6288ebf204d419d4256154994a689">Add Shortcut</a>
+<p class="hint">On iOS 27 and later, the Wallet automation comes along. On older iPhones, Tilla shows under Settings → Apple Pay how to build it yourself.</p>
+</section>
+<section class="steps">
+<h2>How it works</h2>
+<ol>
+<li>Tap “Add Shortcut” and add it in the Shortcuts app.</li>
+<li>In the Shortcuts app, open “Automation”, turn on “Tilla - Apple Pay” and choose “Run Immediately”.</li>
+<li>Pay with your iPhone as usual. Tilla asks with a notification: “Add as an expense?” – or adds the payment straight away if you turn on “Add without asking” under Settings → Apple Pay.</li>
+</ol>
+</section>
+<section class="more">
+<h2>Good to know</h2>
+<p>Tilla only gets the amount and the shop, never card data. Whether the shop’s name comes along depends on your bank. The amount counts in your household’s currency. Unconfirmed payments wait in Tilla under “To confirm” – only on your iPhone, until you add them.</p>
+</section>
+<footer><a href="../#en">Tilla</a> · <a href="../support/#en">Support</a> · <a href="../privacy/#en">Privacy</a> · © 2026 <a href="../../#en">Simon Blum</a></footer>
+</article>
+
+<article lang="es" data-lang="es" data-title="Tilla – Atajo de Apple Pay">
+<h1>Registra Apple Pay automáticamente</h1>
+<p class="lead">Pagar y listo: con el atajo «Tilla - Apple Pay», cada pago con Apple Pay llega a Tilla, como propuesta que confirmas con un toque o directamente como gasto.</p>
+<section class="add">
+<p>Abre esta página en el iPhone donde tienes Tilla configurado.</p>
+<a class="btn shortcut" href="https://www.icloud.com/shortcuts/cde6288ebf204d419d4256154994a689">Añadir atajo</a>
+<p class="hint">Desde iOS 27, la automatización para Cartera viene incluida. En iPhones anteriores, Tilla te muestra en Ajustes → Apple Pay cómo crearla tú.</p>
+</section>
+<section class="steps">
+<h2>Cómo funciona</h2>
+<ol>
+<li>Toca «Añadir atajo» y añádelo en la app Atajos.</li>
+<li>En la app Atajos, abre «Automatización», activa «Tilla - Apple Pay» y elige «Ejecutar inmediatamente».</li>
+<li>Paga con el iPhone como siempre. Tilla te pregunta con una notificación: «¿Añadir como gasto?», o añade el pago directamente si activas «Añadir sin preguntar» en Ajustes → Apple Pay.</li>
+</ol>
+</section>
+<section class="more">
+<h2>Bueno saber</h2>
+<p>Tilla solo recibe el importe y el comercio, nunca datos de la tarjeta. Que llegue el nombre del comercio depende de tu banco. El importe cuenta en la moneda de vuestro hogar. Los pagos sin confirmar esperan en Tilla en «Por confirmar», solo en tu iPhone, hasta que los añadas.</p>
+</section>
+<footer><a href="../#es">Tilla</a> · <a href="../support/#es">Soporte</a> · <a href="../privacy/#es">Privacidad</a> · © 2026 <a href="../../#es">Simon Blum</a></footer>
+</article>
+
+<article lang="fr" data-lang="fr" data-title="Tilla – Raccourci Apple Pay">
+<h1>Saisir Apple Pay automatiquement</h1>
+<p class="lead">Payer, c’est tout&nbsp;: avec le raccourci «&nbsp;Tilla - Apple Pay&nbsp;», chaque paiement Apple Pay arrive dans Tilla – en suggestion que tu confirmes d’un geste, ou directement en dépense.</p>
+<section class="add">
+<p>Ouvre cette page sur l’iPhone où Tilla est configuré.</p>
+<a class="btn shortcut" href="https://www.icloud.com/shortcuts/cde6288ebf204d419d4256154994a689">Ajouter le raccourci</a>
+<p class="hint">À partir d’iOS 27, l’automatisation pour Cartes est incluse. Sur les iPhone plus anciens, Tilla montre dans Réglages → Apple Pay comment la créer toi-même.</p>
+</section>
+<section class="steps">
+<h2>Comment ça marche</h2>
+<ol>
+<li>Touche «&nbsp;Ajouter le raccourci&nbsp;» et ajoute-le dans l’app Raccourcis.</li>
+<li>Dans l’app Raccourcis, ouvre «&nbsp;Automatisation&nbsp;», active «&nbsp;Tilla - Apple Pay&nbsp;» et choisis «&nbsp;Exécuter immédiatement&nbsp;».</li>
+<li>Paie avec ton iPhone comme d’habitude. Tilla te demande par notification&nbsp;: «&nbsp;Ajouter comme dépense&nbsp;?&nbsp;» – ou ajoute le paiement directement si tu actives «&nbsp;Ajouter sans demander&nbsp;» dans Réglages → Apple Pay.</li>
+</ol>
+</section>
+<section class="more">
+<h2>Bon à savoir</h2>
+<p>Tilla ne reçoit que le montant et le commerce, jamais les données de carte. Que le nom du commerce suive dépend de ta banque. Le montant compte dans la devise de votre foyer. Les paiements non confirmés attendent dans Tilla sous «&nbsp;À confirmer&nbsp;» – uniquement sur ton iPhone, jusqu’à ce que tu les ajoutes.</p>
+</section>
+<footer><a href="../#fr">Tilla</a> · <a href="../support/#fr">Assistance</a> · <a href="../privacy/#fr">Confidentialité</a> · © 2026 <a href="../../#fr">Simon Blum</a></footer>
+</article>
+
+<article lang="it" data-lang="it" data-title="Tilla – Comando rapido Apple Pay">
+<h1>Registra Apple Pay in automatico</h1>
+<p class="lead">Paghi e basta: con il comando rapido «Tilla - Apple Pay», ogni pagamento con Apple Pay arriva in Tilla, come proposta da confermare con un tocco o direttamente come spesa.</p>
+<section class="add">
+<p>Apri questa pagina sull’iPhone su cui hai configurato Tilla.</p>
+<a class="btn shortcut" href="https://www.icloud.com/shortcuts/cde6288ebf204d419d4256154994a689">Aggiungi comando rapido</a>
+<p class="hint">Da iOS 27 l’automazione per Wallet è inclusa. Sugli iPhone meno recenti Tilla mostra in Impostazioni → Apple Pay come crearla tu.</p>
+</section>
+<section class="steps">
+<h2>Come funziona</h2>
+<ol>
+<li>Tocca «Aggiungi comando rapido» e aggiungilo nell’app Comandi Rapidi.</li>
+<li>Nell’app Comandi Rapidi apri «Automazione», attiva «Tilla - Apple Pay» e scegli «Esegui immediatamente».</li>
+<li>Paga con l’iPhone come sempre. Tilla ti chiede con una notifica: «Aggiungere come spesa?», oppure aggiunge subito il pagamento se attivi «Aggiungi senza chiedere» in Impostazioni → Apple Pay.</li>
+</ol>
+</section>
+<section class="more">
+<h2>Buono a sapersi</h2>
+<p>Tilla riceve solo l’importo e il negozio, mai i dati della carta. Se arriva anche il nome del negozio dipende dalla tua banca. L’importo conta nella valuta della vostra casa. I pagamenti non confermati aspettano in Tilla in «Da confermare», solo sul tuo iPhone, finché non li aggiungi.</p>
+</section>
+<footer><a href="../#it">Tilla</a> · <a href="../support/#it">Assistenza</a> · <a href="../privacy/#it">Privacy</a> · © 2026 <a href="../../#it">Simon Blum</a></footer>
+</article>
+</main>
+<script>
+(function(){
+  var langs=['de','en','es','fr','it'];
+  function pick(){
+    var h=location.hash.slice(1);if(langs.indexOf(h)>-1)return h;
+    var n=navigator.languages||[navigator.language||''];
+    for(var i=0;i<n.length;i++){var l=String(n[i]).slice(0,2).toLowerCase();if(langs.indexOf(l)>-1)return l}
+    return 'en';
+  }
+  function show(){
+    var l=pick(),a=document.querySelectorAll('article[data-lang]'),n=document.querySelectorAll('.langs a');
+    document.documentElement.lang=l;
+    for(var i=0;i<a.length;i++){var on=a[i].getAttribute('data-lang')===l;a[i].hidden=!on;if(on)document.title=a[i].getAttribute('data-title')}
+    for(var j=0;j<n.length;j++){n[j].setAttribute('aria-current',n[j].hash==='#'+l?'page':'false')}
+  }
+  show();
+  addEventListener('hashchange',function(){show();scrollTo(0,0)});
+})();
+</script>
+</body>
+</html>
