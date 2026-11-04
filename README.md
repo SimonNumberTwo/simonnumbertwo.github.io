@@ -25,3 +25,5 @@ shortcut only needs a new link there – no app update.
 
 Contact address: `simonblum.apps@icloud.com` (an iCloud alias). `tilla/icon.png` and
 `tilla/apple-touch-icon.png` are the app icon (from the app repo's `AppIcon.png`); `tilla/screens/<lang>/` are the raw app screens (`fastlane/store_frames/raw`, 600 px JPEG) that Tilla's page shows in drawn iPhone frames.
+`tilla/share.jpg` (1200 × 630) is the link preview (`og:image`) when the page is shared in Messages, WhatsApp
+& co. – the icon, the promise and screen `de/01`; the preview's texts are German, the page's default.
