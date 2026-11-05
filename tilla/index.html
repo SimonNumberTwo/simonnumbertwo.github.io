@@ -58,6 +58,7 @@ h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom
 .stage::before{content:"";position:absolute;inset:8% 0 0 8%;background:radial-gradient(closest-side,var(--glow),transparent);z-index:0}
 .phone{--w:280px;position:relative;width:var(--w);padding:calc(var(--w)*.032);border-radius:calc(var(--w)*.165);background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06) inset}
 .phone img{width:100%;border-radius:calc(var(--w)*.135)}
+.phone::after{content:"";position:absolute;left:50%;top:calc(var(--w)*.058);width:calc(var(--w)*.292);height:calc(var(--w)*.086);border-radius:calc(var(--w)*.043);background:#000;transform:translateX(-50%)}
 .stage .phone{position:absolute;z-index:1}
 .stage .front{--w:290px;left:6%;top:0}
 .stage .back{--w:250px;right:0;top:70px;transform:rotate(6deg);opacity:.92}
@@ -133,34 +134,34 @@ footer a{text-decoration:none}
 <p class="lead">Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: Ihr tragt ein, was ihr ausgebt, und seht jederzeit, wie viel von euren Einnahmen diesen Monat noch übrig ist – ohne Kategorien, Budgets oder Tabellen.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Jetzt die Beta testen</a><a class="btn ghost" href="#de-features">Funktionen ansehen</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/de/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div><div class="phone front"><img src="screens/de/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest auf einen Blick"></div></div>
+<div class="stage"><div class="phone back"><img src="screens/de/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div><div class="phone front"><img src="screens/de/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest auf einen Blick"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Kein Server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Kein Tracking</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Keine Werbung</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Kein neues Konto</span></li></ul>
 <section class="features wrap" id="de-features">
 <h2 class="section-title">So funktioniert Tilla</h2>
 <div class="feature">
-<div class="phone"><img src="screens/de/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Beleg erkannt: 64,82 € im Supermarkt"></div>
+<div class="phone"><img src="screens/de/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Beleg erkannt: 64,82 € im Supermarkt"></div>
 <div class="feature-text">
 <span class="num">01</span><h3>In Sekunden eingetragen</h3><p>Betrag tippen, schreiben wofür, fertig. Oder den Kassenbon scannen: Tilla erkennt Summe, Geschäft und Datum direkt auf dem iPhone, und das Foto bleibt bei der Ausgabe.</p>
 <div class="note"><strong>Apple Pay automatisch erfassen</strong><p>Mit einer Automation in der Kurzbefehle-App schlägt Tilla nach jeder Zahlung mit dem iPhone die Ausgabe vor. Ein Tipp auf „Hinzufügen“ genügt – oder Tilla trägt sie direkt ein. <a href="shortcut/#de">Zum Kurzbefehl →</a></p></div>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/de/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div>
+<div class="phone"><img src="screens/de/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div>
 <div class="feature-text">
 <span class="num">02</span><h3>Seht, wohin euer Geld geht</h3><p>Die Statistik zeigt Monat und Jahr: Einnahmen, Ausgaben, was übrig bleibt und wo ihr am meisten ausgebt. Mit „Ohne Fixkosten“ seht ihr, was im Alltag zusammenkommt.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/de/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Feste Ausgaben wie Miete und Kita"></div>
+<div class="phone"><img src="screens/de/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Feste Ausgaben wie Miete und Kita"></div>
 <div class="feature-text">
 <span class="num">03</span><h3>Feste Ausgaben tragen sich selbst ein</h3><p>Miete, Kita, Strom oder das Fitnessstudio legt ihr einmal an. Tilla trägt sie am Fälligkeitstag ein – monatlich, alle zwei Wochen oder wie es bei euch eben ist. Ändert sich ein Betrag, gilt er ab dem Monat, den ihr wählt.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/de/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Person über iCloud einladen"></div>
+<div class="phone"><img src="screens/de/05.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Person über iCloud einladen"></div>
 <div class="feature-text">
 <span class="num">04</span><h3>Gemeinsam über iCloud</h3><p>Ladet alle, mit denen ihr zusammenwohnt, per Nachricht ein – Partnerin oder Partner, Familie oder WG. Alle sehen sofort dasselbe, nichts wird doppelt eingetragen. Kein neues Konto, kein Passwort – Tilla nutzt eure Apple-ID.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/de/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla mit Face ID gesperrt"></div>
+<div class="phone"><img src="screens/de/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla mit Face ID gesperrt"></div>
 <div class="feature-text">
 <span class="num">05</span><h3>Privat. Kein Server, kein Tracking.</h3><p>Eure Daten liegen nur auf euren Geräten und in eurem iCloud. Es gibt keinen Tilla-Server, keine Werbung und kein Tracking. Auf Wunsch schützt Face ID oder Touch ID die App.</p>
 </div></div>
@@ -187,34 +188,34 @@ footer a{text-decoration:none}
 <p class="lead">The shared household expense book for couples, families and flatmates: you log what you spend and always see how much of your income is left this month – no categories, budgets or spreadsheets.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Try the beta now</a><a class="btn ghost" href="#en-features">See the features</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/en/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div><div class="phone front"><img src="screens/en/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="See what’s left – income, spending and the rest in one view"></div></div>
+<div class="stage"><div class="phone back"><img src="screens/en/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div><div class="phone front"><img src="screens/en/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="See what’s left – income, spending and the rest in one view"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>No server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>No tracking</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>No ads</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>No new account</span></li></ul>
 <section class="features wrap" id="en-features">
 <h2 class="section-title">How Tilla works</h2>
 <div class="feature">
-<div class="phone"><img src="screens/en/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Receipt recognised: €64.82 at the supermarket"></div>
+<div class="phone"><img src="screens/en/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Receipt recognised: €64.82 at the supermarket"></div>
 <div class="feature-text">
 <span class="num">01</span><h3>Logged in seconds</h3><p>Type the amount, say what it was for, done. Or scan the receipt: Tilla recognises the total, the shop and the date right on your iPhone, and the photo stays with the expense.</p>
 <div class="note"><strong>Capture Apple Pay automatically</strong><p>With an automation in the Shortcuts app, Tilla suggests the expense after every payment with your iPhone. One tap on “Add” is enough – or let Tilla add it straight away. <a href="shortcut/#en">Get the shortcut →</a></p></div>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/en/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div>
+<div class="phone"><img src="screens/en/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div>
 <div class="feature-text">
 <span class="num">02</span><h3>See where your money goes</h3><p>Statistics show the month and the year: income, spending, what’s left and where you spend the most. “Without fixed costs” shows your everyday spending.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/en/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Fixed costs like rent and daycare"></div>
+<div class="phone"><img src="screens/en/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Fixed costs like rent and daycare"></div>
 <div class="feature-text">
 <span class="num">03</span><h3>Fixed costs add themselves</h3><p>Set up rent, daycare, electricity or the gym once. Tilla adds them on their due date – monthly, every two weeks or whatever fits. When an amount changes, it applies from the month you choose.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/en/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Inviting someone over iCloud"></div>
+<div class="phone"><img src="screens/en/05.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Inviting someone over iCloud"></div>
 <div class="feature-text">
 <span class="num">04</span><h3>Together over iCloud</h3><p>Invite the people you live with by message – your partner, family or flatmates. Everyone sees the same right away, nothing is entered twice. No new account, no password – Tilla uses your Apple ID.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/en/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla locked with Face ID"></div>
+<div class="phone"><img src="screens/en/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla locked with Face ID"></div>
 <div class="feature-text">
 <span class="num">05</span><h3>Private. No server, no tracking.</h3><p>Your data stays on your devices and in your iCloud. There is no Tilla server, no ads and no tracking. Face ID or Touch ID can lock the app if you like.</p>
 </div></div>
@@ -241,34 +242,34 @@ footer a{text-decoration:none}
 <p class="lead">El libro de gastos compartido del hogar, para parejas, familias y pisos compartidos: apuntáis lo que gastáis y veis en todo momento cuánto queda de vuestros ingresos este mes, sin categorías, presupuestos ni hojas de cálculo.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prueba la beta ahora</a><a class="btn ghost" href="#es-features">Ver funciones</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/es/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div><div class="phone front"><img src="screens/es/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Ved lo que queda: ingresos, gastos y el resto de un vistazo"></div></div>
+<div class="stage"><div class="phone back"><img src="screens/es/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div><div class="phone front"><img src="screens/es/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Ved lo que queda: ingresos, gastos y el resto de un vistazo"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Sin servidor</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Sin rastreo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Sin anuncios</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Sin cuenta nueva</span></li></ul>
 <section class="features wrap" id="es-features">
 <h2 class="section-title">Así funciona Tilla</h2>
 <div class="feature">
-<div class="phone"><img src="screens/es/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Recibo reconocido: 64,82 € en el supermercado"></div>
+<div class="phone"><img src="screens/es/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Recibo reconocido: 64,82 € en el supermercado"></div>
 <div class="feature-text">
 <span class="num">01</span><h3>Registrado en segundos</h3><p>Escribid el importe y para qué fue, y listo. O escanead el recibo: Tilla reconoce el total, la tienda y la fecha en el propio iPhone, y la foto se queda con el gasto.</p>
 <div class="note"><strong>Apple Pay, sin esfuerzo</strong><p>Con una automatización en la app Atajos, Tilla os propone el gasto después de cada pago con el iPhone. Basta con tocar «Añadir», o dejad que Tilla lo apunte directamente. <a href="shortcut/#es">Ir al atajo →</a></p></div>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/es/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div>
+<div class="phone"><img src="screens/es/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div>
 <div class="feature-text">
 <span class="num">02</span><h3>Ved adónde va vuestro dinero</h3><p>Las estadísticas muestran el mes y el año: ingresos, gastos, lo que queda y dónde gastáis más. Con «Sin gastos fijos» veis el gasto del día a día.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/es/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Gastos fijos como alquiler y guardería"></div>
+<div class="phone"><img src="screens/es/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Gastos fijos como alquiler y guardería"></div>
 <div class="feature-text">
 <span class="num">03</span><h3>Los gastos fijos se apuntan solos</h3><p>Alquiler, guardería, luz o gimnasio: los creáis una vez y Tilla los apunta el día que vencen, cada mes, cada dos semanas o como os toque. Si cambia un importe, se aplica desde el mes que elijáis.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/es/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Invitar a alguien a través de iCloud"></div>
+<div class="phone"><img src="screens/es/05.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Invitar a alguien a través de iCloud"></div>
 <div class="feature-text">
 <span class="num">04</span><h3>Juntos a través de iCloud</h3><p>Invitad con un mensaje a quienes vivís juntos: pareja, familia o compañeros de piso. Todos veis lo mismo al momento y nada se apunta dos veces. Sin cuenta nueva ni contraseña: Tilla usa vuestro Apple ID.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/es/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla bloqueada con Face ID"></div>
+<div class="phone"><img src="screens/es/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla bloqueada con Face ID"></div>
 <div class="feature-text">
 <span class="num">05</span><h3>Privado. Sin servidor ni rastreo.</h3><p>Vuestros datos están solo en vuestros dispositivos y en vuestro iCloud. No hay servidor de Tilla, ni anuncios, ni rastreo. Si queréis, Face ID o Touch ID protegen la app.</p>
 </div></div>
@@ -295,34 +296,34 @@ footer a{text-decoration:none}
 <p class="lead">Le carnet de dépenses du foyer, pensé pour les couples, les familles et les colocations : vous notez ce que vous dépensez et voyez à tout moment ce qu’il reste de vos revenus ce mois-ci – sans catégories, budgets ni tableurs.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Essayer la bêta</a><a class="btn ghost" href="#fr-features">Voir les fonctions</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/fr/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div><div class="phone front"><img src="screens/fr/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Voyez ce qu’il reste : revenus, dépenses et reste d’un coup d’œil"></div></div>
+<div class="stage"><div class="phone back"><img src="screens/fr/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div><div class="phone front"><img src="screens/fr/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Voyez ce qu’il reste : revenus, dépenses et reste d’un coup d’œil"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Pas de serveur</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Pas de pistage</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Pas de publicité</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Pas de nouveau compte</span></li></ul>
 <section class="features wrap" id="fr-features">
 <h2 class="section-title">Comment fonctionne Tilla</h2>
 <div class="feature">
-<div class="phone"><img src="screens/fr/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Ticket reconnu : 64,82 € au supermarché"></div>
+<div class="phone"><img src="screens/fr/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Ticket reconnu : 64,82 € au supermarché"></div>
 <div class="feature-text">
 <span class="num">01</span><h3>Saisi en quelques secondes</h3><p>Tapez le montant, indiquez pour quoi, c’est fait. Ou scannez le ticket : Tilla reconnaît le total, le magasin et la date directement sur l’iPhone, et la photo reste avec la dépense.</p>
 <div class="note"><strong>Apple Pay, automatiquement</strong><p>Grâce à une automatisation dans l’app Raccourcis, Tilla vous propose la dépense après chaque paiement avec l’iPhone. Un toucher sur « Ajouter » suffit – ou laissez Tilla l’ajouter directement. <a href="shortcut/#fr">Voir le raccourci →</a></p></div>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/fr/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div>
+<div class="phone"><img src="screens/fr/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div>
 <div class="feature-text">
 <span class="num">02</span><h3>Voyez où va votre argent</h3><p>Les statistiques montrent le mois et l’année : revenus, dépenses, ce qu’il reste et où vous dépensez le plus. Avec « Sans charges fixes », vous voyez vos dépenses du quotidien.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/fr/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Dépenses fixes comme le loyer et la crèche"></div>
+<div class="phone"><img src="screens/fr/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Dépenses fixes comme le loyer et la crèche"></div>
 <div class="feature-text">
 <span class="num">03</span><h3>Les dépenses fixes s’ajoutent seules</h3><p>Loyer, crèche, électricité ou salle de sport : vous les créez une fois, Tilla les ajoute à leur échéance – chaque mois, toutes les deux semaines ou selon votre rythme. Si un montant change, il s’applique à partir du mois choisi.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/fr/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Inviter quelqu’un via iCloud"></div>
+<div class="phone"><img src="screens/fr/05.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Inviter quelqu’un via iCloud"></div>
 <div class="feature-text">
 <span class="num">04</span><h3>Ensemble via iCloud</h3><p>Invitez par message les personnes avec qui vous vivez : partenaire, famille ou colocataires. Tout le monde voit la même chose aussitôt, rien n’est saisi deux fois. Pas de nouveau compte, pas de mot de passe : Tilla utilise votre identifiant Apple.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/fr/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla verrouillée avec Face ID"></div>
+<div class="phone"><img src="screens/fr/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla verrouillée avec Face ID"></div>
 <div class="feature-text">
 <span class="num">05</span><h3>Privé. Sans serveur ni pistage.</h3><p>Vos données restent sur vos appareils et dans votre iCloud. Pas de serveur Tilla, pas de publicité, pas de pistage. Si vous le souhaitez, Face ID ou Touch ID protège l’app.</p>
 </div></div>
@@ -349,34 +350,34 @@ footer a{text-decoration:none}
 <p class="lead">Il quaderno delle spese di casa pensato per coppie, famiglie e coinquilini: annotate quello che spendete e vedete in ogni momento quanto rimane delle vostre entrate questo mese – senza categorie, budget o fogli di calcolo.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prova subito la beta</a><a class="btn ghost" href="#it-features">Scopri le funzioni</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/it/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div><div class="phone front"><img src="screens/it/01.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Guardate quanto rimane: entrate, spese e il resto a colpo d’occhio"></div></div>
+<div class="stage"><div class="phone back"><img src="screens/it/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div><div class="phone front"><img src="screens/it/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Guardate quanto rimane: entrate, spese e il resto a colpo d’occhio"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Nessun server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Nessun tracciamento</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Nessuna pubblicità</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Nessun nuovo account</span></li></ul>
 <section class="features wrap" id="it-features">
 <h2 class="section-title">Come funziona Tilla</h2>
 <div class="feature">
-<div class="phone"><img src="screens/it/02.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Scontrino riconosciuto: 64,82 € al supermercato"></div>
+<div class="phone"><img src="screens/it/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Scontrino riconosciuto: 64,82 € al supermercato"></div>
 <div class="feature-text">
 <span class="num">01</span><h3>Registrato in pochi secondi</h3><p>Digitate l’importo, scrivete per cosa, fatto. Oppure scansionate lo scontrino: Tilla riconosce totale, negozio e data direttamente sull’iPhone, e la foto resta con la spesa.</p>
 <div class="note"><strong>Apple Pay, in automatico</strong><p>Con un’automazione nell’app Comandi Rapidi, Tilla vi propone la spesa dopo ogni pagamento con l’iPhone. Basta un tocco su «Aggiungi» – oppure lasciate che Tilla la registri subito. <a href="shortcut/#it">Vai al comando rapido →</a></p></div>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/it/03.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div>
+<div class="phone"><img src="screens/it/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div>
 <div class="feature-text">
 <span class="num">02</span><h3>Guardate dove vanno i vostri soldi</h3><p>Le statistiche mostrano il mese e l’anno: entrate, spese, quanto rimane e dove spendete di più. Con «Senza spese fisse» vedete le spese di tutti i giorni.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/it/04.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Spese fisse come affitto e asilo"></div>
+<div class="phone"><img src="screens/it/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Spese fisse come affitto e asilo"></div>
 <div class="feature-text">
 <span class="num">03</span><h3>Le spese fisse si registrano da sole</h3><p>Affitto, asilo, luce o palestra: li create una volta e Tilla li registra alla scadenza – ogni mese, ogni due settimane o come serve a voi. Se un importo cambia, vale dal mese che scegliete.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/it/05.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Invitare qualcuno tramite iCloud"></div>
+<div class="phone"><img src="screens/it/05.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Invitare qualcuno tramite iCloud"></div>
 <div class="feature-text">
 <span class="num">04</span><h3>Insieme tramite iCloud</h3><p>Invitate con un messaggio le persone con cui vivete: partner, famiglia o coinquilini. Tutti vedono subito le stesse cose e niente va inserito due volte. Nessun nuovo account, nessuna password: Tilla usa il vostro ID Apple.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/it/06.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tilla bloccata con Face ID"></div>
+<div class="phone"><img src="screens/it/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla bloccata con Face ID"></div>
 <div class="feature-text">
 <span class="num">05</span><h3>Privato. Niente server né tracciamento.</h3><p>I vostri dati restano solo sui vostri dispositivi e nel vostro iCloud. Nessun server di Tilla, nessuna pubblicità, nessun tracciamento. Se volete, Face ID o Touch ID proteggono l’app.</p>
 </div></div>
