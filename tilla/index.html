@@ -79,6 +79,17 @@ h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom
 .note strong{display:block;margin-bottom:4px}
 .note p{color:var(--sub);font-size:16px}
 
+.privacy{text-align:center;margin-bottom:96px}
+.privacy .section-title{margin-bottom:16px}
+.privacy>p{font-size:19px;color:var(--sub);max-width:34em;margin:0 auto}
+.duo{padding-top:24px;margin-bottom:96px;text-align:center}
+.duo .pill{margin-bottom:16px}
+.duo .section-title{margin-bottom:16px}
+.duo>p{font-size:19px;color:var(--sub);max-width:34em;margin:0 auto 48px}
+.duo-devices{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fold{padding:1.3%;border-radius:32px;background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06) inset}
+.fold img{width:100%;border-radius:22px}
+
 .also{padding-top:24px;margin-bottom:96px}
 .also .section-title{margin-bottom:40px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -110,6 +121,8 @@ footer a{text-decoration:none}
   .feature .phone,.feature:nth-of-type(even) .phone{order:0;margin:0 auto;--w:240px}
   .note{text-align:left}
   .grid{grid-template-columns:repeat(2,1fr)}
+  .privacy,.duo{margin-bottom:72px}
+  .duo-devices{grid-template-columns:1fr}
 }
 @media (max-width:420px){
   .stage{height:470px}
@@ -129,7 +142,7 @@ footer a{text-decoration:none}
 <article lang="de" data-lang="de" data-title="Tilla – Gemeinsame Ausgaben im Blick">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Bald im App Store · iPhone</span>
+<span class="pill">Bald im App Store · iPhone und iPhone Duo</span>
 <h1>Gemeinsame Ausgaben im Blick</h1>
 <p class="lead">Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: Ihr tragt ein, was ihr ausgebt, und seht jederzeit, wie viel von euren Einnahmen diesen Monat noch übrig ist – ohne Kategorien, Budgets oder Tabellen.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Jetzt die Beta testen</a><a class="btn ghost" href="#de-features">Funktionen ansehen</a></div>
@@ -161,11 +174,13 @@ footer a{text-decoration:none}
 <span class="num">04</span><h3>Gemeinsam über iCloud</h3><p>Ladet alle, mit denen ihr zusammenwohnt, per Nachricht ein – Partnerin oder Partner, Familie oder WG. Alle sehen sofort dasselbe, nichts wird doppelt eingetragen. Kein neues Konto, kein Passwort – Tilla nutzt eure Apple-ID.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/de/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla mit Face ID gesperrt"></div>
+<div class="phone"><img src="screens/de/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistik des Jahres: Ausgaben und Einnahmen Monat für Monat"></div>
 <div class="feature-text">
-<span class="num">05</span><h3>Privat. Kein Server, kein Tracking.</h3><p>Eure Daten liegen nur auf euren Geräten und in eurem iCloud. Es gibt keinen Tilla-Server, keine Werbung und kein Tracking. Auf Wunsch schützt Face ID oder Touch ID die App.</p>
+<span class="num">05</span><h3>Das ganze Jahr im Blick</h3><p>Die Jahresansicht zeigt Monat für Monat, was ihr ausgegeben habt und was reingekommen ist. So seht ihr auf einen Blick, welche Monate eng waren und was am Ende übrig bleibt.</p>
 </div></div>
 </section>
+<section class="privacy wrap"><h2 class="section-title">Privat. Kein Server, kein Tracking.</h2><p>Eure Daten liegen nur auf euren Geräten und in eurem iCloud. Es gibt keinen Tilla-Server, keine Werbung und kein Tracking. Auf Wunsch schützt Face ID oder Touch ID die App.</p></section>
+<section class="duo wrap"><span class="pill">iPhone Duo</span><h2 class="section-title">Aufgeklappt noch mehr im Blick</h2><p>Auf dem iPhone Duo nutzt Tilla beide Hälften des Displays: links der Monat, rechts eure Einträge. Neue Ausgaben öffnen sich daneben, der Monat bleibt sichtbar.</p><div class="duo-devices"><div class="fold"><img src="screens/de/duo/01.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Tilla auf dem iPhone Duo: links der Monat, rechts die Einträge"></div><div class="fold"><img src="screens/de/duo/02.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Neue Ausgabe in der rechten Hälfte, der Monat bleibt links sichtbar"></div></div></section>
 <section class="also wrap"><h2 class="section-title">Außerdem</h2><div class="grid">
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri und Kurzbefehle</h3><p>Ausgaben per Sprache eintragen und fragen, wie viel ihr diesen Monat ausgegeben habt.</p></div>
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Tägliche Erinnerung</h3><p>Falls ihr etwas vergessen habt.</p></div>
@@ -183,7 +198,7 @@ footer a{text-decoration:none}
 <article lang="en" data-lang="en" data-title="Tilla – Shared spending at a glance">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Coming soon to the App Store · iPhone</span>
+<span class="pill">Coming soon to the App Store · iPhone and iPhone Duo</span>
 <h1>Shared spending at a glance</h1>
 <p class="lead">The shared household expense book for couples, families and flatmates: you log what you spend and always see how much of your income is left this month – no categories, budgets or spreadsheets.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Try the beta now</a><a class="btn ghost" href="#en-features">See the features</a></div>
@@ -215,11 +230,13 @@ footer a{text-decoration:none}
 <span class="num">04</span><h3>Together over iCloud</h3><p>Invite the people you live with by message – your partner, family or flatmates. Everyone sees the same right away, nothing is entered twice. No new account, no password – Tilla uses your Apple ID.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/en/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla locked with Face ID"></div>
+<div class="phone"><img src="screens/en/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="The year’s statistics: spending and income month by month"></div>
 <div class="feature-text">
-<span class="num">05</span><h3>Private. No server, no tracking.</h3><p>Your data stays on your devices and in your iCloud. There is no Tilla server, no ads and no tracking. Face ID or Touch ID can lock the app if you like.</p>
+<span class="num">05</span><h3>The whole year at a glance</h3><p>The year view shows what you spent and what came in, month by month. So you can see at a glance which months were tight and what’s left at the end.</p>
 </div></div>
 </section>
+<section class="privacy wrap"><h2 class="section-title">Private. No server, no tracking.</h2><p>Your data stays on your devices and in your iCloud. There is no Tilla server, no ads and no tracking. Face ID or Touch ID can lock the app if you like.</p></section>
+<section class="duo wrap"><span class="pill">iPhone Duo</span><h2 class="section-title">Unfold for even more at a glance</h2><p>On iPhone Duo, Tilla uses both halves of the display: your month on the left, your entries on the right. New expenses open alongside, so the month stays in view.</p><div class="duo-devices"><div class="fold"><img src="screens/en/duo/01.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Tilla on iPhone Duo: the month on the left, the entries on the right"></div><div class="fold"><img src="screens/en/duo/02.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="A new expense in the right half, with the month still visible on the left"></div></div></section>
 <section class="also wrap"><h2 class="section-title">Also</h2><div class="grid">
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri and Shortcuts</h3><p>Log expenses by voice and ask how much you’ve spent this month.</p></div>
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Daily reminder</h3><p>In case you forgot something.</p></div>
@@ -237,7 +254,7 @@ footer a{text-decoration:none}
 <article lang="es" data-lang="es" data-title="Tilla – Gastos compartidos a la vista">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Pronto en el App Store · iPhone</span>
+<span class="pill">Pronto en el App Store · iPhone y iPhone Duo</span>
 <h1>Gastos compartidos a la vista</h1>
 <p class="lead">El libro de gastos compartido del hogar, para parejas, familias y pisos compartidos: apuntáis lo que gastáis y veis en todo momento cuánto queda de vuestros ingresos este mes, sin categorías, presupuestos ni hojas de cálculo.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prueba la beta ahora</a><a class="btn ghost" href="#es-features">Ver funciones</a></div>
@@ -269,11 +286,13 @@ footer a{text-decoration:none}
 <span class="num">04</span><h3>Juntos a través de iCloud</h3><p>Invitad con un mensaje a quienes vivís juntos: pareja, familia o compañeros de piso. Todos veis lo mismo al momento y nada se apunta dos veces. Sin cuenta nueva ni contraseña: Tilla usa vuestro Apple ID.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/es/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla bloqueada con Face ID"></div>
+<div class="phone"><img src="screens/es/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Estadísticas del año: gastos e ingresos mes a mes"></div>
 <div class="feature-text">
-<span class="num">05</span><h3>Privado. Sin servidor ni rastreo.</h3><p>Vuestros datos están solo en vuestros dispositivos y en vuestro iCloud. No hay servidor de Tilla, ni anuncios, ni rastreo. Si queréis, Face ID o Touch ID protegen la app.</p>
+<span class="num">05</span><h3>Todo el año de un vistazo</h3><p>La vista anual muestra, mes a mes, lo que habéis gastado y lo que ha entrado. Así veis de un vistazo qué meses fueron justos y lo que queda al final.</p>
 </div></div>
 </section>
+<section class="privacy wrap"><h2 class="section-title">Privado. Sin servidor ni rastreo.</h2><p>Vuestros datos están solo en vuestros dispositivos y en vuestro iCloud. No hay servidor de Tilla, ni anuncios, ni rastreo. Si queréis, Face ID o Touch ID protegen la app.</p></section>
+<section class="duo wrap"><span class="pill">iPhone Duo</span><h2 class="section-title">Al abrirlo, aún más de un vistazo</h2><p>En el iPhone Duo, Tilla aprovecha las dos mitades de la pantalla: el mes a la izquierda y vuestras entradas a la derecha. Los gastos nuevos se abren al lado, y el mes sigue a la vista.</p><div class="duo-devices"><div class="fold"><img src="screens/es/duo/01.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Tilla en el iPhone Duo: el mes a la izquierda y las entradas a la derecha"></div><div class="fold"><img src="screens/es/duo/02.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Un gasto nuevo en la mitad derecha, con el mes visible a la izquierda"></div></div></section>
 <section class="also wrap"><h2 class="section-title">Y además</h2><div class="grid">
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri y Atajos</h3><p>Apuntad gastos con la voz y preguntad cuánto lleváis gastado este mes.</p></div>
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Recordatorio diario</h3><p>Por si se os ha olvidado algo.</p></div>
@@ -291,7 +310,7 @@ footer a{text-decoration:none}
 <article lang="fr" data-lang="fr" data-title="Tilla – Vos dépenses communes en clair">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Bientôt sur l’App Store · iPhone</span>
+<span class="pill">Bientôt sur l’App Store · iPhone et iPhone Duo</span>
 <h1>Vos dépenses communes en clair</h1>
 <p class="lead">Le carnet de dépenses du foyer, pensé pour les couples, les familles et les colocations : vous notez ce que vous dépensez et voyez à tout moment ce qu’il reste de vos revenus ce mois-ci – sans catégories, budgets ni tableurs.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Essayer la bêta</a><a class="btn ghost" href="#fr-features">Voir les fonctions</a></div>
@@ -323,11 +342,13 @@ footer a{text-decoration:none}
 <span class="num">04</span><h3>Ensemble via iCloud</h3><p>Invitez par message les personnes avec qui vous vivez : partenaire, famille ou colocataires. Tout le monde voit la même chose aussitôt, rien n’est saisi deux fois. Pas de nouveau compte, pas de mot de passe : Tilla utilise votre identifiant Apple.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/fr/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla verrouillée avec Face ID"></div>
+<div class="phone"><img src="screens/fr/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiques de l’année : dépenses et revenus mois par mois"></div>
 <div class="feature-text">
-<span class="num">05</span><h3>Privé. Sans serveur ni pistage.</h3><p>Vos données restent sur vos appareils et dans votre iCloud. Pas de serveur Tilla, pas de publicité, pas de pistage. Si vous le souhaitez, Face ID ou Touch ID protège l’app.</p>
+<span class="num">05</span><h3>Toute l’année en un coup d’œil</h3><p>La vue annuelle montre, mois par mois, ce que vous avez dépensé et ce qui est rentré. Vous voyez d’un coup d’œil quels mois ont été serrés et ce qu’il reste à la fin.</p>
 </div></div>
 </section>
+<section class="privacy wrap"><h2 class="section-title">Privé. Sans serveur ni pistage.</h2><p>Vos données restent sur vos appareils et dans votre iCloud. Pas de serveur Tilla, pas de publicité, pas de pistage. Si vous le souhaitez, Face ID ou Touch ID protège l’app.</p></section>
+<section class="duo wrap"><span class="pill">iPhone Duo</span><h2 class="section-title">Dépliez, et voyez encore plus</h2><p>Sur l’iPhone Duo, Tilla utilise les deux moitiés de l’écran : le mois à gauche, vos entrées à droite. Les nouvelles dépenses s’ouvrent à côté, et le mois reste visible.</p><div class="duo-devices"><div class="fold"><img src="screens/fr/duo/01.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Tilla sur l’iPhone Duo : le mois à gauche, les entrées à droite"></div><div class="fold"><img src="screens/fr/duo/02.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Une nouvelle dépense dans la moitié droite, le mois restant visible à gauche"></div></div></section>
 <section class="also wrap"><h2 class="section-title">Et aussi</h2><div class="grid">
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri et Raccourcis</h3><p>Saisissez une dépense à la voix et demandez combien vous avez dépensé ce mois-ci.</p></div>
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Rappel quotidien</h3><p>Au cas où vous auriez oublié quelque chose.</p></div>
@@ -345,7 +366,7 @@ footer a{text-decoration:none}
 <article lang="it" data-lang="it" data-title="Tilla – Spese comuni a colpo d’occhio">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Presto sull’App Store · iPhone</span>
+<span class="pill">Presto sull’App Store · iPhone e iPhone Duo</span>
 <h1>Spese comuni a colpo d’occhio</h1>
 <p class="lead">Il quaderno delle spese di casa pensato per coppie, famiglie e coinquilini: annotate quello che spendete e vedete in ogni momento quanto rimane delle vostre entrate questo mese – senza categorie, budget o fogli di calcolo.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prova subito la beta</a><a class="btn ghost" href="#it-features">Scopri le funzioni</a></div>
@@ -377,11 +398,13 @@ footer a{text-decoration:none}
 <span class="num">04</span><h3>Insieme tramite iCloud</h3><p>Invitate con un messaggio le persone con cui vivete: partner, famiglia o coinquilini. Tutti vedono subito le stesse cose e niente va inserito due volte. Nessun nuovo account, nessuna password: Tilla usa il vostro ID Apple.</p>
 </div></div>
 <div class="feature">
-<div class="phone"><img src="screens/it/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Tilla bloccata con Face ID"></div>
+<div class="phone"><img src="screens/it/06.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiche dell’anno: spese ed entrate mese per mese"></div>
 <div class="feature-text">
-<span class="num">05</span><h3>Privato. Niente server né tracciamento.</h3><p>I vostri dati restano solo sui vostri dispositivi e nel vostro iCloud. Nessun server di Tilla, nessuna pubblicità, nessun tracciamento. Se volete, Face ID o Touch ID proteggono l’app.</p>
+<span class="num">05</span><h3>Tutto l’anno a colpo d’occhio</h3><p>La vista annuale mostra, mese per mese, quanto avete speso e quanto è entrato. Così vedete a colpo d’occhio quali mesi sono stati stretti e cosa resta alla fine.</p>
 </div></div>
 </section>
+<section class="privacy wrap"><h2 class="section-title">Privato. Niente server né tracciamento.</h2><p>I vostri dati restano solo sui vostri dispositivi e nel vostro iCloud. Nessun server di Tilla, nessuna pubblicità, nessun tracciamento. Se volete, Face ID o Touch ID proteggono l’app.</p></section>
+<section class="duo wrap"><span class="pill">iPhone Duo</span><h2 class="section-title">Apritelo e vedete ancora di più</h2><p>Su iPhone Duo, Tilla usa entrambe le metà dello schermo: il mese a sinistra, le vostre voci a destra. Le nuove spese si aprono accanto e il mese resta in vista.</p><div class="duo-devices"><div class="fold"><img src="screens/it/duo/01.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Tilla su iPhone Duo: il mese a sinistra, le voci a destra"></div><div class="fold"><img src="screens/it/duo/02.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Una nuova spesa nella metà destra, con il mese visibile a sinistra"></div></div></section>
 <section class="also wrap"><h2 class="section-title">E inoltre</h2><div class="grid">
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Siri e Comandi Rapidi</h3><p>Registrate le spese a voce e chiedete quanto avete speso questo mese.</p></div>
 <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 21h4"/></svg><h3>Promemoria giornaliero</h3><p>Nel caso abbiate dimenticato qualcosa.</p></div>
