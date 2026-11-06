@@ -60,8 +60,9 @@ h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom
 .phone img{width:100%;border-radius:calc(var(--w)*.135)}
 .phone::after{content:"";position:absolute;left:50%;top:calc(var(--w)*.058);width:calc(var(--w)*.292);height:calc(var(--w)*.086);border-radius:calc(var(--w)*.043);background:#000;transform:translateX(-50%)}
 .stage .phone{position:absolute;z-index:1}
-.stage .front{--w:290px;left:6%;top:0}
-.stage .back{--w:250px;right:0;top:70px;transform:rotate(6deg);opacity:.92}
+.stage .front{--w:200px;left:-12px;top:176px;z-index:2}
+.stage .fold{position:absolute;z-index:0}
+.stage .back{width:490px;right:-36px;top:44px}
 
 .trust{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:96px}
 .trust li{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-weight:600;font-size:16px}
@@ -87,7 +88,7 @@ h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom
 .duo .section-title{margin-bottom:16px}
 .duo>p{font-size:19px;color:var(--sub);max-width:34em;margin:0 auto 48px}
 .duo-devices{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.fold{padding:1.3%;border-radius:32px;background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06) inset}
+.fold{padding:1.3%;border-radius:clamp(20px,6.4%,32px);background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06) inset}
 .fold img{width:100%;border-radius:22px}
 
 .also{padding-top:24px;margin-bottom:96px}
@@ -113,9 +114,9 @@ footer a{text-decoration:none}
   .hero{grid-template-columns:1fr;gap:40px;padding-top:44px;text-align:center}
   .lead{margin:0 auto}
   .actions{justify-content:center}
-  .stage{height:540px;max-width:440px;width:100%;margin:0 auto}
-  .stage .front{--w:250px;left:4%}
-  .stage .back{--w:210px;top:60px}
+  .stage{height:530px;max-width:440px;width:100%;margin:0 auto}
+  .stage .front{--w:180px;left:0;top:130px}
+  .stage .back{width:410px;right:0;top:16px}
   .trust{grid-template-columns:repeat(2,1fr);margin-bottom:72px}
   .feature,.feature:nth-of-type(even){grid-template-columns:1fr;gap:32px;text-align:center;margin-bottom:72px}
   .feature .phone,.feature:nth-of-type(even) .phone{order:0;margin:0 auto;--w:240px}
@@ -125,9 +126,9 @@ footer a{text-decoration:none}
   .duo-devices{grid-template-columns:1fr}
 }
 @media (max-width:420px){
-  .stage{height:470px}
-  .stage .front{--w:220px;left:0}
-  .stage .back{--w:180px;top:50px}
+  .stage{height:430px}
+  .stage .front{--w:150px;left:0;top:96px}
+  .stage .back{width:318px;right:0;top:8px}
   .trust li{font-size:15px;padding:12px}
   .grid{grid-template-columns:1fr}
 }
@@ -147,7 +148,7 @@ footer a{text-decoration:none}
 <p class="lead">Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: Ihr tragt ein, was ihr ausgebt, und seht jederzeit, wie viel von euren Einnahmen diesen Monat noch übrig ist – ohne Kategorien, Budgets oder Tabellen.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Jetzt die Beta testen</a><a class="btn ghost" href="#de-features">Funktionen ansehen</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/de/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft"></div><div class="phone front"><img src="screens/de/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest auf einen Blick"></div></div>
+<div class="stage"><div class="fold back"><img src="screens/de/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft · iPhone Duo"></div><div class="phone front"><img src="screens/de/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest auf einen Blick"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Kein Server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Kein Tracking</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Keine Werbung</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Kein neues Konto</span></li></ul>
 <section class="features wrap" id="de-features">
@@ -203,7 +204,7 @@ footer a{text-decoration:none}
 <p class="lead">The shared household expense book for couples, families and flatmates: you log what you spend and always see how much of your income is left this month – no categories, budgets or spreadsheets.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Try the beta now</a><a class="btn ghost" href="#en-features">See the features</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/en/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistics by month, year and shop"></div><div class="phone front"><img src="screens/en/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="See what’s left – income, spending and the rest in one view"></div></div>
+<div class="stage"><div class="fold back"><img src="screens/en/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistics by month, year and shop · iPhone Duo"></div><div class="phone front"><img src="screens/en/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="See what’s left – income, spending and the rest in one view"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>No server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>No tracking</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>No ads</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>No new account</span></li></ul>
 <section class="features wrap" id="en-features">
@@ -259,7 +260,7 @@ footer a{text-decoration:none}
 <p class="lead">El libro de gastos compartido del hogar, para parejas, familias y pisos compartidos: apuntáis lo que gastáis y veis en todo momento cuánto queda de vuestros ingresos este mes, sin categorías, presupuestos ni hojas de cálculo.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prueba la beta ahora</a><a class="btn ghost" href="#es-features">Ver funciones</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/es/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio"></div><div class="phone front"><img src="screens/es/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Ved lo que queda: ingresos, gastos y el resto de un vistazo"></div></div>
+<div class="stage"><div class="fold back"><img src="screens/es/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio · iPhone Duo"></div><div class="phone front"><img src="screens/es/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Ved lo que queda: ingresos, gastos y el resto de un vistazo"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Sin servidor</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Sin rastreo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Sin anuncios</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Sin cuenta nueva</span></li></ul>
 <section class="features wrap" id="es-features">
@@ -315,7 +316,7 @@ footer a{text-decoration:none}
 <p class="lead">Le carnet de dépenses du foyer, pensé pour les couples, les familles et les colocations : vous notez ce que vous dépensez et voyez à tout moment ce qu’il reste de vos revenus ce mois-ci – sans catégories, budgets ni tableurs.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Essayer la bêta</a><a class="btn ghost" href="#fr-features">Voir les fonctions</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/fr/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin"></div><div class="phone front"><img src="screens/fr/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Voyez ce qu’il reste : revenus, dépenses et reste d’un coup d’œil"></div></div>
+<div class="stage"><div class="fold back"><img src="screens/fr/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin · iPhone Duo"></div><div class="phone front"><img src="screens/fr/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Voyez ce qu’il reste : revenus, dépenses et reste d’un coup d’œil"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Pas de serveur</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Pas de pistage</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Pas de publicité</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Pas de nouveau compte</span></li></ul>
 <section class="features wrap" id="fr-features">
@@ -371,7 +372,7 @@ footer a{text-decoration:none}
 <p class="lead">Il quaderno delle spese di casa pensato per coppie, famiglie e coinquilini: annotate quello che spendete e vedete in ogni momento quanto rimane delle vostre entrate questo mese – senza categorie, budget o fogli di calcolo.</p>
 <div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prova subito la beta</a><a class="btn ghost" href="#it-features">Scopri le funzioni</a></div>
 </div>
-<div class="stage"><div class="phone back"><img src="screens/it/03.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio"></div><div class="phone front"><img src="screens/it/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Guardate quanto rimane: entrate, spese e il resto a colpo d’occhio"></div></div>
+<div class="stage"><div class="fold back"><img src="screens/it/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio · iPhone Duo"></div><div class="phone front"><img src="screens/it/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Guardate quanto rimane: entrate, spese e il resto a colpo d’occhio"></div></div>
 </section>
 <ul class="trust wrap"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 9h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2Z"/><path d="M3 3l18 18"/></svg><span>Nessun server</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg><span>Nessun tracciamento</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg><span>Nessuna pubblicità</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><span>Nessun nuovo account</span></li></ul>
 <section class="features wrap" id="it-features">
