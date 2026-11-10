@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tilla – Gemeinsame Ausgaben im Blick</title>
+<meta name="apple-itunes-app" content="app-id=6825910160">
 <meta name="description" content="Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: eintragen, was ihr ausgebt, und sehen, was diesen Monat noch übrig ist – über iCloud, ohne Konto und ohne Tracking.">
 <link rel="canonical" href="https://simonnumbertwo.github.io/tilla/">
 <meta property="og:type" content="website">
@@ -101,10 +102,15 @@ h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom
 
 .band{margin-bottom:56px}
 .band-card{text-align:center;background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:32px;padding:56px 24px}
-.band-card img{width:104px;height:104px;border-radius:24px;margin:0 auto 24px;box-shadow:0 12px 32px var(--glow)}
+.band-card>img{width:104px;height:104px;border-radius:24px;margin:0 auto 24px;box-shadow:0 12px 32px var(--glow)}
 .band-card h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:10px}
 .band-card p{color:var(--sub)}
-.band-card .beta{margin-top:24px}.band-card .hint{font-size:15px;margin-top:10px}
+.store{display:inline-block;line-height:0;border-radius:10px}
+.store img{height:52px;width:auto}
+.band-card .get{margin-top:24px}
+.band-card .preview{max-width:32em;margin:40px auto 0;padding-top:36px;border-top:1px solid var(--line)}
+.band-card .preview h3{font-size:21px;font-weight:700;margin-bottom:8px}
+.band-card .beta{margin-top:20px}.band-card .btn.ghost{background:var(--card);border:1px solid var(--line)}
 .band-card .q{margin-top:20px;color:var(--text);font-weight:500}
 
 footer{padding-top:8px;padding-bottom:48px;text-align:center;font-size:15px;color:var(--sub)}
@@ -143,10 +149,10 @@ footer a{text-decoration:none}
 <article lang="de" data-lang="de" data-title="Tilla – Gemeinsame Ausgaben im Blick">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Bald im App Store · iPhone und iPhone Duo</span>
+<span class="pill">Jetzt im App Store · iPhone und iPhone Duo</span>
 <h1>Gemeinsame Ausgaben im Blick</h1>
 <p class="lead">Das gemeinsame Haushaltsbuch für Paare, Familien und WGs: Ihr tragt ein, was ihr ausgebt, und seht jederzeit, wie viel von euren Einnahmen diesen Monat noch übrig ist – ohne Kategorien, Budgets oder Tabellen.</p>
-<div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Jetzt die Beta testen</a><a class="btn ghost" href="#de-features">Funktionen ansehen</a></div>
+<div class="actions"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/de-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/de-black.svg" width="120" height="40" alt="Laden im App Store"></picture></a><a class="btn ghost" href="#de-features">Funktionen ansehen</a></div>
 </div>
 <div class="stage"><div class="fold back"><img src="screens/de/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistik nach Monat, Jahr und Geschäft · iPhone Duo"></div><div class="phone front"><img src="screens/de/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Seht sofort, was übrig ist – Einnahmen, Ausgaben und der Rest auf einen Blick"></div></div>
 </section>
@@ -190,8 +196,9 @@ footer a{text-decoration:none}
 </div></section>
 <section class="band wrap"><div class="band-card">
 <img src="icon.png" width="256" height="256" alt="App-Symbol von Tilla">
-<h2>Bald im App Store</h2><p>Tilla braucht iOS 18 oder neuer und ein iCloud-Konto.</p>
-<p class="beta"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Jetzt die Beta testen</a></p><p class="hint">Über Apples TestFlight-App, solange Plätze frei sind.</p>
+<h2>Jetzt im App Store</h2><p>Tilla braucht iOS 18 oder neuer und ein iCloud-Konto.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/de-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/de-black.svg" width="120" height="40" alt="Laden im App Store"></picture></a></p>
+<div class="preview"><h3>Neues vorab ausprobieren</h3><p>In der Beta bekommt ihr neue Funktionen, bevor sie im App Store erscheinen. Sie läuft über Apples TestFlight-App und kann noch Fehler enthalten. Zurück zur App-Store-Version geht jederzeit, eure Daten bleiben in iCloud.</p><p class="beta"><a class="btn ghost" href="https://testflight.apple.com/join/KK5AnQhK">Beta beitreten</a></p></div>
 <p class="q">Fragen oder Feedback? <a href="support/#de">Zum Support</a></p>
 </div></section>
 <footer class="wrap"><a href="support/#de">Support</a> · <a href="privacy/#de">Datenschutz</a> · © 2026 <a href="../#de">Simon Blum</a></footer>
@@ -199,10 +206,10 @@ footer a{text-decoration:none}
 <article lang="en" data-lang="en" data-title="Tilla – Shared spending at a glance">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Coming soon to the App Store · iPhone and iPhone Duo</span>
+<span class="pill">Now on the App Store · iPhone and iPhone Duo</span>
 <h1>Shared spending at a glance</h1>
 <p class="lead">The shared household expense book for couples, families and flatmates: you log what you spend and always see how much of your income is left this month – no categories, budgets or spreadsheets.</p>
-<div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Try the beta now</a><a class="btn ghost" href="#en-features">See the features</a></div>
+<div class="actions"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/en-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/en-black.svg" width="120" height="40" alt="Download on the App Store"></picture></a><a class="btn ghost" href="#en-features">See the features</a></div>
 </div>
 <div class="stage"><div class="fold back"><img src="screens/en/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistics by month, year and shop · iPhone Duo"></div><div class="phone front"><img src="screens/en/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="See what’s left – income, spending and the rest in one view"></div></div>
 </section>
@@ -246,8 +253,9 @@ footer a{text-decoration:none}
 </div></section>
 <section class="band wrap"><div class="band-card">
 <img src="icon.png" width="256" height="256" alt="Tilla app icon">
-<h2>Coming soon to the App Store</h2><p>Tilla requires iOS 18 or later and an iCloud account.</p>
-<p class="beta"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Try the beta now</a></p><p class="hint">Through Apple’s TestFlight app, while places last.</p>
+<h2>Now on the App Store</h2><p>Tilla requires iOS 18 or later and an iCloud account.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/en-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/en-black.svg" width="120" height="40" alt="Download on the App Store"></picture></a></p>
+<div class="preview"><h3>Try what’s next</h3><p>The beta gets new features before they reach the App Store. It runs through Apple’s TestFlight app and may still have bugs. You can switch back to the App Store version at any time – your data stays in iCloud.</p><p class="beta"><a class="btn ghost" href="https://testflight.apple.com/join/KK5AnQhK">Join the beta</a></p></div>
 <p class="q">Questions or feedback? <a href="support/#en">Get support</a></p>
 </div></section>
 <footer class="wrap"><a href="support/#en">Support</a> · <a href="privacy/#en">Privacy</a> · © 2026 <a href="../#en">Simon Blum</a></footer>
@@ -255,10 +263,10 @@ footer a{text-decoration:none}
 <article lang="es" data-lang="es" data-title="Tilla – Gastos compartidos a la vista">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Pronto en el App Store · iPhone y iPhone Duo</span>
+<span class="pill">Ya en el App Store · iPhone y iPhone Duo</span>
 <h1>Gastos compartidos a la vista</h1>
 <p class="lead">El libro de gastos compartido del hogar, para parejas, familias y pisos compartidos: apuntáis lo que gastáis y veis en todo momento cuánto queda de vuestros ingresos este mes, sin categorías, presupuestos ni hojas de cálculo.</p>
-<div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prueba la beta ahora</a><a class="btn ghost" href="#es-features">Ver funciones</a></div>
+<div class="actions"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/es-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/es-black.svg" width="120" height="40" alt="Descárgalo en el App Store"></picture></a><a class="btn ghost" href="#es-features">Ver funciones</a></div>
 </div>
 <div class="stage"><div class="fold back"><img src="screens/es/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Estadísticas por mes, año y comercio · iPhone Duo"></div><div class="phone front"><img src="screens/es/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Ved lo que queda: ingresos, gastos y el resto de un vistazo"></div></div>
 </section>
@@ -302,8 +310,9 @@ footer a{text-decoration:none}
 </div></section>
 <section class="band wrap"><div class="band-card">
 <img src="icon.png" width="256" height="256" alt="Icono de la app Tilla">
-<h2>Pronto en el App Store</h2><p>Tilla requiere iOS 18 o posterior y una cuenta de iCloud.</p>
-<p class="beta"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prueba la beta ahora</a></p><p class="hint">Con la app TestFlight de Apple, mientras queden plazas.</p>
+<h2>Ya en el App Store</h2><p>Tilla requiere iOS 18 o posterior y una cuenta de iCloud.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/es-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/es-black.svg" width="120" height="40" alt="Descárgalo en el App Store"></picture></a></p>
+<div class="preview"><h3>Probad lo nuevo antes que nadie</h3><p>En la beta tenéis las funciones nuevas antes de que lleguen al App Store. Funciona con la app TestFlight de Apple y aún puede tener errores. Podéis volver a la versión del App Store cuando queráis: vuestros datos siguen en iCloud.</p><p class="beta"><a class="btn ghost" href="https://testflight.apple.com/join/KK5AnQhK">Unirse a la beta</a></p></div>
 <p class="q">¿Preguntas o comentarios? <a href="support/#es">Ir al soporte</a></p>
 </div></section>
 <footer class="wrap"><a href="support/#es">Soporte</a> · <a href="privacy/#es">Privacidad</a> · © 2026 <a href="../#es">Simon Blum</a></footer>
@@ -311,10 +320,10 @@ footer a{text-decoration:none}
 <article lang="fr" data-lang="fr" data-title="Tilla – Vos dépenses communes en clair">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Bientôt sur l’App Store · iPhone et iPhone Duo</span>
+<span class="pill">Disponible sur l’App Store · iPhone et iPhone Duo</span>
 <h1>Vos dépenses communes en clair</h1>
 <p class="lead">Le carnet de dépenses du foyer, pensé pour les couples, les familles et les colocations : vous notez ce que vous dépensez et voyez à tout moment ce qu’il reste de vos revenus ce mois-ci – sans catégories, budgets ni tableurs.</p>
-<div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Essayer la bêta</a><a class="btn ghost" href="#fr-features">Voir les fonctions</a></div>
+<div class="actions"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/fr-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/fr-black.svg" width="127" height="40" alt="Télécharger dans l’App Store"></picture></a><a class="btn ghost" href="#fr-features">Voir les fonctions</a></div>
 </div>
 <div class="stage"><div class="fold back"><img src="screens/fr/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistiques par mois, par an et par magasin · iPhone Duo"></div><div class="phone front"><img src="screens/fr/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Voyez ce qu’il reste : revenus, dépenses et reste d’un coup d’œil"></div></div>
 </section>
@@ -358,8 +367,9 @@ footer a{text-decoration:none}
 </div></section>
 <section class="band wrap"><div class="band-card">
 <img src="icon.png" width="256" height="256" alt="Icône de l’app Tilla">
-<h2>Bientôt sur l’App Store</h2><p>Tilla nécessite iOS 18 ou version ultérieure et un compte iCloud.</p>
-<p class="beta"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Essayer la bêta</a></p><p class="hint">Avec l’app TestFlight d’Apple, dans la limite des places disponibles.</p>
+<h2>Disponible sur l’App Store</h2><p>Tilla nécessite iOS 18 ou version ultérieure et un compte iCloud.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/fr-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/fr-black.svg" width="127" height="40" alt="Télécharger dans l’App Store"></picture></a></p>
+<div class="preview"><h3>Les nouveautés en avant-première</h3><p>Avec la bêta, vous profitez des nouvelles fonctions avant leur arrivée sur l’App Store. Elle passe par l’app TestFlight d’Apple et peut encore contenir des bugs. Vous pouvez revenir à la version de l’App Store à tout moment&nbsp;: vos données restent dans iCloud.</p><p class="beta"><a class="btn ghost" href="https://testflight.apple.com/join/KK5AnQhK">Rejoindre la bêta</a></p></div>
 <p class="q">Des questions ou un retour ? <a href="support/#fr">Assistance</a></p>
 </div></section>
 <footer class="wrap"><a href="support/#fr">Assistance</a> · <a href="privacy/#fr">Confidentialité</a> · © 2026 <a href="../#fr">Simon Blum</a></footer>
@@ -367,10 +377,10 @@ footer a{text-decoration:none}
 <article lang="it" data-lang="it" data-title="Tilla – Spese comuni a colpo d’occhio">
 <section class="hero wrap">
 <div class="hero-text">
-<span class="pill">Presto sull’App Store · iPhone e iPhone Duo</span>
+<span class="pill">Ora sull’App Store · iPhone e iPhone Duo</span>
 <h1>Spese comuni a colpo d’occhio</h1>
 <p class="lead">Il quaderno delle spese di casa pensato per coppie, famiglie e coinquilini: annotate quello che spendete e vedete in ogni momento quanto rimane delle vostre entrate questo mese – senza categorie, budget o fogli di calcolo.</p>
-<div class="actions"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prova subito la beta</a><a class="btn ghost" href="#it-features">Scopri le funzioni</a></div>
+<div class="actions"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/it-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/it-black.svg" width="120" height="40" alt="Scarica su App Store"></picture></a><a class="btn ghost" href="#it-features">Scopri le funzioni</a></div>
 </div>
 <div class="stage"><div class="fold back"><img src="screens/it/duo/03.jpg" width="2853" height="2007" loading="lazy" decoding="async" alt="Statistiche per mese, anno e negozio · iPhone Duo"></div><div class="phone front"><img src="screens/it/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Guardate quanto rimane: entrate, spese e il resto a colpo d’occhio"></div></div>
 </section>
@@ -414,8 +424,9 @@ footer a{text-decoration:none}
 </div></section>
 <section class="band wrap"><div class="band-card">
 <img src="icon.png" width="256" height="256" alt="Icona dell’app Tilla">
-<h2>Presto sull’App Store</h2><p>Tilla richiede iOS 18 o versioni successive e un account iCloud.</p>
-<p class="beta"><a class="btn" href="https://testflight.apple.com/join/KK5AnQhK">Prova subito la beta</a></p><p class="hint">Con l’app TestFlight di Apple, finché ci sono posti.</p>
+<h2>Ora sull’App Store</h2><p>Tilla richiede iOS 18 o versioni successive e un account iCloud.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="badges/it-white.svg" media="(prefers-color-scheme: dark)"><img src="badges/it-black.svg" width="120" height="40" alt="Scarica su App Store"></picture></a></p>
+<div class="preview"><h3>Provate le novità in anteprima</h3><p>Con la beta ricevete le nuove funzioni prima che arrivino sull’App Store. Funziona con l’app TestFlight di Apple e può ancora contenere errori. Potete tornare alla versione dell’App Store in qualsiasi momento: i vostri dati restano su iCloud.</p><p class="beta"><a class="btn ghost" href="https://testflight.apple.com/join/KK5AnQhK">Partecipa alla beta</a></p></div>
 <p class="q">Domande o feedback? <a href="support/#it">Assistenza</a></p>
 </div></section>
 <footer class="wrap"><a href="support/#it">Assistenza</a> · <a href="privacy/#it">Privacy</a> · © 2026 <a href="../#it">Simon Blum</a></footer>
