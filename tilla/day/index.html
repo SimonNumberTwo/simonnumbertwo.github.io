@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Tag mit Tilla – vom Bäcker bis zum Sofa</title>
+<meta name="description" content="Vom Bäcker am Morgen bis zum Sofa am Abend: wie ein Haushalt Tilla auf Apple Watch, iPhone, Mac und iPad nutzt – und alle immer dasselbe sehen.">
+<link rel="canonical" href="https://simonnumbertwo.github.io/tilla/day/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tilla">
+<meta property="og:url" content="https://simonnumbertwo.github.io/tilla/day/">
+<meta property="og:title" content="Ein Tag mit Tilla – vom Bäcker bis zum Sofa">
+<meta property="og:image" content="https://simonnumbertwo.github.io/tilla/share.jpg">
+<meta name="theme-color" content="#FBFBFD" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<style>
+:root{color-scheme:light dark;--bg:#FBFBFD;--bg2:#F2F2F7;--card:#FFFFFF;--text:#1D1D1F;--sub:#5E5E66;--acc:#0062CC;--fill:#007AFF;--glow:rgba(0,122,255,.18);--line:rgba(60,60,67,.14);--bar:rgba(251,251,253,.8);--bezel:#1D1D1F;
+--i-sky:#E8F1FF;--i-a:#2F8CFF;--i-dark:#2C3E57;--i-wall:#FFF3E2;--i-paper:#FFFFFF;--i-glass:#CFE3FF;--i-warm:#FFB340;--i-bread:#E3A15B;--i-sun:#FFD25E;--i-g:#34C759;--i-red:#FF6B5E;--i-ground:#D6E6FB;--i-wood:#C99A6B;--i-night:#2C3E57}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--bg2:#0D0D0F;--card:#1C1C1E;--text:#F5F5F7;--sub:#A1A1A8;--acc:#4DA3FF;--fill:#0A84FF;--glow:rgba(10,132,255,.28);--line:rgba(84,84,88,.5);--bar:rgba(0,0,0,.72);--bezel:#3A3A3C;
+--i-sky:#101C2E;--i-a:#2F86F0;--i-dark:#7E92AF;--i-wall:#22324A;--i-paper:#E9EEF6;--i-glass:#2E4D78;--i-warm:#E89A2C;--i-bread:#C7864A;--i-sun:#F5C84C;--i-g:#30B350;--i-red:#E85C50;--i-ground:#17263B;--i-wood:#8A6646;--i-night:#060D18}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--acc)}
+img{display:block;max-width:100%;height:auto}
+h1,h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;letter-spacing:-.02em;margin:0}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+[hidden]{display:none!important}
+.bar{position:sticky;top:0;z-index:10;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.langs{display:flex;gap:2px;font-size:14px}
+.langs a{text-decoration:none;padding:5px 9px;border-radius:8px;color:var(--sub);font-weight:500}
+.langs a[aria-current=page]{background:var(--bg2);color:var(--text);font-weight:600}
+
+.intro{text-align:center;padding-top:80px;padding-bottom:72px}
+h1{font-size:clamp(40px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom:20px}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--sub);max-width:34em;margin:0 auto}
+
+/* The day: a line through the moments, the scene and the device on one side, what happens on the other. */
+.day{position:relative;margin-bottom:104px}
+.moment{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;margin-bottom:112px}
+.moment:nth-child(even) .scene{order:2}
+.scene{position:relative;aspect-ratio:4/3;border-radius:32px;background:var(--i-sky)}
+.scene svg{position:absolute;inset:0;width:100%;height:100%;border-radius:32px}
+.shot{position:absolute}
+.phone{--w:150px;position:relative;width:var(--w);padding:calc(var(--w)*.032);border-radius:calc(var(--w)*.165);background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06) inset}
+.phone img{width:100%;border-radius:calc(var(--w)*.135)}
+.phone::after{content:"";position:absolute;left:50%;top:calc(var(--w)*.058);width:calc(var(--w)*.292);height:calc(var(--w)*.086);border-radius:calc(var(--w)*.043);background:#000;transform:translateX(-50%)}
+.phone-shot{right:5%;bottom:-14%}
+.watch{right:8%;bottom:-8%}
+.wrist{position:relative;width:132px;padding:10px;border-radius:38px/40px;background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
+.wrist img{width:100%;border-radius:28px/30px}
+.wrist::after{content:"";position:absolute;right:-6px;top:24%;width:7px;height:14%;border-radius:3px;background:var(--bezel)}
+.wide{right:-5%;bottom:-20%;width:58%}
+.tablet{padding:6px;border-radius:18px;background:var(--bezel);box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
+.tablet img{border-radius:12px;width:100%}
+.combo{position:relative}
+.combo .window{width:100%;border-radius:2.2%/3%;box-shadow:0 30px 60px -20px rgba(0,0,0,.4),0 0 0 1px var(--line)}
+.combo .over{position:absolute;right:3%;top:3%;width:29%;filter:drop-shadow(0 10px 20px rgba(0,0,0,.32))}
+.when{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:15px;font-weight:600}
+.when time{background:var(--glow);color:var(--acc);border-radius:999px;padding:4px 12px;font-variant-numeric:tabular-nums}
+.when span{color:var(--sub)}
+.story h2{font-size:clamp(28px,3.6vw,40px);line-height:1.1;font-weight:800;margin-bottom:14px}
+.story p:last-child{font-size:19px;color:var(--sub);max-width:28em}
+
+.band{margin-bottom:56px}
+.band-card{text-align:center;background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:32px;padding:56px 24px}
+.band-card>img{width:104px;height:104px;border-radius:24px;margin:0 auto 24px;box-shadow:0 12px 32px var(--glow)}
+.band-card h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:10px}
+.band-card p{color:var(--sub)}
+.store{display:inline-block;line-height:0;border-radius:10px}
+.store img{height:52px;width:auto}
+.band-card .get{margin-top:24px}
+.band-card .more{margin-top:24px;font-weight:600}
+footer{padding-top:8px;padding-bottom:48px;text-align:center;font-size:15px;color:var(--sub)}
+footer a{text-decoration:none}
+
+@media (max-width:880px){
+  .intro{padding-top:48px;padding-bottom:48px}
+  .moment{grid-template-columns:1fr;gap:72px;margin-bottom:88px}
+  .moment:nth-child(even) .scene{order:0}
+  .scene{max-width:520px;width:100%;margin:0 auto}
+  .story{text-align:center}
+  .when{justify-content:center}
+  .story p:last-child{margin:0 auto}
+  .wide{right:-2%;bottom:-12%;width:58%}
+  .moment{gap:84px}
+}
+@media (max-width:420px){
+  .phone{--w:112px}
+  .wrist{width:100px;padding:8px;border-radius:30px/32px}
+  .wrist img{border-radius:22px/24px}
+  .scene,.scene svg{border-radius:24px}
+  .moment{gap:56px}
+}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap bar-in">
+<a class="brand" href="../"><img src="../icon.png" width="256" height="256" alt="">Tilla</a>
+<nav class="langs" aria-label="Language"><a href="#de" lang="de">DE</a><a href="#en" lang="en">EN</a><a href="#es" lang="es">ES</a><a href="#fr" lang="fr">FR</a><a href="#it" lang="it">IT</a></nav>
+</div></header>
+<main>
+<article lang="de" data-lang="de" data-title="Ein Tag mit Tilla – vom Bäcker bis zum Sofa" hidden>
+<header class="intro wrap"><h1>Ein Tag mit Tilla</h1><p class="lead">Vom Bäcker am Morgen bis zum Sofa am Abend: wie ein Haushalt Tilla auf Apple Watch, iPhone, Mac und iPad nutzt – und alle immer dasselbe sehen.</p></header>
+<div class="day">
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<circle cx="338" cy="58" r="26" fill="var(--i-sun)"/>
+<rect x="40" y="70" width="230" height="200" rx="12" fill="var(--i-wall)"/>
+<rect x="40" y="70" width="230" height="26" rx="12" fill="var(--i-dark)"/>
+<g fill="var(--i-a)"><rect x="28" y="96" width="32" height="34"/><rect x="92" y="96" width="32" height="34"/><rect x="156" y="96" width="32" height="34"/><rect x="220" y="96" width="32" height="34"/></g>
+<g fill="var(--i-paper)"><rect x="60" y="96" width="32" height="34"/><rect x="124" y="96" width="32" height="34"/><rect x="188" y="96" width="32" height="34"/><rect x="252" y="96" width="30" height="34"/></g>
+<g fill="var(--i-a)"><circle cx="44" cy="130" r="16"/><circle cx="108" cy="130" r="16"/><circle cx="172" cy="130" r="16"/><circle cx="236" cy="130" r="16"/></g>
+<g fill="var(--i-paper)"><circle cx="76" cy="130" r="16"/><circle cx="140" cy="130" r="16"/><circle cx="204" cy="130" r="16"/><circle cx="267" cy="130" r="15"/></g>
+<rect x="62" y="166" width="120" height="86" rx="10" fill="var(--i-glass)"/>
+<rect x="72" y="226" width="100" height="8" rx="4" fill="var(--i-dark)" opacity=".35"/>
+<ellipse cx="102" cy="212" rx="24" ry="13" fill="var(--i-warm)"/>
+<path d="M90 208c6-5 18-5 24 0" stroke="var(--i-paper)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M146 222c-14 0-16-22-2-24 9-1 12 8 2 14-10-6-7-15 2-14 14 2 12 24-2 24" stroke="var(--i-warm)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="198" y="166" width="52" height="104" rx="8" fill="var(--i-a)"/>
+<circle cx="238" cy="222" r="4" fill="var(--i-paper)"/>
+<rect x="0" y="270" width="400" height="30" fill="var(--i-ground)"/></svg><div class="shot watch"><div class="wrist"><img src="../screens/de/watch/02.jpg" width="422" height="514" loading="lazy" decoding="async" alt="Brötchen, bar bezahlt"></div></div></div><div class="story"><p class="when"><time>07:45</time><span>Apple Watch</span></p><h2>Brötchen, bar bezahlt</h2><p>Betrag tippen, Bäckerei wählen – eingetragen, bevor das Wechselgeld in der Hand ist. Das iPhone bleibt in der Tasche.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="232" width="400" height="68" fill="var(--i-ground)"/>
+<rect x="30" y="150" width="250" height="90" rx="10" fill="var(--i-wall)"/>
+<rect x="30" y="150" width="250" height="14" rx="7" fill="var(--i-dark)"/>
+<path d="M78 92h58l-8 74h-42z" fill="var(--i-paper)"/>
+<rect x="74" y="84" width="66" height="14" rx="5" fill="var(--i-warm)"/>
+<path d="M136 112c22 0 22 30 0 30" stroke="var(--i-paper)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<g stroke="var(--i-dark)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".45"><path d="M96 70c-8-10 8-16 0-28"/><path d="M118 70c-8-10 8-16 0-28"/></g>
+<rect x="176" y="62" width="70" height="104" rx="14" fill="var(--i-dark)"/>
+<rect x="183" y="70" width="56" height="88" rx="9" fill="var(--i-a)"/>
+<g stroke="var(--i-a)" stroke-width="7" fill="none" stroke-linecap="round"><path d="M266 92c10 10 10 30 0 40"/><path d="M284 80c18 18 18 46 0 64"/><path d="M302 68c26 26 26 62 0 88"/></g>
+<circle cx="211" cy="114" r="15" fill="var(--i-paper)"/>
+<path d="M204 114l5 5 10-11" stroke="var(--i-g)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/de/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Mit Apple Pay bezahlt"></div></div></div><div class="story"><p class="when"><time>09:20</time><span>iPhone · Apple Pay</span></p><h2>Mit Apple Pay bezahlt</h2><p>Später zahlt jemand anderes aus dem Haushalt beim Bäcker mit dem iPhone. Tilla schlägt die Ausgabe vor – ein Tipp auf „Hinzufügen“ genügt.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="250" width="400" height="50" fill="var(--i-ground)"/>
+<g transform="rotate(-8 300 110)"><path d="M262 40h86v150l-11-8-11 8-11-8-11 8-11-8-11 8-10-8z" fill="var(--i-paper)"/>
+<g fill="var(--i-dark)" opacity=".3"><rect x="276" y="58" width="58" height="6" rx="3"/><rect x="276" y="76" width="40" height="6" rx="3"/><rect x="276" y="94" width="50" height="6" rx="3"/><rect x="276" y="112" width="34" height="6" rx="3"/></g>
+<rect x="276" y="140" width="58" height="10" rx="5" fill="var(--i-a)"/></g>
+<path d="M30 92h34l30 110h130l24-84H82" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 202h124" stroke="var(--i-dark)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="112" cy="236" r="15" fill="var(--i-dark)"/><circle cx="208" cy="236" r="15" fill="var(--i-dark)"/>
+<rect x="112" y="118" width="64" height="78" rx="8" fill="var(--i-warm)"/>
+<path d="M126 120c0-22 36-22 36 0" stroke="var(--i-warm)" stroke-width="6" fill="none"/>
+<rect x="178" y="56" width="16" height="104" rx="8" transform="rotate(24 186 108)" fill="var(--i-bread)"/>
+<g fill="var(--i-g)"><ellipse cx="104" cy="114" rx="12" ry="24" transform="rotate(-30 104 114)"/><ellipse cx="120" cy="104" rx="10" ry="22" transform="rotate(10 120 104)"/></g>
+<circle cx="214" cy="160" r="16" fill="var(--i-red)"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/de/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Großeinkauf im Supermarkt"></div></div></div><div class="story"><p class="when"><time>12:30</time><span>iPhone</span></p><h2>Großeinkauf im Supermarkt</h2><p>Kassenbon fotografieren: Summe, Geschäft und Datum stehen drin. Das Foto bleibt bei der Ausgabe – für alle im Haushalt.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="250" y="34" width="110" height="120" rx="10" fill="var(--i-glass)"/>
+<path d="M305 34v120M250 94h110" stroke="var(--i-wall)" stroke-width="6"/>
+<rect x="0" y="212" width="400" height="16" rx="4" fill="var(--i-wood)"/>
+<rect x="24" y="226" width="14" height="74" fill="var(--i-wood)"/><rect x="362" y="226" width="14" height="74" fill="var(--i-wood)"/>
+<rect x="96" y="94" width="150" height="100" rx="10" fill="var(--i-dark)"/>
+<rect x="104" y="102" width="134" height="84" rx="5" fill="var(--i-a)"/>
+<rect x="114" y="112" width="34" height="64" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="112" width="72" height="10" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="130" width="54" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<rect x="156" y="146" width="62" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<path d="M80 194h182l-12 18H92z" fill="var(--i-dark)" opacity=".85"/>
+<path d="M48 212v-90l34-30" stroke="var(--i-dark)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 82l40 18-12 22z" fill="var(--i-warm)"/>
+<rect x="34" y="204" width="30" height="10" rx="5" fill="var(--i-dark)"/>
+<rect x="282" y="174" width="34" height="38" rx="6" fill="var(--i-a)"/>
+<path d="M316 182c14 0 14 20 0 20" stroke="var(--i-a)" stroke-width="6" fill="none"/>
+<rect x="336" y="178" width="30" height="34" rx="5" fill="var(--i-warm)"/>
+<g fill="var(--i-g)"><ellipse cx="344" cy="160" rx="8" ry="20" transform="rotate(-24 344 160)"/><ellipse cx="358" cy="156" rx="8" ry="22" transform="rotate(18 358 156)"/></g></svg><div class="shot wide"><div class="combo"><img class="window" src="../screens/de/mac/04.jpg" width="2200" height="1600" loading="lazy" decoding="async" alt="Zwischendurch am Schreibtisch"><img class="over" src="../screens/de/mac/04-panel.png" width="720" height="1216" loading="lazy" decoding="async" alt=""></div></div></div><div class="story"><p class="when"><time>15:10</time><span>Mac</span></p><h2>Zwischendurch am Schreibtisch</h2><p>⌥⌘N aus jeder App: Betrag, wofür, sichern – ohne das Fenster zu wechseln. Oben steht, wie viel vom Monat schon weg ist.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="40" y="30" width="120" height="110" rx="10" fill="var(--i-night)"/>
+<circle cx="118" cy="66" r="16" fill="var(--i-sun)"/><circle cx="126" cy="60" r="14" fill="var(--i-night)"/>
+<g fill="var(--i-paper)"><circle cx="66" cy="56" r="3"/><circle cx="84" cy="96" r="2.5"/><circle cx="140" cy="112" r="2.5"/></g>
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<circle cx="330" cy="92" r="58" fill="var(--i-sun)" opacity=".28"/>
+<path d="M306 62h48l12 46h-72z" fill="var(--i-warm)"/>
+<rect x="327" y="108" width="6" height="150" fill="var(--i-dark)"/>
+<rect x="306" y="254" width="48" height="8" rx="4" fill="var(--i-dark)"/>
+<rect x="40" y="150" width="236" height="74" rx="22" fill="var(--i-a)"/>
+<rect x="30" y="200" width="256" height="50" rx="16" fill="var(--i-a)" opacity=".85"/>
+<rect x="18" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="258" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="70" y="164" width="62" height="46" rx="14" fill="var(--i-warm)"/>
+<rect x="186" y="164" width="62" height="46" rx="14" fill="var(--i-paper)"/>
+<rect x="50" y="248" width="10" height="16" fill="var(--i-dark)"/><rect x="256" y="248" width="10" height="16" fill="var(--i-dark)"/></svg><div class="shot wide"><div class="tablet"><img src="../screens/de/ipad/03.jpg" width="2752" height="2064" loading="lazy" decoding="async" alt="Gemeinsam auf dem Sofa"></div></div></div><div class="story"><p class="when"><time>21:00</time><span>iPad</span></p><h2>Gemeinsam auf dem Sofa</h2><p>Wo ist das Geld diesen Monat hin? Die Statistik zeigt es auf einen Blick – mit allem, was heute auf Uhr, iPhone und Mac dazugekommen ist.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<rect x="44" y="52" width="180" height="176" rx="18" fill="var(--i-paper)"/>
+<rect x="44" y="52" width="180" height="48" rx="18" fill="var(--i-a)"/>
+<rect x="44" y="82" width="180" height="18" fill="var(--i-a)"/>
+<g fill="var(--i-dark)"><rect x="82" y="38" width="10" height="30" rx="5"/><rect x="176" y="38" width="10" height="30" rx="5"/></g>
+<text x="134" y="190" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="92" font-weight="800" fill="var(--i-dark)">1</text>
+<path d="M262 160l52-44 52 44v84h-104z" fill="var(--i-wall)"/>
+<path d="M250 166l64-56 64 56" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="298" y="196" width="32" height="48" rx="5" fill="var(--i-warm)"/>
+<circle cx="244" cy="96" r="22" fill="var(--i-g)"/>
+<path d="M234 96l7 7 13-14" stroke="var(--i-paper)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/de/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Und ganz von allein"></div></div></div><div class="story"><p class="when"><time>Jeden Monat</time><span>iPhone</span></p><h2>Und ganz von allein</h2><p>Miete, Kita und Strom legt ihr einmal an. Tilla trägt sie am Fälligkeitstag ein, ohne dass jemand daran denken muss.</p></div></section>
+</div>
+<section class="band wrap"><div class="band-card"><img src="../icon.png" width="256" height="256" alt="">
+<h2>Ein Haushalt, alle Geräte</h2><p>Jeder Eintrag ist über iCloud gleich bei allen – ohne Konto und ohne Server.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="../badges/de-white.svg" media="(prefers-color-scheme: dark)"><img src="../badges/de-black.svg" width="120" height="40" alt="Laden im App Store"></picture></a></p>
+<p class="more"><a href="../#de">Alles über Tilla →</a></p></div></section>
+<footer class="wrap"><a href="../support/#de">Support</a> · <a href="../privacy/#de">Datenschutz</a> · © 2026 <a href="../../#de">Simon Blum</a></footer>
+</article>
+<article lang="en" data-lang="en" data-title="A day with Tilla – from the bakery to the sofa" hidden>
+<header class="intro wrap"><h1>A day with Tilla</h1><p class="lead">From the bakery in the morning to the sofa at night: how one household uses Tilla on Apple Watch, iPhone, Mac and iPad – with everyone always seeing the same.</p></header>
+<div class="day">
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<circle cx="338" cy="58" r="26" fill="var(--i-sun)"/>
+<rect x="40" y="70" width="230" height="200" rx="12" fill="var(--i-wall)"/>
+<rect x="40" y="70" width="230" height="26" rx="12" fill="var(--i-dark)"/>
+<g fill="var(--i-a)"><rect x="28" y="96" width="32" height="34"/><rect x="92" y="96" width="32" height="34"/><rect x="156" y="96" width="32" height="34"/><rect x="220" y="96" width="32" height="34"/></g>
+<g fill="var(--i-paper)"><rect x="60" y="96" width="32" height="34"/><rect x="124" y="96" width="32" height="34"/><rect x="188" y="96" width="32" height="34"/><rect x="252" y="96" width="30" height="34"/></g>
+<g fill="var(--i-a)"><circle cx="44" cy="130" r="16"/><circle cx="108" cy="130" r="16"/><circle cx="172" cy="130" r="16"/><circle cx="236" cy="130" r="16"/></g>
+<g fill="var(--i-paper)"><circle cx="76" cy="130" r="16"/><circle cx="140" cy="130" r="16"/><circle cx="204" cy="130" r="16"/><circle cx="267" cy="130" r="15"/></g>
+<rect x="62" y="166" width="120" height="86" rx="10" fill="var(--i-glass)"/>
+<rect x="72" y="226" width="100" height="8" rx="4" fill="var(--i-dark)" opacity=".35"/>
+<ellipse cx="102" cy="212" rx="24" ry="13" fill="var(--i-warm)"/>
+<path d="M90 208c6-5 18-5 24 0" stroke="var(--i-paper)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M146 222c-14 0-16-22-2-24 9-1 12 8 2 14-10-6-7-15 2-14 14 2 12 24-2 24" stroke="var(--i-warm)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="198" y="166" width="52" height="104" rx="8" fill="var(--i-a)"/>
+<circle cx="238" cy="222" r="4" fill="var(--i-paper)"/>
+<rect x="0" y="270" width="400" height="30" fill="var(--i-ground)"/></svg><div class="shot watch"><div class="wrist"><img src="../screens/en/watch/02.jpg" width="422" height="514" loading="lazy" decoding="async" alt="Bread rolls, paid in cash"></div></div></div><div class="story"><p class="when"><time>07:45</time><span>Apple Watch</span></p><h2>Bread rolls, paid in cash</h2><p>Type the amount, pick the bakery – logged before the change is in your hand. The iPhone stays in your pocket.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="232" width="400" height="68" fill="var(--i-ground)"/>
+<rect x="30" y="150" width="250" height="90" rx="10" fill="var(--i-wall)"/>
+<rect x="30" y="150" width="250" height="14" rx="7" fill="var(--i-dark)"/>
+<path d="M78 92h58l-8 74h-42z" fill="var(--i-paper)"/>
+<rect x="74" y="84" width="66" height="14" rx="5" fill="var(--i-warm)"/>
+<path d="M136 112c22 0 22 30 0 30" stroke="var(--i-paper)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<g stroke="var(--i-dark)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".45"><path d="M96 70c-8-10 8-16 0-28"/><path d="M118 70c-8-10 8-16 0-28"/></g>
+<rect x="176" y="62" width="70" height="104" rx="14" fill="var(--i-dark)"/>
+<rect x="183" y="70" width="56" height="88" rx="9" fill="var(--i-a)"/>
+<g stroke="var(--i-a)" stroke-width="7" fill="none" stroke-linecap="round"><path d="M266 92c10 10 10 30 0 40"/><path d="M284 80c18 18 18 46 0 64"/><path d="M302 68c26 26 26 62 0 88"/></g>
+<circle cx="211" cy="114" r="15" fill="var(--i-paper)"/>
+<path d="M204 114l5 5 10-11" stroke="var(--i-g)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/en/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Paid with Apple Pay"></div></div></div><div class="story"><p class="when"><time>09:20</time><span>iPhone · Apple Pay</span></p><h2>Paid with Apple Pay</h2><p>Later, someone else in the household pays at the bakery with their iPhone. Tilla suggests the expense – one tap on “Add” is all it takes.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="250" width="400" height="50" fill="var(--i-ground)"/>
+<g transform="rotate(-8 300 110)"><path d="M262 40h86v150l-11-8-11 8-11-8-11 8-11-8-11 8-10-8z" fill="var(--i-paper)"/>
+<g fill="var(--i-dark)" opacity=".3"><rect x="276" y="58" width="58" height="6" rx="3"/><rect x="276" y="76" width="40" height="6" rx="3"/><rect x="276" y="94" width="50" height="6" rx="3"/><rect x="276" y="112" width="34" height="6" rx="3"/></g>
+<rect x="276" y="140" width="58" height="10" rx="5" fill="var(--i-a)"/></g>
+<path d="M30 92h34l30 110h130l24-84H82" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 202h124" stroke="var(--i-dark)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="112" cy="236" r="15" fill="var(--i-dark)"/><circle cx="208" cy="236" r="15" fill="var(--i-dark)"/>
+<rect x="112" y="118" width="64" height="78" rx="8" fill="var(--i-warm)"/>
+<path d="M126 120c0-22 36-22 36 0" stroke="var(--i-warm)" stroke-width="6" fill="none"/>
+<rect x="178" y="56" width="16" height="104" rx="8" transform="rotate(24 186 108)" fill="var(--i-bread)"/>
+<g fill="var(--i-g)"><ellipse cx="104" cy="114" rx="12" ry="24" transform="rotate(-30 104 114)"/><ellipse cx="120" cy="104" rx="10" ry="22" transform="rotate(10 120 104)"/></g>
+<circle cx="214" cy="160" r="16" fill="var(--i-red)"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/en/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="The big shop at the supermarket"></div></div></div><div class="story"><p class="when"><time>12:30</time><span>iPhone</span></p><h2>The big shop at the supermarket</h2><p>Snap the receipt: total, shop and date are filled in. The photo stays with the expense – for everyone in the household.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="250" y="34" width="110" height="120" rx="10" fill="var(--i-glass)"/>
+<path d="M305 34v120M250 94h110" stroke="var(--i-wall)" stroke-width="6"/>
+<rect x="0" y="212" width="400" height="16" rx="4" fill="var(--i-wood)"/>
+<rect x="24" y="226" width="14" height="74" fill="var(--i-wood)"/><rect x="362" y="226" width="14" height="74" fill="var(--i-wood)"/>
+<rect x="96" y="94" width="150" height="100" rx="10" fill="var(--i-dark)"/>
+<rect x="104" y="102" width="134" height="84" rx="5" fill="var(--i-a)"/>
+<rect x="114" y="112" width="34" height="64" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="112" width="72" height="10" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="130" width="54" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<rect x="156" y="146" width="62" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<path d="M80 194h182l-12 18H92z" fill="var(--i-dark)" opacity=".85"/>
+<path d="M48 212v-90l34-30" stroke="var(--i-dark)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 82l40 18-12 22z" fill="var(--i-warm)"/>
+<rect x="34" y="204" width="30" height="10" rx="5" fill="var(--i-dark)"/>
+<rect x="282" y="174" width="34" height="38" rx="6" fill="var(--i-a)"/>
+<path d="M316 182c14 0 14 20 0 20" stroke="var(--i-a)" stroke-width="6" fill="none"/>
+<rect x="336" y="178" width="30" height="34" rx="5" fill="var(--i-warm)"/>
+<g fill="var(--i-g)"><ellipse cx="344" cy="160" rx="8" ry="20" transform="rotate(-24 344 160)"/><ellipse cx="358" cy="156" rx="8" ry="22" transform="rotate(18 358 156)"/></g></svg><div class="shot wide"><div class="combo"><img class="window" src="../screens/en/mac/04.jpg" width="2200" height="1600" loading="lazy" decoding="async" alt="In between, at the desk"><img class="over" src="../screens/en/mac/04-panel.png" width="720" height="1216" loading="lazy" decoding="async" alt=""></div></div></div><div class="story"><p class="when"><time>15:10</time><span>Mac</span></p><h2>In between, at the desk</h2><p>⌥⌘N from any app: amount, what for, save – without switching windows. At the top you see how much of the month is already spent.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="40" y="30" width="120" height="110" rx="10" fill="var(--i-night)"/>
+<circle cx="118" cy="66" r="16" fill="var(--i-sun)"/><circle cx="126" cy="60" r="14" fill="var(--i-night)"/>
+<g fill="var(--i-paper)"><circle cx="66" cy="56" r="3"/><circle cx="84" cy="96" r="2.5"/><circle cx="140" cy="112" r="2.5"/></g>
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<circle cx="330" cy="92" r="58" fill="var(--i-sun)" opacity=".28"/>
+<path d="M306 62h48l12 46h-72z" fill="var(--i-warm)"/>
+<rect x="327" y="108" width="6" height="150" fill="var(--i-dark)"/>
+<rect x="306" y="254" width="48" height="8" rx="4" fill="var(--i-dark)"/>
+<rect x="40" y="150" width="236" height="74" rx="22" fill="var(--i-a)"/>
+<rect x="30" y="200" width="256" height="50" rx="16" fill="var(--i-a)" opacity=".85"/>
+<rect x="18" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="258" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="70" y="164" width="62" height="46" rx="14" fill="var(--i-warm)"/>
+<rect x="186" y="164" width="62" height="46" rx="14" fill="var(--i-paper)"/>
+<rect x="50" y="248" width="10" height="16" fill="var(--i-dark)"/><rect x="256" y="248" width="10" height="16" fill="var(--i-dark)"/></svg><div class="shot wide"><div class="tablet"><img src="../screens/en/ipad/03.jpg" width="2752" height="2064" loading="lazy" decoding="async" alt="Together on the sofa"></div></div></div><div class="story"><p class="when"><time>21:00</time><span>iPad</span></p><h2>Together on the sofa</h2><p>Where did the money go this month? Statistics shows it at a glance – with everything added today on the watch, iPhone and Mac.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<rect x="44" y="52" width="180" height="176" rx="18" fill="var(--i-paper)"/>
+<rect x="44" y="52" width="180" height="48" rx="18" fill="var(--i-a)"/>
+<rect x="44" y="82" width="180" height="18" fill="var(--i-a)"/>
+<g fill="var(--i-dark)"><rect x="82" y="38" width="10" height="30" rx="5"/><rect x="176" y="38" width="10" height="30" rx="5"/></g>
+<text x="134" y="190" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="92" font-weight="800" fill="var(--i-dark)">1</text>
+<path d="M262 160l52-44 52 44v84h-104z" fill="var(--i-wall)"/>
+<path d="M250 166l64-56 64 56" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="298" y="196" width="32" height="48" rx="5" fill="var(--i-warm)"/>
+<circle cx="244" cy="96" r="22" fill="var(--i-g)"/>
+<path d="M234 96l7 7 13-14" stroke="var(--i-paper)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/en/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="And all by itself"></div></div></div><div class="story"><p class="when"><time>Every month</time><span>iPhone</span></p><h2>And all by itself</h2><p>Rent, childcare and electricity are set up once. Tilla logs them on the day they’re due, without anyone having to remember.</p></div></section>
+</div>
+<section class="band wrap"><div class="band-card"><img src="../icon.png" width="256" height="256" alt="">
+<h2>One household, every device</h2><p>Every entry reaches everyone over iCloud right away – no account, no server.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="../badges/en-white.svg" media="(prefers-color-scheme: dark)"><img src="../badges/en-black.svg" width="120" height="40" alt="Download on the App Store"></picture></a></p>
+<p class="more"><a href="../#en">Everything about Tilla →</a></p></div></section>
+<footer class="wrap"><a href="../support/#en">Support</a> · <a href="../privacy/#en">Privacy</a> · © 2026 <a href="../../#en">Simon Blum</a></footer>
+</article>
+<article lang="es" data-lang="es" data-title="Un día con Tilla – de la panadería al sofá" hidden>
+<header class="intro wrap"><h1>Un día con Tilla</h1><p class="lead">De la panadería por la mañana al sofá por la noche: cómo un hogar usa Tilla en el Apple Watch, el iPhone, el Mac y el iPad, y todos ven siempre lo mismo.</p></header>
+<div class="day">
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<circle cx="338" cy="58" r="26" fill="var(--i-sun)"/>
+<rect x="40" y="70" width="230" height="200" rx="12" fill="var(--i-wall)"/>
+<rect x="40" y="70" width="230" height="26" rx="12" fill="var(--i-dark)"/>
+<g fill="var(--i-a)"><rect x="28" y="96" width="32" height="34"/><rect x="92" y="96" width="32" height="34"/><rect x="156" y="96" width="32" height="34"/><rect x="220" y="96" width="32" height="34"/></g>
+<g fill="var(--i-paper)"><rect x="60" y="96" width="32" height="34"/><rect x="124" y="96" width="32" height="34"/><rect x="188" y="96" width="32" height="34"/><rect x="252" y="96" width="30" height="34"/></g>
+<g fill="var(--i-a)"><circle cx="44" cy="130" r="16"/><circle cx="108" cy="130" r="16"/><circle cx="172" cy="130" r="16"/><circle cx="236" cy="130" r="16"/></g>
+<g fill="var(--i-paper)"><circle cx="76" cy="130" r="16"/><circle cx="140" cy="130" r="16"/><circle cx="204" cy="130" r="16"/><circle cx="267" cy="130" r="15"/></g>
+<rect x="62" y="166" width="120" height="86" rx="10" fill="var(--i-glass)"/>
+<rect x="72" y="226" width="100" height="8" rx="4" fill="var(--i-dark)" opacity=".35"/>
+<ellipse cx="102" cy="212" rx="24" ry="13" fill="var(--i-warm)"/>
+<path d="M90 208c6-5 18-5 24 0" stroke="var(--i-paper)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M146 222c-14 0-16-22-2-24 9-1 12 8 2 14-10-6-7-15 2-14 14 2 12 24-2 24" stroke="var(--i-warm)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="198" y="166" width="52" height="104" rx="8" fill="var(--i-a)"/>
+<circle cx="238" cy="222" r="4" fill="var(--i-paper)"/>
+<rect x="0" y="270" width="400" height="30" fill="var(--i-ground)"/></svg><div class="shot watch"><div class="wrist"><img src="../screens/es/watch/02.jpg" width="422" height="514" loading="lazy" decoding="async" alt="Panecillos, pagados en efectivo"></div></div></div><div class="story"><p class="when"><time>07:45</time><span>Apple Watch</span></p><h2>Panecillos, pagados en efectivo</h2><p>Escribid el importe, elegid la panadería: apuntado antes de tener el cambio en la mano. El iPhone se queda en el bolsillo.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="232" width="400" height="68" fill="var(--i-ground)"/>
+<rect x="30" y="150" width="250" height="90" rx="10" fill="var(--i-wall)"/>
+<rect x="30" y="150" width="250" height="14" rx="7" fill="var(--i-dark)"/>
+<path d="M78 92h58l-8 74h-42z" fill="var(--i-paper)"/>
+<rect x="74" y="84" width="66" height="14" rx="5" fill="var(--i-warm)"/>
+<path d="M136 112c22 0 22 30 0 30" stroke="var(--i-paper)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<g stroke="var(--i-dark)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".45"><path d="M96 70c-8-10 8-16 0-28"/><path d="M118 70c-8-10 8-16 0-28"/></g>
+<rect x="176" y="62" width="70" height="104" rx="14" fill="var(--i-dark)"/>
+<rect x="183" y="70" width="56" height="88" rx="9" fill="var(--i-a)"/>
+<g stroke="var(--i-a)" stroke-width="7" fill="none" stroke-linecap="round"><path d="M266 92c10 10 10 30 0 40"/><path d="M284 80c18 18 18 46 0 64"/><path d="M302 68c26 26 26 62 0 88"/></g>
+<circle cx="211" cy="114" r="15" fill="var(--i-paper)"/>
+<path d="M204 114l5 5 10-11" stroke="var(--i-g)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/es/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Pagado con Apple Pay"></div></div></div><div class="story"><p class="when"><time>09:20</time><span>iPhone · Apple Pay</span></p><h2>Pagado con Apple Pay</h2><p>Más tarde, otra persona del hogar paga en la panadería con el iPhone. Tilla propone el gasto: basta un toque en «Añadir».</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="250" width="400" height="50" fill="var(--i-ground)"/>
+<g transform="rotate(-8 300 110)"><path d="M262 40h86v150l-11-8-11 8-11-8-11 8-11-8-11 8-10-8z" fill="var(--i-paper)"/>
+<g fill="var(--i-dark)" opacity=".3"><rect x="276" y="58" width="58" height="6" rx="3"/><rect x="276" y="76" width="40" height="6" rx="3"/><rect x="276" y="94" width="50" height="6" rx="3"/><rect x="276" y="112" width="34" height="6" rx="3"/></g>
+<rect x="276" y="140" width="58" height="10" rx="5" fill="var(--i-a)"/></g>
+<path d="M30 92h34l30 110h130l24-84H82" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 202h124" stroke="var(--i-dark)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="112" cy="236" r="15" fill="var(--i-dark)"/><circle cx="208" cy="236" r="15" fill="var(--i-dark)"/>
+<rect x="112" y="118" width="64" height="78" rx="8" fill="var(--i-warm)"/>
+<path d="M126 120c0-22 36-22 36 0" stroke="var(--i-warm)" stroke-width="6" fill="none"/>
+<rect x="178" y="56" width="16" height="104" rx="8" transform="rotate(24 186 108)" fill="var(--i-bread)"/>
+<g fill="var(--i-g)"><ellipse cx="104" cy="114" rx="12" ry="24" transform="rotate(-30 104 114)"/><ellipse cx="120" cy="104" rx="10" ry="22" transform="rotate(10 120 104)"/></g>
+<circle cx="214" cy="160" r="16" fill="var(--i-red)"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/es/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="La compra grande en el súper"></div></div></div><div class="story"><p class="when"><time>12:30</time><span>iPhone</span></p><h2>La compra grande en el súper</h2><p>Haced una foto del recibo: el total, la tienda y la fecha se rellenan solos. La foto se queda con el gasto, para todo el hogar.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="250" y="34" width="110" height="120" rx="10" fill="var(--i-glass)"/>
+<path d="M305 34v120M250 94h110" stroke="var(--i-wall)" stroke-width="6"/>
+<rect x="0" y="212" width="400" height="16" rx="4" fill="var(--i-wood)"/>
+<rect x="24" y="226" width="14" height="74" fill="var(--i-wood)"/><rect x="362" y="226" width="14" height="74" fill="var(--i-wood)"/>
+<rect x="96" y="94" width="150" height="100" rx="10" fill="var(--i-dark)"/>
+<rect x="104" y="102" width="134" height="84" rx="5" fill="var(--i-a)"/>
+<rect x="114" y="112" width="34" height="64" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="112" width="72" height="10" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="130" width="54" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<rect x="156" y="146" width="62" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<path d="M80 194h182l-12 18H92z" fill="var(--i-dark)" opacity=".85"/>
+<path d="M48 212v-90l34-30" stroke="var(--i-dark)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 82l40 18-12 22z" fill="var(--i-warm)"/>
+<rect x="34" y="204" width="30" height="10" rx="5" fill="var(--i-dark)"/>
+<rect x="282" y="174" width="34" height="38" rx="6" fill="var(--i-a)"/>
+<path d="M316 182c14 0 14 20 0 20" stroke="var(--i-a)" stroke-width="6" fill="none"/>
+<rect x="336" y="178" width="30" height="34" rx="5" fill="var(--i-warm)"/>
+<g fill="var(--i-g)"><ellipse cx="344" cy="160" rx="8" ry="20" transform="rotate(-24 344 160)"/><ellipse cx="358" cy="156" rx="8" ry="22" transform="rotate(18 358 156)"/></g></svg><div class="shot wide"><div class="combo"><img class="window" src="../screens/es/mac/04.jpg" width="2200" height="1600" loading="lazy" decoding="async" alt="Entre tarea y tarea, en el escritorio"><img class="over" src="../screens/es/mac/04-panel.png" width="720" height="1216" loading="lazy" decoding="async" alt=""></div></div></div><div class="story"><p class="when"><time>15:10</time><span>Mac</span></p><h2>Entre tarea y tarea, en el escritorio</h2><p>⌥⌘N desde cualquier app: importe, para qué, guardar, sin cambiar de ventana. Arriba veis cuánto del mes ya se ha ido.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="40" y="30" width="120" height="110" rx="10" fill="var(--i-night)"/>
+<circle cx="118" cy="66" r="16" fill="var(--i-sun)"/><circle cx="126" cy="60" r="14" fill="var(--i-night)"/>
+<g fill="var(--i-paper)"><circle cx="66" cy="56" r="3"/><circle cx="84" cy="96" r="2.5"/><circle cx="140" cy="112" r="2.5"/></g>
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<circle cx="330" cy="92" r="58" fill="var(--i-sun)" opacity=".28"/>
+<path d="M306 62h48l12 46h-72z" fill="var(--i-warm)"/>
+<rect x="327" y="108" width="6" height="150" fill="var(--i-dark)"/>
+<rect x="306" y="254" width="48" height="8" rx="4" fill="var(--i-dark)"/>
+<rect x="40" y="150" width="236" height="74" rx="22" fill="var(--i-a)"/>
+<rect x="30" y="200" width="256" height="50" rx="16" fill="var(--i-a)" opacity=".85"/>
+<rect x="18" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="258" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="70" y="164" width="62" height="46" rx="14" fill="var(--i-warm)"/>
+<rect x="186" y="164" width="62" height="46" rx="14" fill="var(--i-paper)"/>
+<rect x="50" y="248" width="10" height="16" fill="var(--i-dark)"/><rect x="256" y="248" width="10" height="16" fill="var(--i-dark)"/></svg><div class="shot wide"><div class="tablet"><img src="../screens/es/ipad/03.jpg" width="2752" height="2064" loading="lazy" decoding="async" alt="Juntos en el sofá"></div></div></div><div class="story"><p class="when"><time>21:00</time><span>iPad</span></p><h2>Juntos en el sofá</h2><p>¿Adónde ha ido el dinero este mes? Las estadísticas lo muestran de un vistazo, con todo lo que se añadió hoy en el reloj, el iPhone y el Mac.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<rect x="44" y="52" width="180" height="176" rx="18" fill="var(--i-paper)"/>
+<rect x="44" y="52" width="180" height="48" rx="18" fill="var(--i-a)"/>
+<rect x="44" y="82" width="180" height="18" fill="var(--i-a)"/>
+<g fill="var(--i-dark)"><rect x="82" y="38" width="10" height="30" rx="5"/><rect x="176" y="38" width="10" height="30" rx="5"/></g>
+<text x="134" y="190" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="92" font-weight="800" fill="var(--i-dark)">1</text>
+<path d="M262 160l52-44 52 44v84h-104z" fill="var(--i-wall)"/>
+<path d="M250 166l64-56 64 56" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="298" y="196" width="32" height="48" rx="5" fill="var(--i-warm)"/>
+<circle cx="244" cy="96" r="22" fill="var(--i-g)"/>
+<path d="M234 96l7 7 13-14" stroke="var(--i-paper)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/es/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Y sin mover un dedo"></div></div></div><div class="story"><p class="when"><time>Cada mes</time><span>iPhone</span></p><h2>Y sin mover un dedo</h2><p>El alquiler, la guardería y la luz se configuran una vez. Tilla los apunta el día que tocan, sin que nadie tenga que acordarse.</p></div></section>
+</div>
+<section class="band wrap"><div class="band-card"><img src="../icon.png" width="256" height="256" alt="">
+<h2>Un hogar, todos los dispositivos</h2><p>Cada entrada llega enseguida a todos por iCloud, sin cuenta y sin servidor.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="../badges/es-white.svg" media="(prefers-color-scheme: dark)"><img src="../badges/es-black.svg" width="120" height="40" alt="Descárgalo en el App Store"></picture></a></p>
+<p class="more"><a href="../#es">Todo sobre Tilla →</a></p></div></section>
+<footer class="wrap"><a href="../support/#es">Soporte</a> · <a href="../privacy/#es">Privacidad</a> · © 2026 <a href="../../#es">Simon Blum</a></footer>
+</article>
+<article lang="fr" data-lang="fr" data-title="Une journée avec Tilla – de la boulangerie au canapé" hidden>
+<header class="intro wrap"><h1>Une journée avec Tilla</h1><p class="lead">De la boulangerie le matin au canapé le soir : comment un foyer utilise Tilla sur Apple Watch, iPhone, Mac et iPad – et tout le monde voit toujours la même chose.</p></header>
+<div class="day">
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<circle cx="338" cy="58" r="26" fill="var(--i-sun)"/>
+<rect x="40" y="70" width="230" height="200" rx="12" fill="var(--i-wall)"/>
+<rect x="40" y="70" width="230" height="26" rx="12" fill="var(--i-dark)"/>
+<g fill="var(--i-a)"><rect x="28" y="96" width="32" height="34"/><rect x="92" y="96" width="32" height="34"/><rect x="156" y="96" width="32" height="34"/><rect x="220" y="96" width="32" height="34"/></g>
+<g fill="var(--i-paper)"><rect x="60" y="96" width="32" height="34"/><rect x="124" y="96" width="32" height="34"/><rect x="188" y="96" width="32" height="34"/><rect x="252" y="96" width="30" height="34"/></g>
+<g fill="var(--i-a)"><circle cx="44" cy="130" r="16"/><circle cx="108" cy="130" r="16"/><circle cx="172" cy="130" r="16"/><circle cx="236" cy="130" r="16"/></g>
+<g fill="var(--i-paper)"><circle cx="76" cy="130" r="16"/><circle cx="140" cy="130" r="16"/><circle cx="204" cy="130" r="16"/><circle cx="267" cy="130" r="15"/></g>
+<rect x="62" y="166" width="120" height="86" rx="10" fill="var(--i-glass)"/>
+<rect x="72" y="226" width="100" height="8" rx="4" fill="var(--i-dark)" opacity=".35"/>
+<ellipse cx="102" cy="212" rx="24" ry="13" fill="var(--i-warm)"/>
+<path d="M90 208c6-5 18-5 24 0" stroke="var(--i-paper)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M146 222c-14 0-16-22-2-24 9-1 12 8 2 14-10-6-7-15 2-14 14 2 12 24-2 24" stroke="var(--i-warm)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="198" y="166" width="52" height="104" rx="8" fill="var(--i-a)"/>
+<circle cx="238" cy="222" r="4" fill="var(--i-paper)"/>
+<rect x="0" y="270" width="400" height="30" fill="var(--i-ground)"/></svg><div class="shot watch"><div class="wrist"><img src="../screens/fr/watch/02.jpg" width="422" height="514" loading="lazy" decoding="async" alt="Des petits pains, payés en espèces"></div></div></div><div class="story"><p class="when"><time>07:45</time><span>Apple Watch</span></p><h2>Des petits pains, payés en espèces</h2><p>Tapez le montant, choisissez la boulangerie : c’est noté avant d’avoir la monnaie en main. L’iPhone reste dans la poche.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="232" width="400" height="68" fill="var(--i-ground)"/>
+<rect x="30" y="150" width="250" height="90" rx="10" fill="var(--i-wall)"/>
+<rect x="30" y="150" width="250" height="14" rx="7" fill="var(--i-dark)"/>
+<path d="M78 92h58l-8 74h-42z" fill="var(--i-paper)"/>
+<rect x="74" y="84" width="66" height="14" rx="5" fill="var(--i-warm)"/>
+<path d="M136 112c22 0 22 30 0 30" stroke="var(--i-paper)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<g stroke="var(--i-dark)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".45"><path d="M96 70c-8-10 8-16 0-28"/><path d="M118 70c-8-10 8-16 0-28"/></g>
+<rect x="176" y="62" width="70" height="104" rx="14" fill="var(--i-dark)"/>
+<rect x="183" y="70" width="56" height="88" rx="9" fill="var(--i-a)"/>
+<g stroke="var(--i-a)" stroke-width="7" fill="none" stroke-linecap="round"><path d="M266 92c10 10 10 30 0 40"/><path d="M284 80c18 18 18 46 0 64"/><path d="M302 68c26 26 26 62 0 88"/></g>
+<circle cx="211" cy="114" r="15" fill="var(--i-paper)"/>
+<path d="M204 114l5 5 10-11" stroke="var(--i-g)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/fr/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Payé avec Apple Pay"></div></div></div><div class="story"><p class="when"><time>09:20</time><span>iPhone · Apple Pay</span></p><h2>Payé avec Apple Pay</h2><p>Plus tard, quelqu’un d’autre du foyer paie à la boulangerie avec son iPhone. Tilla propose la dépense : un toucher sur « Ajouter » suffit.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="250" width="400" height="50" fill="var(--i-ground)"/>
+<g transform="rotate(-8 300 110)"><path d="M262 40h86v150l-11-8-11 8-11-8-11 8-11-8-11 8-10-8z" fill="var(--i-paper)"/>
+<g fill="var(--i-dark)" opacity=".3"><rect x="276" y="58" width="58" height="6" rx="3"/><rect x="276" y="76" width="40" height="6" rx="3"/><rect x="276" y="94" width="50" height="6" rx="3"/><rect x="276" y="112" width="34" height="6" rx="3"/></g>
+<rect x="276" y="140" width="58" height="10" rx="5" fill="var(--i-a)"/></g>
+<path d="M30 92h34l30 110h130l24-84H82" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 202h124" stroke="var(--i-dark)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="112" cy="236" r="15" fill="var(--i-dark)"/><circle cx="208" cy="236" r="15" fill="var(--i-dark)"/>
+<rect x="112" y="118" width="64" height="78" rx="8" fill="var(--i-warm)"/>
+<path d="M126 120c0-22 36-22 36 0" stroke="var(--i-warm)" stroke-width="6" fill="none"/>
+<rect x="178" y="56" width="16" height="104" rx="8" transform="rotate(24 186 108)" fill="var(--i-bread)"/>
+<g fill="var(--i-g)"><ellipse cx="104" cy="114" rx="12" ry="24" transform="rotate(-30 104 114)"/><ellipse cx="120" cy="104" rx="10" ry="22" transform="rotate(10 120 104)"/></g>
+<circle cx="214" cy="160" r="16" fill="var(--i-red)"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/fr/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Les grosses courses au supermarché"></div></div></div><div class="story"><p class="when"><time>12:30</time><span>iPhone</span></p><h2>Les grosses courses au supermarché</h2><p>Photographiez le ticket : total, magasin et date sont remplis. La photo reste avec la dépense, pour tout le foyer.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="250" y="34" width="110" height="120" rx="10" fill="var(--i-glass)"/>
+<path d="M305 34v120M250 94h110" stroke="var(--i-wall)" stroke-width="6"/>
+<rect x="0" y="212" width="400" height="16" rx="4" fill="var(--i-wood)"/>
+<rect x="24" y="226" width="14" height="74" fill="var(--i-wood)"/><rect x="362" y="226" width="14" height="74" fill="var(--i-wood)"/>
+<rect x="96" y="94" width="150" height="100" rx="10" fill="var(--i-dark)"/>
+<rect x="104" y="102" width="134" height="84" rx="5" fill="var(--i-a)"/>
+<rect x="114" y="112" width="34" height="64" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="112" width="72" height="10" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="130" width="54" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<rect x="156" y="146" width="62" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<path d="M80 194h182l-12 18H92z" fill="var(--i-dark)" opacity=".85"/>
+<path d="M48 212v-90l34-30" stroke="var(--i-dark)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 82l40 18-12 22z" fill="var(--i-warm)"/>
+<rect x="34" y="204" width="30" height="10" rx="5" fill="var(--i-dark)"/>
+<rect x="282" y="174" width="34" height="38" rx="6" fill="var(--i-a)"/>
+<path d="M316 182c14 0 14 20 0 20" stroke="var(--i-a)" stroke-width="6" fill="none"/>
+<rect x="336" y="178" width="30" height="34" rx="5" fill="var(--i-warm)"/>
+<g fill="var(--i-g)"><ellipse cx="344" cy="160" rx="8" ry="20" transform="rotate(-24 344 160)"/><ellipse cx="358" cy="156" rx="8" ry="22" transform="rotate(18 358 156)"/></g></svg><div class="shot wide"><div class="combo"><img class="window" src="../screens/fr/mac/04.jpg" width="2200" height="1600" loading="lazy" decoding="async" alt="Entre deux tâches, au bureau"><img class="over" src="../screens/fr/mac/04-panel.png" width="720" height="1216" loading="lazy" decoding="async" alt=""></div></div></div><div class="story"><p class="when"><time>15:10</time><span>Mac</span></p><h2>Entre deux tâches, au bureau</h2><p>⌥⌘N depuis n’importe quelle app : montant, pour quoi, enregistrer – sans changer de fenêtre. En haut, vous voyez ce qui est déjà dépensé ce mois-ci.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="40" y="30" width="120" height="110" rx="10" fill="var(--i-night)"/>
+<circle cx="118" cy="66" r="16" fill="var(--i-sun)"/><circle cx="126" cy="60" r="14" fill="var(--i-night)"/>
+<g fill="var(--i-paper)"><circle cx="66" cy="56" r="3"/><circle cx="84" cy="96" r="2.5"/><circle cx="140" cy="112" r="2.5"/></g>
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<circle cx="330" cy="92" r="58" fill="var(--i-sun)" opacity=".28"/>
+<path d="M306 62h48l12 46h-72z" fill="var(--i-warm)"/>
+<rect x="327" y="108" width="6" height="150" fill="var(--i-dark)"/>
+<rect x="306" y="254" width="48" height="8" rx="4" fill="var(--i-dark)"/>
+<rect x="40" y="150" width="236" height="74" rx="22" fill="var(--i-a)"/>
+<rect x="30" y="200" width="256" height="50" rx="16" fill="var(--i-a)" opacity=".85"/>
+<rect x="18" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="258" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="70" y="164" width="62" height="46" rx="14" fill="var(--i-warm)"/>
+<rect x="186" y="164" width="62" height="46" rx="14" fill="var(--i-paper)"/>
+<rect x="50" y="248" width="10" height="16" fill="var(--i-dark)"/><rect x="256" y="248" width="10" height="16" fill="var(--i-dark)"/></svg><div class="shot wide"><div class="tablet"><img src="../screens/fr/ipad/03.jpg" width="2752" height="2064" loading="lazy" decoding="async" alt="Ensemble sur le canapé"></div></div></div><div class="story"><p class="when"><time>21:00</time><span>iPad</span></p><h2>Ensemble sur le canapé</h2><p>Où est passé l’argent ce mois-ci ? Les statistiques le montrent d’un coup d’œil – avec tout ce qui a été ajouté aujourd’hui sur la montre, l’iPhone et le Mac.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<rect x="44" y="52" width="180" height="176" rx="18" fill="var(--i-paper)"/>
+<rect x="44" y="52" width="180" height="48" rx="18" fill="var(--i-a)"/>
+<rect x="44" y="82" width="180" height="18" fill="var(--i-a)"/>
+<g fill="var(--i-dark)"><rect x="82" y="38" width="10" height="30" rx="5"/><rect x="176" y="38" width="10" height="30" rx="5"/></g>
+<text x="134" y="190" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="92" font-weight="800" fill="var(--i-dark)">1</text>
+<path d="M262 160l52-44 52 44v84h-104z" fill="var(--i-wall)"/>
+<path d="M250 166l64-56 64 56" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="298" y="196" width="32" height="48" rx="5" fill="var(--i-warm)"/>
+<circle cx="244" cy="96" r="22" fill="var(--i-g)"/>
+<path d="M234 96l7 7 13-14" stroke="var(--i-paper)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/fr/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Et tout seul"></div></div></div><div class="story"><p class="when"><time>Chaque mois</time><span>iPhone</span></p><h2>Et tout seul</h2><p>Loyer, crèche et électricité se configurent une fois. Tilla les note le jour de l’échéance, sans que personne n’ait à y penser.</p></div></section>
+</div>
+<section class="band wrap"><div class="band-card"><img src="../icon.png" width="256" height="256" alt="">
+<h2>Un foyer, tous les appareils</h2><p>Chaque entrée arrive aussitôt chez tout le monde via iCloud – sans compte, sans serveur.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="../badges/fr-white.svg" media="(prefers-color-scheme: dark)"><img src="../badges/fr-black.svg" width="120" height="40" alt="Télécharger dans l’App Store"></picture></a></p>
+<p class="more"><a href="../#fr">Tout sur Tilla →</a></p></div></section>
+<footer class="wrap"><a href="../support/#fr">Assistance</a> · <a href="../privacy/#fr">Confidentialité</a> · © 2026 <a href="../../#fr">Simon Blum</a></footer>
+</article>
+<article lang="it" data-lang="it" data-title="Una giornata con Tilla – dal forno al divano" hidden>
+<header class="intro wrap"><h1>Una giornata con Tilla</h1><p class="lead">Dal forno al mattino al divano la sera: come una casa usa Tilla su Apple Watch, iPhone, Mac e iPad, e tutti vedono sempre le stesse cose.</p></header>
+<div class="day">
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<circle cx="338" cy="58" r="26" fill="var(--i-sun)"/>
+<rect x="40" y="70" width="230" height="200" rx="12" fill="var(--i-wall)"/>
+<rect x="40" y="70" width="230" height="26" rx="12" fill="var(--i-dark)"/>
+<g fill="var(--i-a)"><rect x="28" y="96" width="32" height="34"/><rect x="92" y="96" width="32" height="34"/><rect x="156" y="96" width="32" height="34"/><rect x="220" y="96" width="32" height="34"/></g>
+<g fill="var(--i-paper)"><rect x="60" y="96" width="32" height="34"/><rect x="124" y="96" width="32" height="34"/><rect x="188" y="96" width="32" height="34"/><rect x="252" y="96" width="30" height="34"/></g>
+<g fill="var(--i-a)"><circle cx="44" cy="130" r="16"/><circle cx="108" cy="130" r="16"/><circle cx="172" cy="130" r="16"/><circle cx="236" cy="130" r="16"/></g>
+<g fill="var(--i-paper)"><circle cx="76" cy="130" r="16"/><circle cx="140" cy="130" r="16"/><circle cx="204" cy="130" r="16"/><circle cx="267" cy="130" r="15"/></g>
+<rect x="62" y="166" width="120" height="86" rx="10" fill="var(--i-glass)"/>
+<rect x="72" y="226" width="100" height="8" rx="4" fill="var(--i-dark)" opacity=".35"/>
+<ellipse cx="102" cy="212" rx="24" ry="13" fill="var(--i-warm)"/>
+<path d="M90 208c6-5 18-5 24 0" stroke="var(--i-paper)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M146 222c-14 0-16-22-2-24 9-1 12 8 2 14-10-6-7-15 2-14 14 2 12 24-2 24" stroke="var(--i-warm)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="198" y="166" width="52" height="104" rx="8" fill="var(--i-a)"/>
+<circle cx="238" cy="222" r="4" fill="var(--i-paper)"/>
+<rect x="0" y="270" width="400" height="30" fill="var(--i-ground)"/></svg><div class="shot watch"><div class="wrist"><img src="../screens/it/watch/02.jpg" width="422" height="514" loading="lazy" decoding="async" alt="Panini, pagati in contanti"></div></div></div><div class="story"><p class="when"><time>07:45</time><span>Apple Watch</span></p><h2>Panini, pagati in contanti</h2><p>Digitate l’importo, scegliete il forno: registrato prima di avere il resto in mano. L’iPhone resta in tasca.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="232" width="400" height="68" fill="var(--i-ground)"/>
+<rect x="30" y="150" width="250" height="90" rx="10" fill="var(--i-wall)"/>
+<rect x="30" y="150" width="250" height="14" rx="7" fill="var(--i-dark)"/>
+<path d="M78 92h58l-8 74h-42z" fill="var(--i-paper)"/>
+<rect x="74" y="84" width="66" height="14" rx="5" fill="var(--i-warm)"/>
+<path d="M136 112c22 0 22 30 0 30" stroke="var(--i-paper)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<g stroke="var(--i-dark)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".45"><path d="M96 70c-8-10 8-16 0-28"/><path d="M118 70c-8-10 8-16 0-28"/></g>
+<rect x="176" y="62" width="70" height="104" rx="14" fill="var(--i-dark)"/>
+<rect x="183" y="70" width="56" height="88" rx="9" fill="var(--i-a)"/>
+<g stroke="var(--i-a)" stroke-width="7" fill="none" stroke-linecap="round"><path d="M266 92c10 10 10 30 0 40"/><path d="M284 80c18 18 18 46 0 64"/><path d="M302 68c26 26 26 62 0 88"/></g>
+<circle cx="211" cy="114" r="15" fill="var(--i-paper)"/>
+<path d="M204 114l5 5 10-11" stroke="var(--i-g)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/it/01.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="Pagato con Apple Pay"></div></div></div><div class="story"><p class="when"><time>09:20</time><span>iPhone · Apple Pay</span></p><h2>Pagato con Apple Pay</h2><p>Più tardi qualcun altro della casa paga al forno con l’iPhone. Tilla propone la spesa: basta un tocco su «Aggiungi».</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="250" width="400" height="50" fill="var(--i-ground)"/>
+<g transform="rotate(-8 300 110)"><path d="M262 40h86v150l-11-8-11 8-11-8-11 8-11-8-11 8-10-8z" fill="var(--i-paper)"/>
+<g fill="var(--i-dark)" opacity=".3"><rect x="276" y="58" width="58" height="6" rx="3"/><rect x="276" y="76" width="40" height="6" rx="3"/><rect x="276" y="94" width="50" height="6" rx="3"/><rect x="276" y="112" width="34" height="6" rx="3"/></g>
+<rect x="276" y="140" width="58" height="10" rx="5" fill="var(--i-a)"/></g>
+<path d="M30 92h34l30 110h130l24-84H82" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 202h124" stroke="var(--i-dark)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="112" cy="236" r="15" fill="var(--i-dark)"/><circle cx="208" cy="236" r="15" fill="var(--i-dark)"/>
+<rect x="112" y="118" width="64" height="78" rx="8" fill="var(--i-warm)"/>
+<path d="M126 120c0-22 36-22 36 0" stroke="var(--i-warm)" stroke-width="6" fill="none"/>
+<rect x="178" y="56" width="16" height="104" rx="8" transform="rotate(24 186 108)" fill="var(--i-bread)"/>
+<g fill="var(--i-g)"><ellipse cx="104" cy="114" rx="12" ry="24" transform="rotate(-30 104 114)"/><ellipse cx="120" cy="104" rx="10" ry="22" transform="rotate(10 120 104)"/></g>
+<circle cx="214" cy="160" r="16" fill="var(--i-red)"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/it/02.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="La spesa grande al supermercato"></div></div></div><div class="story"><p class="when"><time>12:30</time><span>iPhone</span></p><h2>La spesa grande al supermercato</h2><p>Fotografate lo scontrino: totale, negozio e data sono già compilati. La foto resta con la spesa, per tutta la casa.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="250" y="34" width="110" height="120" rx="10" fill="var(--i-glass)"/>
+<path d="M305 34v120M250 94h110" stroke="var(--i-wall)" stroke-width="6"/>
+<rect x="0" y="212" width="400" height="16" rx="4" fill="var(--i-wood)"/>
+<rect x="24" y="226" width="14" height="74" fill="var(--i-wood)"/><rect x="362" y="226" width="14" height="74" fill="var(--i-wood)"/>
+<rect x="96" y="94" width="150" height="100" rx="10" fill="var(--i-dark)"/>
+<rect x="104" y="102" width="134" height="84" rx="5" fill="var(--i-a)"/>
+<rect x="114" y="112" width="34" height="64" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="112" width="72" height="10" rx="3" fill="var(--i-paper)" opacity=".75"/>
+<rect x="156" y="130" width="54" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<rect x="156" y="146" width="62" height="8" rx="3" fill="var(--i-paper)" opacity=".5"/>
+<path d="M80 194h182l-12 18H92z" fill="var(--i-dark)" opacity=".85"/>
+<path d="M48 212v-90l34-30" stroke="var(--i-dark)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 82l40 18-12 22z" fill="var(--i-warm)"/>
+<rect x="34" y="204" width="30" height="10" rx="5" fill="var(--i-dark)"/>
+<rect x="282" y="174" width="34" height="38" rx="6" fill="var(--i-a)"/>
+<path d="M316 182c14 0 14 20 0 20" stroke="var(--i-a)" stroke-width="6" fill="none"/>
+<rect x="336" y="178" width="30" height="34" rx="5" fill="var(--i-warm)"/>
+<g fill="var(--i-g)"><ellipse cx="344" cy="160" rx="8" ry="20" transform="rotate(-24 344 160)"/><ellipse cx="358" cy="156" rx="8" ry="22" transform="rotate(18 358 156)"/></g></svg><div class="shot wide"><div class="combo"><img class="window" src="../screens/it/mac/04.jpg" width="2200" height="1600" loading="lazy" decoding="async" alt="Tra un lavoro e l’altro, alla scrivania"><img class="over" src="../screens/it/mac/04-panel.png" width="720" height="1216" loading="lazy" decoding="async" alt=""></div></div></div><div class="story"><p class="when"><time>15:10</time><span>Mac</span></p><h2>Tra un lavoro e l’altro, alla scrivania</h2><p>⌥⌘N da qualsiasi app: importo, per cosa, salva, senza cambiare finestra. In alto vedete quanto del mese è già speso.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="40" y="30" width="120" height="110" rx="10" fill="var(--i-night)"/>
+<circle cx="118" cy="66" r="16" fill="var(--i-sun)"/><circle cx="126" cy="60" r="14" fill="var(--i-night)"/>
+<g fill="var(--i-paper)"><circle cx="66" cy="56" r="3"/><circle cx="84" cy="96" r="2.5"/><circle cx="140" cy="112" r="2.5"/></g>
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<circle cx="330" cy="92" r="58" fill="var(--i-sun)" opacity=".28"/>
+<path d="M306 62h48l12 46h-72z" fill="var(--i-warm)"/>
+<rect x="327" y="108" width="6" height="150" fill="var(--i-dark)"/>
+<rect x="306" y="254" width="48" height="8" rx="4" fill="var(--i-dark)"/>
+<rect x="40" y="150" width="236" height="74" rx="22" fill="var(--i-a)"/>
+<rect x="30" y="200" width="256" height="50" rx="16" fill="var(--i-a)" opacity=".85"/>
+<rect x="18" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="258" y="176" width="40" height="74" rx="18" fill="var(--i-a)"/>
+<rect x="70" y="164" width="62" height="46" rx="14" fill="var(--i-warm)"/>
+<rect x="186" y="164" width="62" height="46" rx="14" fill="var(--i-paper)"/>
+<rect x="50" y="248" width="10" height="16" fill="var(--i-dark)"/><rect x="256" y="248" width="10" height="16" fill="var(--i-dark)"/></svg><div class="shot wide"><div class="tablet"><img src="../screens/it/ipad/03.jpg" width="2752" height="2064" loading="lazy" decoding="async" alt="Insieme sul divano"></div></div></div><div class="story"><p class="when"><time>21:00</time><span>iPad</span></p><h2>Insieme sul divano</h2><p>Dove sono finiti i soldi questo mese? Le statistiche lo mostrano a colpo d’occhio, con tutto ciò che è stato aggiunto oggi su orologio, iPhone e Mac.</p></div></section>
+<section class="moment wrap"><div class="scene"><svg viewBox="0 0 400 300" aria-hidden="true">
+<rect x="0" y="262" width="400" height="38" fill="var(--i-ground)"/>
+<rect x="44" y="52" width="180" height="176" rx="18" fill="var(--i-paper)"/>
+<rect x="44" y="52" width="180" height="48" rx="18" fill="var(--i-a)"/>
+<rect x="44" y="82" width="180" height="18" fill="var(--i-a)"/>
+<g fill="var(--i-dark)"><rect x="82" y="38" width="10" height="30" rx="5"/><rect x="176" y="38" width="10" height="30" rx="5"/></g>
+<text x="134" y="190" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="92" font-weight="800" fill="var(--i-dark)">1</text>
+<path d="M262 160l52-44 52 44v84h-104z" fill="var(--i-wall)"/>
+<path d="M250 166l64-56 64 56" stroke="var(--i-dark)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="298" y="196" width="32" height="48" rx="5" fill="var(--i-warm)"/>
+<circle cx="244" cy="96" r="22" fill="var(--i-g)"/>
+<path d="M234 96l7 7 13-14" stroke="var(--i-paper)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="shot phone-shot"><div class="phone"><img src="../screens/it/04.jpg" width="1206" height="2622" loading="lazy" decoding="async" alt="E da solo"></div></div></div><div class="story"><p class="when"><time>Ogni mese</time><span>iPhone</span></p><h2>E da solo</h2><p>Affitto, asilo e luce si impostano una volta. Tilla li registra il giorno della scadenza, senza che nessuno debba ricordarsene.</p></div></section>
+</div>
+<section class="band wrap"><div class="band-card"><img src="../icon.png" width="256" height="256" alt="">
+<h2>Una casa, tutti i dispositivi</h2><p>Ogni voce arriva subito a tutti via iCloud, senza account e senza server.</p>
+<p class="get"><a class="store" href="https://apps.apple.com/app/id6825910160"><picture><source srcset="../badges/it-white.svg" media="(prefers-color-scheme: dark)"><img src="../badges/it-black.svg" width="120" height="40" alt="Scarica su App Store"></picture></a></p>
+<p class="more"><a href="../#it">Tutto su Tilla →</a></p></div></section>
+<footer class="wrap"><a href="../support/#it">Supporto</a> · <a href="../privacy/#it">Privacy</a> · © 2026 <a href="../../#it">Simon Blum</a></footer>
+</article>
+</main>
+<script>
+(function(){
+  var langs=['de','en','es','fr','it'];
+  function pick(){
+    var h=location.hash.slice(1);if(langs.indexOf(h)>-1)return h;
+    var n=navigator.languages||[navigator.language||''];
+    for(var i=0;i<n.length;i++){var l=String(n[i]).slice(0,2).toLowerCase();if(langs.indexOf(l)>-1)return l}
+    return 'en';
+  }
+  function show(){
+    var l=pick(),a=document.querySelectorAll('article[data-lang]'),n=document.querySelectorAll('.langs a');
+    document.documentElement.lang=l;
+    for(var i=0;i<a.length;i++){var on=a[i].getAttribute('data-lang')===l;a[i].hidden=!on;if(on)document.title=a[i].getAttribute('data-title')}
+    for(var j=0;j<n.length;j++){n[j].setAttribute('aria-current',n[j].hash==='#'+l?'page':'false')}
+  }
+  show();
+  addEventListener('hashchange',function(){show();scrollTo(0,0)});
+})();
+</script>
+</body>
+</html>
